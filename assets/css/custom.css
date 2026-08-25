@@ -235,6 +235,171 @@ main > .identity-page > .about-story {
   margin-top: 1.4rem;
 }
 
+main > .page-intro {
+  margin: 0 auto;
+  max-width: 1500px;
+  padding: clamp(4.5rem, 9vw, 9rem) clamp(1.25rem, 5vw, 5rem) clamp(3rem, 6vw, 6rem);
+}
+
+.page-intro h1,
+.contact-intro h1 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(3rem, 6vw, 6.5rem);
+  font-weight: 400;
+  letter-spacing: -0.04em;
+  line-height: 0.98;
+  max-width: 12ch;
+}
+
+.page-intro > p:last-child {
+  color: var(--portfolio-muted);
+  font-size: clamp(1.05rem, 1.5vw, 1.3rem);
+  line-height: 1.7;
+  margin-top: 2rem;
+  max-width: 40rem;
+}
+
+main > .portfolio-index {
+  display: grid;
+  gap: clamp(1.25rem, 2.5vw, 2.5rem);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin: 0 auto;
+  max-width: 1500px;
+  padding: 0 clamp(1.25rem, 5vw, 5rem) clamp(5rem, 10vw, 10rem);
+}
+
+.portfolio-category-card {
+  background: var(--portfolio-paper-light);
+  border: 1px solid var(--portfolio-line);
+  display: block;
+  overflow: hidden;
+  transition: border-color 180ms ease, transform 180ms ease;
+}
+
+.portfolio-category-card:hover {
+  border-color: var(--portfolio-ink);
+  transform: translateY(-4px);
+}
+
+.portfolio-category-media {
+  aspect-ratio: 9 / 7;
+  overflow: hidden;
+}
+
+.portfolio-category-media img {
+  height: 100%;
+  object-fit: cover;
+  transition: transform 500ms ease;
+  width: 100%;
+}
+
+.portfolio-category-card:hover .portfolio-category-media img {
+  transform: scale(1.025);
+}
+
+.portfolio-category-placeholder {
+  align-items: flex-end;
+  background:
+    linear-gradient(135deg, rgba(139, 94, 60, 0.22), transparent 55%),
+    repeating-linear-gradient(135deg, transparent 0 34px, rgba(33, 31, 27, 0.035) 34px 35px),
+    #e7e0d5;
+  color: rgba(33, 31, 27, 0.28);
+  display: flex;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(4rem, 10vw, 9rem);
+  height: 100%;
+  justify-content: flex-end;
+  padding: clamp(1.5rem, 4vw, 3.5rem);
+}
+
+.portfolio-category-copy {
+  align-items: flex-end;
+  display: flex;
+  gap: 2rem;
+  justify-content: space-between;
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.portfolio-category-copy p {
+  color: var(--portfolio-accent);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+.portfolio-category-copy h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.8rem, 3vw, 3rem);
+  font-weight: 400;
+  line-height: 1.05;
+}
+
+.portfolio-category-copy div > span {
+  color: var(--portfolio-muted);
+  display: block;
+  line-height: 1.6;
+  margin-top: 0.8rem;
+  max-width: 34rem;
+}
+
+.portfolio-category-arrow {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 2.2rem;
+  transition: transform 180ms ease;
+}
+
+.portfolio-category-card:hover .portfolio-category-arrow {
+  transform: translateX(0.35rem);
+}
+
+.contact-page {
+  min-height: calc(100vh - 11rem);
+}
+
+main > .contact-page > .contact-intro {
+  display: grid;
+  gap: clamp(3rem, 8vw, 9rem);
+  grid-template-columns: minmax(0, 1fr) minmax(20rem, 0.8fr);
+  margin: 0 auto;
+  max-width: 1500px;
+  padding: clamp(5rem, 10vw, 10rem) clamp(1.25rem, 5vw, 5rem);
+}
+
+.contact-copy {
+  border-left: 1px solid var(--portfolio-line);
+  padding-left: clamp(1.5rem, 4vw, 4rem);
+}
+
+.contact-copy > p {
+  color: var(--portfolio-muted);
+  font-size: clamp(1.05rem, 1.4vw, 1.25rem);
+  line-height: 1.8;
+}
+
+.contact-placeholder {
+  border-bottom: 1px solid var(--portfolio-line);
+  border-top: 1px solid var(--portfolio-line);
+  margin: 2.5rem 0;
+  padding: 1.75rem 0;
+}
+
+.contact-placeholder span {
+  color: var(--portfolio-accent);
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+}
+
+.contact-placeholder strong {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.45;
+}
+
 main > .identity-page > .about-focus {
   max-width: 1500px;
 }
@@ -348,6 +513,17 @@ body > footer {
     padding-left: 0;
     padding-top: 2rem;
   }
+
+  main > .contact-page > .contact-intro {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-copy {
+    border-left: 0;
+    border-top: 1px solid var(--portfolio-line);
+    padding-left: 0;
+    padding-top: 2rem;
+  }
 }
 
 @media (max-width: 640px) {
@@ -396,6 +572,14 @@ body > footer {
 
   .focus-grid h3 {
     margin-top: 2.75rem;
+  }
+
+  main > .portfolio-index {
+    grid-template-columns: 1fr;
+  }
+
+  .portfolio-category-copy {
+    align-items: flex-start;
   }
 }
 

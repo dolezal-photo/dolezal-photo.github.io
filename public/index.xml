@@ -1,10 +1,56 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>My New Hugo Site</title>
+    <title>Moje Portfolio on Doležal Photo</title>
     <link>http://localhost:1313/</link>
-    <description>Recent content on My New Hugo Site</description>
+    <description>Recent content in Moje Portfolio on Doležal Photo</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <language>cs-CZ</language>
+    <copyright>© Doležal Photo</copyright><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ateliér</title>
+      <link>http://localhost:1313/portfolio/atelier/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/portfolio/atelier/</guid><description>Portrétní a ateliérová fotografie.</description></item>
+    <item>
+      <title>Koncerty</title>
+      <link>http://localhost:1313/portfolio/koncerty/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/portfolio/koncerty/</guid><description>Energie živé hudby, světlo a okamžiky z pódia i zákulisí.</description></item>
+    <item>
+      <title>Shora</title>
+      <link>http://localhost:1313/portfolio/shora/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/portfolio/shora/</guid><description>Letecké fotografie a nový pohled na krajinu, stavby a události.</description></item>
+    <item>
+      <title>Catering</title>
+      <link>http://localhost:1313/portfolio/catering/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/portfolio/catering/</guid><description>Jídlo, detail a atmosféra gastronomických událostí.</description></item>
+    <item>
+      <title>Svatební video</title>
+      <link>http://localhost:1313/portfolio/svatebni-video/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/portfolio/svatebni-video/</guid><description>Svatební příběhy zachycené v pohybu, zvuku a emocích.</description></item>
+    <item>
+      <title>Interiéry</title>
+      <link>http://localhost:1313/portfolio/interiery/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/portfolio/interiery/</guid><description>Architektura, prostor, materiály a přirozené světlo.</description></item>
+    <item>
+      <title>Kdo jsem</title>
+      <link>http://localhost:1313/kdo-jsem/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/kdo-jsem/</guid>
+        <media:content url="http://localhost:1313/kdo-jsem/kdo-jsem_hu_16be219146b17fda.jpg" type="image/jpeg"/>
+        <description>
+          &lt;img src=&quot;http://localhost:1313/kdo-jsem/kdo-jsem_hu_16be219146b17fda.jpg&quot; /&gt;
+          &lt;p&gt;Poznejte fotografa za Doležal Photo a jeho přístup k fotografování lidí, událostí a míst.&lt;/p&gt;
+        </description></item>
+    <item>
+      <title>Kontakt</title>
+      <link>http://localhost:1313/kontakt/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/kontakt/</guid><description>Domluvme fotografování nebo video pro váš příběh, událost či prostor.</description></item>
   </channel>
 </rss>

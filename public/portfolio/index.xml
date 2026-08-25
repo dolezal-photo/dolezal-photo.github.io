@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Portfolio on Doležal Photo</title>
+    <link>http://localhost:1313/portfolio/</link>
+    <description>Recent content in Portfolio on Doležal Photo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>cs-CZ</language>
+    <copyright>© Doležal Photo</copyright><atom:link href="http://localhost:1313/portfolio/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ateliér</title>
+      <link>http://localhost:1313/portfolio/atelier/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/portfolio/atelier/</guid><description>Portrétní a ateliérová fotografie.</description></item>
+    <item>
+      <title>Koncerty</title>
+      <link>http://localhost:1313/portfolio/koncerty/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/portfolio/koncerty/</guid><description>Energie živé hudby, světlo a okamžiky z pódia i zákulisí.</description></item>
+    <item>
+      <title>Shora</title>
+      <link>http://localhost:1313/portfolio/shora/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/portfolio/shora/</guid><description>Letecké fotografie a nový pohled na krajinu, stavby a události.</description></item>
+    <item>
+      <title>Catering</title>
+      <link>http://localhost:1313/portfolio/catering/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/portfolio/catering/</guid><description>Jídlo, detail a atmosféra gastronomických událostí.</description></item>
+    <item>
+      <title>Svatební video</title>
+      <link>http://localhost:1313/portfolio/svatebni-video/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/portfolio/svatebni-video/</guid><description>Svatební příběhy zachycené v pohybu, zvuku a emocích.</description></item>
+    <item>
+      <title>Interiéry</title>
+      <link>http://localhost:1313/portfolio/interiery/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/portfolio/interiery/</guid><description>Architektura, prostor, materiály a přirozené světlo.</description></item>
+  </channel>
+</rss>

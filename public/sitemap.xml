@@ -2,9 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://localhost:1313/portfolio/atelier/</loc>
+  </url><url>
+    <loc>http://localhost:1313/portfolio/koncerty/</loc>
+  </url><url>
+    <loc>http://localhost:1313/portfolio/shora/</loc>
+  </url><url>
+    <loc>http://localhost:1313/portfolio/catering/</loc>
+  </url><url>
+    <loc>http://localhost:1313/portfolio/svatebni-video/</loc>
+  </url><url>
+    <loc>http://localhost:1313/portfolio/interiery/</loc>
+  </url><url>
     <loc>http://localhost:1313/categories/</loc>
   </url><url>
+    <loc>http://localhost:1313/kdo-jsem/</loc>
+  </url><url>
+    <loc>http://localhost:1313/kontakt/</loc>
+  </url><url>
     <loc>http://localhost:1313/</loc>
+  </url><url>
+    <loc>http://localhost:1313/portfolio/</loc>
   </url><url>
     <loc>http://localhost:1313/tags/</loc>
   </url>

@@ -1,18 +1,3 @@
-{{ define "header" }}
-  <header class="identity-header">
-    <a class="identity-brand" href="/" aria-label="Doležal Photo – úvodní stránka">
-      <span>Doležal</span>
-      <small>Photo</small>
-    </a>
-    <nav class="identity-nav" aria-label="Hlavní navigace">
-      <a href="/">Úvod</a>
-      <a href="#portfolio">Portfolio</a>
-      <a class="active" href="/kdo-jsem/" aria-current="page">Kdo jsem</a>
-      <a href="#kontakt">Kontakt</a>
-    </nav>
-  </header>
-{{ end }}
-
 {{ define "main" }}
   <article class="identity-page">
     <section class="about-hero" aria-labelledby="about-title">
@@ -23,8 +8,8 @@
           Jsem fotograf na volné noze. Zachycuji lidi, energii živých událostí i charakter míst — od ateliéru a koncertních pódií po interiéry a pohledy z výšky.
         </p>
         <div class="about-actions">
-          <a class="button button-primary" href="#portfolio">Prohlédnout zaměření</a>
-          <a class="button button-secondary" href="#kontakt">Domluvit spolupráci</a>
+          <a class="button button-primary" href="/portfolio/">Prohlédnout portfolio</a>
+          <a class="button button-secondary" href="/kontakt/">Domluvit spolupráci</a>
         </div>
       </div>
 
@@ -51,35 +36,5 @@
       </div>
     </section>
 
-    <section class="about-focus" id="portfolio" aria-labelledby="focus-title">
-      <div class="section-heading">
-        <p class="eyebrow">Čemu se věnuji</p>
-        <h2 id="focus-title">Lidé, události i prostor.</h2>
-      </div>
-      <div class="focus-grid">
-        <article>
-          <span>01</span>
-          <h3>Lidé a příběhy</h3>
-          <p>Ateliérové focení, portréty a svatební příběhy zachycené fotografií i videem.</p>
-        </article>
-        <article>
-          <span>02</span>
-          <h3>Energie okamžiku</h3>
-          <p>Koncerty a živé události, kde rozhoduje rychlá reakce, světlo a správný moment.</p>
-        </article>
-        <article>
-          <span>03</span>
-          <h3>Prostor a detail</h3>
-          <p>Interiéry, catering a letecké záběry, které ukazují celek i drobnosti s charakterem.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="about-cta" id="kontakt" aria-labelledby="contact-title">
-      <p class="eyebrow">Spolupráce</p>
-      <h2 id="contact-title">Máte příběh, který stojí za zachycení?</h2>
-      <p>Ozvěte se mi. Společně probereme představu, místo i podobu výsledných fotografií nebo videa.</p>
-      <p class="contact-note">Kontaktní údaje doplníme v dalším kroku.</p>
-    </section>
   </article>
 {{ end }}

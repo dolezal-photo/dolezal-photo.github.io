@@ -1,0 +1,34 @@
+{{ define "main" }}
+  <section class="page-intro">
+    <p class="eyebrow">Portfolio</p>
+    <h1>Každý příběh potřebuje jiný pohled.</h1>
+    <p>Vyberte si oblast. Každá kategorie má vlastní stránku a samostatnou galerii.</p>
+  </section>
+
+  <section class="portfolio-index" aria-label="Kategorie portfolia">
+    {{ range $index, $album := .Pages.ByWeight }}
+      <a class="portfolio-category-card" href="{{ $album.RelPermalink }}">
+        <div class="portfolio-category-media">
+          {{ $images := $album.Resources.ByType "image" }}
+          {{ if gt (len $images) 0 }}
+            {{ $cover := index $images 0 }}
+            {{ $thumbnail := $cover.Filter (slice images.AutoOrient (images.Process "fill 900x700")) }}
+            <img src="{{ $thumbnail.RelPermalink }}" alt="{{ $album.Title }}" width="{{ $thumbnail.Width }}" height="{{ $thumbnail.Height }}" />
+          {{ else }}
+            <div class="portfolio-category-placeholder" aria-hidden="true">
+              <span>{{ printf "%02d" (add $index 1) }}</span>
+            </div>
+          {{ end }}
+        </div>
+        <div class="portfolio-category-copy">
+          <div>
+            <p>{{ printf "%02d" (add $index 1) }}</p>
+            <h2>{{ $album.Title }}</h2>
+            {{ with $album.Description }}<span>{{ . }}</span>{{ end }}
+          </div>
+          <span class="portfolio-category-arrow" aria-hidden="true">→</span>
+        </div>
+      </a>
+    {{ end }}
+  </section>
+{{ end }}

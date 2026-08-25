@@ -11,17 +11,17 @@ copyright = "© Doležal Photo"
 [menu]
   [[menu.main]]
     name = "Úvod"
-    url = "/"
+    pageRef = "/"
     weight = 1
   [[menu.main]]
     name = "Portfolio"
-    url = "/kdo-jsem/#portfolio"
+    pageRef = "/portfolio"
     weight = 2
   [[menu.main]]
     name = "Kdo jsem"
-    url = "/kdo-jsem/"
+    pageRef = "/kdo-jsem"
     weight = 3
   [[menu.main]]
     name = "Kontakt"
-    url = "/kdo-jsem/#kontakt"
+    pageRef = "/kontakt"
     weight = 4

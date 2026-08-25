@@ -17,18 +17,23 @@ from PIL import Image, ImageOps
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 SOURCE_ROOT = PROJECT_ROOT / "fotky-originaly"
 MANIFEST_PATH = SOURCE_ROOT / ".komprese.json"
+SETTINGS_PATH = SOURCE_ROOT / "nastaveni.json"
 
 TARGETS = {
     "kdo-jsem": (PROJECT_ROOT / "content" / "kdo-jsem", "kdo-jsem.jpg"),
-    "atelier": (PROJECT_ROOT / "content" / "atelier", None),
-    "koncerty": (PROJECT_ROOT / "content" / "koncerty", None),
-    "shora": (PROJECT_ROOT / "content" / "shora", None),
-    "catering": (PROJECT_ROOT / "content" / "catering", None),
-    "svatebni-video": (PROJECT_ROOT / "content" / "svatebni-video", None),
-    "interiery": (PROJECT_ROOT / "content" / "interiery", None),
+    "atelier": (PROJECT_ROOT / "content" / "portfolio" / "atelier", None),
+    "koncerty": (PROJECT_ROOT / "content" / "portfolio" / "koncerty", None),
+    "shora": (PROJECT_ROOT / "content" / "portfolio" / "shora", None),
+    "catering": (PROJECT_ROOT / "content" / "portfolio" / "catering", None),
+    "svatebni-video": (
+        PROJECT_ROOT / "content" / "portfolio" / "svatebni-video",
+        None,
+    ),
+    "interiery": (PROJECT_ROOT / "content" / "portfolio" / "interiery", None),
 }
 
 SUPPORTED_EXTENSIONS = {".jpg", ".jpeg", ".png", ".tif", ".tiff"}
+PORTFOLIO_ALBUMS = tuple(album for album in TARGETS if album != "kdo-jsem")
 
 
 def parse_args() -> argparse.Namespace:
@@ -83,6 +88,90 @@ def save_manifest(files: dict[str, dict[str, object]]) -> None:
         json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
     )
     os.replace(temp_path, MANIFEST_PATH)
+
+
+def load_settings() -> tuple[str, dict[str, list[str]]]:
+    try:
+        data = json.loads(SETTINGS_PATH.read_text(encoding="utf-8"))
+    except FileNotFoundError as error:
+        raise ValueError(f"Chybi nastaveni {SETTINGS_PATH.name}.") from error
+    except (json.JSONDecodeError, OSError) as error:
+        raise ValueError(f"Nelze precist {SETTINGS_PATH.name}: {error}") from error
+
+    if not isinstance(data, dict):
+        raise ValueError(f"{SETTINGS_PATH.name} musi obsahovat JSON objekt.")
+
+    portrait = data.get("kdo_jsem", "")
+    if not isinstance(portrait, str):
+        raise ValueError("Hodnota kdo_jsem musi byt nazev souboru.")
+
+    portfolio_data = data.get("portfolio", {})
+    if not isinstance(portfolio_data, dict):
+        raise ValueError("Hodnota portfolio musi byt JSON objekt.")
+
+    portfolio: dict[str, list[str]] = {}
+    for album in PORTFOLIO_ALBUMS:
+        order = portfolio_data.get(album, [])
+        if not isinstance(order, list) or not all(
+            isinstance(filename, str) for filename in order
+        ):
+            raise ValueError(f"Poradi pro {album} musi byt seznam nazvu souboru.")
+        if len(order) != len(set(order)):
+            raise ValueError(f"Poradi pro {album} obsahuje stejny soubor vicekrat.")
+        portfolio[album] = order
+
+    return portrait, portfolio
+
+
+def select_sources(
+    album: str,
+    sources: list[Path],
+    portrait: str,
+    portfolio_order: dict[str, list[str]],
+) -> list[Path]:
+    by_name = {source.name: source for source in sources}
+
+    if album == "kdo-jsem":
+        if portrait:
+            if Path(portrait).name != portrait:
+                raise ValueError("kdo_jsem musi obsahovat pouze nazev souboru.")
+            if portrait not in by_name:
+                raise ValueError(
+                    f"Vybrany portret {portrait!r} neni ve slozce kdo-jsem."
+                )
+            return [by_name[portrait]]
+        if len(sources) == 1:
+            return sources
+        if not sources:
+            return []
+        raise ValueError(
+            "Ve slozce kdo-jsem je vice obrazku; vyber jeden v nastaveni.json."
+        )
+
+    configured_names = portfolio_order.get(album, [])
+    missing = [name for name in configured_names if name not in by_name]
+    if missing:
+        raise ValueError(
+            f"V nastaveni galerie {album} chybi soubory: {', '.join(missing)}"
+        )
+
+    configured = [by_name[name] for name in configured_names]
+    remaining = sorted(
+        (source for source in sources if source.name not in configured_names),
+        key=lambda source: source.name.casefold(),
+    )
+    return configured + remaining
+
+
+def is_managed_output(relative_path: str) -> bool:
+    try:
+        output = (PROJECT_ROOT / relative_path).resolve()
+        return output.suffix.lower() == ".jpg" and any(
+            output.is_relative_to(destination_dir.resolve())
+            for destination_dir, _ in TARGETS.values()
+        )
+    except (OSError, ValueError):
+        return False
 
 
 def safe_stem(filename: str) -> str:
@@ -149,7 +238,14 @@ def main() -> int:
     errors = 0
     original_bytes = 0
     web_bytes = 0
-    claimed_destinations: dict[Path, Path] = {}
+    removed = 0
+    tasks: list[tuple[Path, Path]] = []
+
+    try:
+        portrait, portfolio_order = load_settings()
+    except ValueError as error:
+        print(f"CHYBA: {error}", file=sys.stderr)
+        return 1
 
     for album, (destination_dir, fixed_filename) in TARGETS.items():
         source_dir = SOURCE_ROOT / album
@@ -161,72 +257,96 @@ def main() -> int:
             if path.is_file() and path.suffix.lower() in SUPPORTED_EXTENSIONS
         )
 
-        if fixed_filename and len(sources) > 1:
-            print(
-                f"CHYBA: Ve slozce {source_dir.relative_to(PROJECT_ROOT)} musi byt "
-                "prave jeden obrazek.",
-                file=sys.stderr,
+        try:
+            selected_sources = select_sources(
+                album, sources, portrait, portfolio_order
             )
+        except ValueError as error:
+            print(f"CHYBA: {error}", file=sys.stderr)
             errors += 1
             continue
 
-        for source in sources:
+        for position, source in enumerate(selected_sources, start=1):
             destination = destination_dir / (
-                fixed_filename or f"{safe_stem(source.stem)}.jpg"
+                fixed_filename or f"{position:02d}-{safe_stem(source.stem)}.jpg"
             )
-            previous_source = claimed_destinations.get(destination)
-            if previous_source and previous_source != source:
-                print(
-                    f"CHYBA: {source.name} a {previous_source.name} maji stejny webovy nazev "
-                    f"{destination.name}.",
-                    file=sys.stderr,
-                )
-                errors += 1
+            tasks.append((source, destination))
+
+    active_source_keys = {
+        source.relative_to(PROJECT_ROOT).as_posix() for source, _ in tasks
+    }
+    active_output_paths = {
+        destination.relative_to(PROJECT_ROOT).as_posix() for _, destination in tasks
+    }
+    obsolete_outputs: set[str] = set()
+
+    for source, destination in tasks:
+
+        source_key = source.relative_to(PROJECT_ROOT).as_posix()
+        output_key = destination.relative_to(PROJECT_ROOT).as_posix()
+        current_signature = signature(source, args.max_edge, args.quality)
+        manifest_entry = manifest.get(source_key, {})
+        old_output = manifest_entry.get("output")
+        if isinstance(old_output, str) and old_output != output_key:
+            obsolete_outputs.add(old_output)
+        unchanged = (
+            not args.force
+            and destination.exists()
+            and manifest_entry.get("signature") == current_signature
+            and old_output == output_key
+        )
+
+        if unchanged:
+            print(f"PRESKOCENO: {source.relative_to(SOURCE_ROOT)}")
+            skipped += 1
+            continue
+
+        print(
+            f"{'PLAN' if args.dry_run else 'ZPRACOVAVAM'}: "
+            f"{source.relative_to(SOURCE_ROOT)} -> "
+            f"{destination.relative_to(PROJECT_ROOT)}"
+        )
+        if args.dry_run:
+            continue
+
+        try:
+            optimize(source, destination, args.max_edge, args.quality)
+            updated_manifest[source_key] = {
+                "signature": current_signature,
+                "output": output_key,
+            }
+            original_bytes += source.stat().st_size
+            web_bytes += destination.stat().st_size
+            processed += 1
+        except (OSError, ValueError) as error:
+            print(f"CHYBA: {source}: {error}", file=sys.stderr)
+            errors += 1
+
+    if not args.dry_run and errors == 0:
+        stale_sources = set(updated_manifest) - active_source_keys
+        for source_key in stale_sources:
+            entry = updated_manifest.pop(source_key, {})
+            old_output = entry.get("output")
+            if isinstance(old_output, str):
+                obsolete_outputs.add(old_output)
+
+        for output_key in sorted(obsolete_outputs - active_output_paths):
+            if not is_managed_output(output_key):
                 continue
-            claimed_destinations[destination] = source
-
-            source_key = source.relative_to(PROJECT_ROOT).as_posix()
-            current_signature = signature(source, args.max_edge, args.quality)
-            manifest_entry = manifest.get(source_key, {})
-            unchanged = (
-                not args.force
-                and destination.exists()
-                and manifest_entry.get("signature") == current_signature
-                and manifest_entry.get("output")
-                == destination.relative_to(PROJECT_ROOT).as_posix()
-            )
-
-            if unchanged:
-                print(f"PRESKOCENO: {source.relative_to(SOURCE_ROOT)}")
-                skipped += 1
-                continue
-
-            print(
-                f"{'PLAN' if args.dry_run else 'ZPRACOVAVAM'}: "
-                f"{source.relative_to(SOURCE_ROOT)} -> "
-                f"{destination.relative_to(PROJECT_ROOT)}"
-            )
-            if args.dry_run:
-                continue
-
-            try:
-                optimize(source, destination, args.max_edge, args.quality)
-                updated_manifest[source_key] = {
-                    "signature": current_signature,
-                    "output": destination.relative_to(PROJECT_ROOT).as_posix(),
-                }
-                original_bytes += source.stat().st_size
-                web_bytes += destination.stat().st_size
-                processed += 1
-            except (OSError, ValueError) as error:
-                print(f"CHYBA: {source}: {error}", file=sys.stderr)
-                errors += 1
+            output_path = PROJECT_ROOT / output_key
+            if output_path.exists():
+                output_path.unlink()
+                print(f"ODSTRANENO: {output_key}")
+                removed += 1
 
     if not args.dry_run:
         save_manifest(updated_manifest)
 
     print()
-    print(f"Hotovo: {processed} zpracovano, {skipped} beze zmeny, {errors} chyb.")
+    print(
+        f"Hotovo: {processed} zpracovano, {skipped} beze zmeny, "
+        f"{removed} starych kopii odstraneno, {errors} chyb."
+    )
     if processed and original_bytes:
         reduction = 100 * (1 - web_bytes / original_bytes)
         print(

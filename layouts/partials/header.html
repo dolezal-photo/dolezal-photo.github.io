@@ -1,0 +1,13 @@
+<header class="identity-header">
+  <a class="identity-brand" href="{{ site.Home.RelPermalink }}" aria-label="Doležal Photo – úvodní stránka">
+    <span>Doležal</span>
+    <small>Photo</small>
+  </a>
+  <nav class="identity-nav" aria-label="Hlavní navigace">
+    {{ $currentPage := . }}
+    {{ range site.Menus.main }}
+      {{ $active := or ($currentPage.IsMenuCurrent .Menu .) ($currentPage.HasMenuCurrent .Menu .) }}
+      <a{{ if $active }} class="active" aria-current="page"{{ end }} href="{{ .URL }}">{{ .Name }}</a>
+    {{ end }}
+  </nav>
+</header>
