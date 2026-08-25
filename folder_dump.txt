@@ -1,0 +1,4642 @@
+FOLDER DUMP - 2026-08-25 12:56:22.039639
+================================================================================
+
+DIRECTORY TREE
+--------------------
+ROOT: /Users/jirka/Downloads/fotograficke portfolio/dolezal-photo.github.io
+
+[D] .
+  [F] .DS_Store
+  [F] .gitmodules
+  [F] .hugo_build.lock
+  [F] hugo.toml
+  [F] README.md
+  [D] archetypes
+    [F] default.md
+  [D] resources
+    [D] resources/_gen
+      [D] resources/_gen/assets
+        [D] resources/_gen/assets/css
+          [F] main.scss_77b10c8e87ff110a62c52933fe3f7f11.content
+          [F] main.scss_77b10c8e87ff110a62c52933fe3f7f11.json
+  [D] content
+    [F] _index.md
+  [D] public
+    [F] .DS_Store
+    [F] 404.html
+    [F] index.html
+    [F] index.xml
+    [F] sitemap.xml
+    [D] public/css
+      [F] main.min.929a37b4f846bf86c1bf9935695bb75dbed775e4c8f11304661afa14f26407c0.css
+    [D] public/images
+      [F] favicon.svg
+    [D] public/js
+    [D] public/tags
+      [F] index.html
+      [F] index.xml
+    [D] public/categories
+      [F] index.html
+      [F] index.xml
+  [D] layouts
+  [D] static
+  [D] i18n
+  [D] assets
+    [F] jsconfig.json
+  [D] themes
+    [F] .DS_Store
+    [D] themes/gallery
+      [F] .git
+      [F] .prettierignore
+      [F] .stylelintrc.json
+      [F] go.mod
+      [F] LICENSE
+      [F] package.json
+      [F] prettier.config.js
+      [F] README.md
+      [F] theme.toml
+      [D] themes/gallery/exampleSite
+        [F] go.mod
+        [F] package.json
+        [F] README.md
+        [D] themes/gallery/exampleSite/config
+          [D] themes/gallery/exampleSite/config/_default
+            [F] hugo.toml
+        [D] themes/gallery/exampleSite/content
+          [F] _index.md
+          [F] about.md
+          [F] imprint.md
+          [D] themes/gallery/exampleSite/content/fashion-beauty
+            [F] index.md
+          [D] themes/gallery/exampleSite/content/nature
+            [F] index.md
+          [D] themes/gallery/exampleSite/content/private
+            [F] index.md
+          [D] themes/gallery/exampleSite/content/animals
+            [F] _index.md
+            [D] themes/gallery/exampleSite/content/animals/dogs
+              [F] index.md
+            [D] themes/gallery/exampleSite/content/animals/cats
+              [F] index.md
+          [D] themes/gallery/exampleSite/content/categories
+            [D] themes/gallery/exampleSite/content/categories/animals
+              [F] _index.md
+          [D] themes/gallery/exampleSite/content/featured-album
+            [F] index.md
+        [D] themes/gallery/exampleSite/layouts
+          [D] themes/gallery/exampleSite/layouts/partials
+            [F] head-custom.html
+        [D] themes/gallery/exampleSite/assets
+          [D] themes/gallery/exampleSite/assets/css
+            [F] custom.css
+      [D] themes/gallery/images
+      [D] themes/gallery/layouts
+        [F] 404.html
+        [D] themes/gallery/layouts/_default
+          [F] baseof.html
+          [F] home.html
+          [F] list.html
+          [F] prose.html
+          [F] rss.xml
+          [F] single.html
+          [F] sitemap.xml
+        [D] themes/gallery/layouts/partials
+          [F] album-card.html
+          [F] categories.html
+          [F] featured.html
+          [F] footer.html
+          [F] gallery.html
+          [F] get-gallery.html
+          [F] head-custom.html
+          [F] head.html
+          [F] header.html
+          [F] menu.html
+          [F] opengraph.html
+          [F] related.html
+          [F] social-icons.html
+          [F] title.html
+      [D] themes/gallery/static
+        [D] themes/gallery/static/images
+          [F] favicon.svg
+      [D] themes/gallery/.github
+        [F] FUNDING.yml
+        [D] themes/gallery/.github/workflows
+          [F] hugo.yml
+      [D] themes/gallery/i18n
+        [F] da.yaml
+        [F] de.yaml
+        [F] en.yaml
+        [F] es.yaml
+        [F] fr.yaml
+        [F] it.yaml
+        [F] ja.yaml
+        [F] nb.yaml
+        [F] pt.yaml
+        [F] uk.yaml
+        [F] zh.yaml
+      [D] themes/gallery/assets
+        [F] jsconfig.json
+        [D] themes/gallery/assets/css
+          [F] _colors.scss
+          [F] _normalize.scss
+          [F] _styles.scss
+          [F] custom.css
+          [F] main.scss
+          [D] themes/gallery/assets/css/photoswipe
+            [F] photoswipe-dynamic-caption-plugin.css
+            [F] photoswipe.css
+        [D] themes/gallery/assets/js
+          [F] custom.js
+          [F] gallery.js
+          [F] justified-layout.ts
+          [F] lazysizes.js
+          [F] lightbox.js
+          [F] main.js
+          [F] menu.js
+          [D] themes/gallery/assets/js/photoswipe
+            [F] photoswipe-dynamic-caption-plugin.esm.min.js
+================================================================================
+FILE: .DS_Store
+----------------------------------------
+[SKIPPED (binary)]
+--------------------------------------------------------------------------------
+
+FILE: .gitmodules
+----------------------------------------
+[submodule "themes/gallery"]
+	path = themes/gallery
+	url = https://github.com/nicokaiser/hugo-theme-gallery.git
+
+--------------------------------------------------------------------------------
+
+FILE: .hugo_build.lock
+----------------------------------------
+[OK (utf-8)]
+--------------------------------------------------------------------------------
+
+FILE: hugo.toml
+----------------------------------------
+baseURL = 'https://example.org/'
+languageCode = 'en-us'
+title = 'My New Hugo Site'
+theme = "gallery"
+--------------------------------------------------------------------------------
+
+FILE: README.md
+----------------------------------------
+# dolezal-photo
+Jsem fotograf na volné noze a tvořím prvotřídní vizuály s důrazem na kvalitu.
+
+--------------------------------------------------------------------------------
+
+FILE: archetypes/default.md
+----------------------------------------
++++
+date = '{{ .Date }}'
+draft = true
+title = '{{ replace .File.ContentBaseName "-" " " | title }}'
++++
+
+--------------------------------------------------------------------------------
+
+FILE: resources/_gen/assets/css/main.scss_77b10c8e87ff110a62c52933fe3f7f11.content
+----------------------------------------
+*,::before,::after{box-sizing:border-box;border-width:0}html{line-height:1.5;font-family:ui-sans-serif,system-ui,sans-serif;-webkit-text-size-adjust:100%;tab-size:4}body{margin:0}h1,h2,h3,h4,h5,h6{font-weight:inherit;font-size:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}button,input{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button{-webkit-appearance:button;background-image:none;background-color:initial;cursor:pointer}:disabled{cursor:default}:-moz-focusring{outline:1px dotted ButtonText}h1,h2,h3,figure,p{margin:0}ul,menu{margin:0;padding:0;list-style:none}img,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}:root{color-scheme:light dark;--surface-1-light:#fff;--surface-2-light:#e5e5e5;--text-1-light:#0a0a0a;--text-2-light:#737373;--border-light:#bbb;--surface-1-dark:#0a0a0a;--surface-2-dark:#404040;--text-1-dark:#fafafa;--text-2-dark:#a3a3a3;--border-dark:#606060;--surface-1:var(--surface-1-light);--surface-2:var(--surface-2-light);--text-1:var(--text-1-light);--text-2:var(--text-2-light);--border:var(--border-light)}@media(prefers-color-scheme:dark){:root{--surface-1:var(--surface-1-dark);--surface-2:var(--surface-2-dark);--text-1:var(--text-1-dark);--text-2:var(--text-2-dark);--border:var(--border-dark)}}html.light{color-scheme:light;--surface-1:var(--surface-1-light);--surface-2:var(--surface-2-light);--text-1:var(--text-1-light);--text-2:var(--text-2-light);--border:var(--border-light)}html.dark{color-scheme:dark;--surface-1:var(--surface-1-dark);--surface-2:var(--surface-2-dark);--text-1:var(--text-1-dark);--text-2:var(--text-2-dark);--border:var(--border-dark)}html{height:100%}body{display:flex;flex-direction:column;width:100%;min-height:100%;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;background-color:var(--surface-1);color:var(--text-1)}body>header{display:flex;justify-content:space-between;align-items:center;padding:.5rem;margin-bottom:2rem;width:100%;min-height:4rem}@media(min-width:640px){body>header{margin-bottom:3rem}}body>header ul{display:inline-flex}body>header .btn{display:inline-flex;justify-content:center;align-items:center;border-radius:.5rem;padding-right:1rem;padding-left:1rem;height:3rem;font-weight:600;font-size:1.25rem;user-select:none}body>header .btn-square{padding:0;width:3rem}body>menu{margin:0 auto 5rem;padding-right:1.5rem;padding-left:1.5rem;width:100%;max-width:768px;color:var(--text-2);font-weight:600;font-size:1.25rem;line-height:1.4;user-select:none;text-align:center}body>menu a{display:block;padding-top:.5rem;padding-bottom:.5rem}body>menu a:hover,body>menu a[aria-current=true]{color:var(--text-1)}body>main{flex-grow:1;width:100%;height:100%}main>section{margin:0 auto 3rem;padding-right:1.5rem;padding-left:1.5rem}@media(min-width:640px){main>section{margin-bottom:4rem}}body>footer{margin-right:auto;margin-left:auto;color:var(--text-2);font-size:.875rem;line-height:1.4286}body>footer section:last-of-type{display:flex;flex-flow:row wrap;justify-content:center;gap:1rem;padding:2.5rem}body>footer section:last-of-type a:hover{text-decoration-line:underline}hgroup{display:flex;flex-direction:column;align-items:center;gap:1.5rem;margin:0 auto 3rem;padding-right:1.5rem;padding-left:1.5rem;max-width:1024px;text-align:center}hgroup h1{font-weight:600;font-size:clamp(2rem,calc(1.667rem + 1.481vw),3rem);line-height:clamp(2.25rem,calc(1.833rem + 1.852vw),3.5rem);text-wrap:balance}hgroup h2{font-weight:600;font-size:clamp(1.5rem,calc(1.333rem + .741vw),2rem);line-height:clamp(1.75rem,calc(1.5rem + 1.111vw),2.5rem);text-wrap:balance}hgroup p{color:var(--text-2);font-size:1.0625rem;line-height:1.5556;text-wrap:balance}@media(min-width:640px){hgroup{width:83.3333%;margin-bottom:4rem}}section.galleries{display:grid;grid-template-columns:repeat(1,minmax(0,1fr));gap:2rem 1.5rem;max-width:1280px}@media(min-width:640px){section.galleries{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:3rem}}@media(min-width:1024px){section.galleries{grid-template-columns:repeat(3,minmax(0,1fr))}}section.gallery{padding-right:0;padding-left:0}.prose{max-width:768px;color:var(--text-1);font-size:1rem;line-height:1.75}.prose a{color:var(--text-1);font-weight:500;text-decoration:underline}.prose p{margin-top:1.25em;margin-bottom:1.25em}.prose img{margin-top:2em;margin-bottom:2em}.prose h3{margin-top:1.6em;margin-bottom:.6em;color:var(--text-1);font-weight:600;font-size:1.25em;line-height:1.6}.prose ul{margin-top:1.25em;margin-bottom:1.25em;padding-left:1.625em;list-style-type:disc}.prose ul>li{margin-top:.5em;margin-bottom:.5em;padding-left:.375em}.prose ul li::marker{color:var(--text-2);font-variant-numeric:tabular-nums;unicode-bidi:isolate;text-align:start!important;text-align-last:start!important;text-indent:0!important;text-transform:none}.prose h3+*{margin-top:0}.prose figure{margin-top:2em;margin-bottom:2em}.prose figure>*{margin-top:0;margin-bottom:0}.prose>:first-child{margin-top:0}.prose>:last-child{margin-bottom:0}.card{display:flex;flex-direction:column;border-radius:1rem}.card>figure{aspect-ratio:3/2;width:100%;border-radius:1rem}.card>img,.card figure>img{box-shadow:0 1px 2px rgba(0,0,0,5%);border-radius:1rem;aspect-ratio:3/2;width:100%;overflow:hidden;object-fit:cover}.card>img:hover,.card figure>img:hover{box-shadow:0 10px 15px -3px rgba(0,0,0,.1),0 4px 6px -4px rgba(0,0,0,.1)}.card>div{display:flex;flex:auto;flex-direction:column;gap:.75rem;padding:1rem}.card>div>h2{font-weight:600;font-size:1.125rem;line-height:1.375}.card>div>p{color:var(--text-2);font-size:.875rem;line-height:1.4286}.gallery-item{cursor:zoom-in}.hidden{display:none}#menu-toggle[aria-expanded=true] .icon-menu{display:none}#menu-toggle[aria-expanded=true] .icon-close{display:block}section.social-icons{display:flex;flex-wrap:wrap;gap:1.5rem;justify-content:center;margin-top:2rem;padding-right:1.5rem;padding-left:1.5rem}section.featured{padding-right:1.5rem;padding-left:1.5rem;max-width:1280px;color:var(--text-1-dark)}.featured-card{display:flex;box-shadow:0 1px 2px rgba(0,0,0,5%);border-radius:1rem;background-position:50%;background-size:cover;aspect-ratio:1/1;width:100%;overflow:hidden}@media(min-width:640px){.featured-card{aspect-ratio:16/9}}.featured-card>div{display:flex;flex-direction:column;justify-content:flex-end;gap:1rem;background-image:linear-gradient(to top,RGB(0 0 0/.8) 10%,transparent 50%);padding:1.5rem;width:100%;height:100%}.featured-card>div>h2{font-weight:600;font-size:clamp(1.5rem,calc(1.375rem + .556vw),1.875rem);line-height:1.2}.featured-card>div>p{font-size:.875rem;line-height:1.4286}.featured-card:hover{box-shadow:0 10px 15px -3px rgba(0,0,0,.1),0 4px 6px -4px rgba(0,0,0,.1)}nav.categories{padding-right:1.5rem;padding-left:1.5rem;margin:0 auto 3rem}nav.categories>ul{display:flex;flex-flow:row wrap;justify-content:center;gap:.75rem}nav.categories>ul li{max-width:100%}nav.categories>ul li>a{display:block;padding:.5rem .75rem;border-radius:9999px;border:1px solid var(--border);font-size:.875rem;line-height:1.4286;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}@media(min-width:640px){nav.categories>ul li>a{padding:.75rem 1rem;font-size:1rem;line-height:1.25}}@media(min-width:640px){nav.categories{margin-bottom:4rem}}/*!PhotoSwipe main CSS by Dmytro Semenov | photoswipe.com*/.pswp{--pswp-bg:#000;--pswp-placeholder-bg:#222;--pswp-root-z-index:100000;--pswp-preloader-color:rgba(79, 79, 79, 0.4);--pswp-preloader-color-secondary:rgba(255, 255, 255, 0.9);--pswp-icon-color:#fff;--pswp-icon-color-secondary:#4f4f4f;--pswp-icon-stroke-color:#4f4f4f;--pswp-icon-stroke-width:2px;--pswp-error-text-color:var(--pswp-icon-color)}.pswp{position:fixed;top:0;left:0;width:100%;height:100%;z-index:var(--pswp-root-z-index);display:none;touch-action:none;outline:0;opacity:.003;contain:layout style size;-webkit-tap-highlight-color:transparent}.pswp:focus{outline:0}.pswp *{box-sizing:border-box}.pswp img{max-width:none}.pswp--open{display:block}.pswp,.pswp__bg{transform:translateZ(0);will-change:opacity}.pswp__bg{opacity:.005;background:var(--pswp-bg)}.pswp,.pswp__scroll-wrap{overflow:hidden}.pswp__scroll-wrap,.pswp__bg,.pswp__container,.pswp__item,.pswp__content,.pswp__img,.pswp__zoom-wrap{position:absolute;top:0;left:0;width:100%;height:100%}.pswp__img,.pswp__zoom-wrap{width:auto;height:auto}.pswp--click-to-zoom.pswp--zoom-allowed .pswp__img{cursor:-webkit-zoom-in;cursor:-moz-zoom-in;cursor:zoom-in}.pswp--click-to-zoom.pswp--zoomed-in .pswp__img{cursor:move;cursor:-webkit-grab;cursor:-moz-grab;cursor:grab}.pswp--click-to-zoom.pswp--zoomed-in .pswp__img:active{cursor:-webkit-grabbing;cursor:-moz-grabbing;cursor:grabbing}.pswp--no-mouse-drag.pswp--zoomed-in .pswp__img,.pswp--no-mouse-drag.pswp--zoomed-in .pswp__img:active,.pswp__img{cursor:-webkit-zoom-out;cursor:-moz-zoom-out;cursor:zoom-out}.pswp__container,.pswp__img,.pswp__button,.pswp__counter{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.pswp__item{z-index:1;overflow:hidden}.pswp__hidden{display:none!important}.pswp__content{pointer-events:none}.pswp__content>*{pointer-events:auto}.pswp__error-msg-container{display:grid}.pswp__error-msg{margin:auto;font-size:1em;line-height:1;color:var(--pswp-error-text-color)}.pswp .pswp__hide-on-close{opacity:.005;will-change:opacity;transition:opacity var(--pswp-transition-duration)cubic-bezier(.4,0,.22,1);z-index:10;pointer-events:none}.pswp--ui-visible .pswp__hide-on-close{opacity:1;pointer-events:auto}.pswp__button{position:relative;display:block;width:50px;height:60px;padding:0;margin:0;overflow:hidden;cursor:pointer;background:0 0;border:0;box-shadow:none;opacity:.85;-webkit-appearance:none;-webkit-touch-callout:none}.pswp__button:hover,.pswp__button:active,.pswp__button:focus{transition:none;padding:0;background:0 0;border:0;box-shadow:none;opacity:1}.pswp__button:disabled{opacity:.3;cursor:auto}.pswp__icn{fill:var(--pswp-icon-color);color:var(--pswp-icon-color-secondary)}.pswp__icn{position:absolute;top:14px;left:9px;width:32px;height:32px;overflow:hidden;pointer-events:none}.pswp__icn-shadow{stroke:var(--pswp-icon-stroke-color);stroke-width:var(--pswp-icon-stroke-width);fill:none}.pswp__icn:focus{outline:0}div.pswp__img--placeholder,.pswp__img--with-bg{background:var(--pswp-placeholder-bg)}.pswp__top-bar{position:absolute;left:0;top:0;width:100%;height:60px;display:flex;flex-direction:row;justify-content:flex-end;z-index:10;pointer-events:none!important}.pswp__top-bar>*{pointer-events:auto;will-change:opacity}.pswp__button--close{margin-right:6px}.pswp__button--arrow{position:absolute;top:0;width:75px;height:100px;top:50%;margin-top:-50px}.pswp__button--arrow:disabled{display:none;cursor:default}.pswp__button--arrow .pswp__icn{top:50%;margin-top:-30px;width:60px;height:60px;background:0 0;border-radius:0}.pswp--one-slide .pswp__button--arrow{display:none}.pswp--touch .pswp__button--arrow{visibility:hidden}.pswp--has_mouse .pswp__button--arrow{visibility:visible}.pswp__button--arrow--prev{right:auto;left:0}.pswp__button--arrow--next{right:0}.pswp__button--arrow--next .pswp__icn{left:auto;right:14px;transform:scale(-1,1)}.pswp__button--zoom{display:none}.pswp--zoom-allowed .pswp__button--zoom{display:block}.pswp--zoomed-in .pswp__zoom-icn-bar-v{display:none}.pswp__preloader{position:relative;overflow:hidden;width:50px;height:60px;margin-right:auto}.pswp__preloader .pswp__icn{opacity:0;transition:opacity .2s linear;animation:pswp-clockwise 600ms linear infinite}.pswp__preloader--active .pswp__icn{opacity:.85}@keyframes pswp-clockwise{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}.pswp__counter{height:30px;margin-top:15px;margin-inline-start:20px;font-size:14px;line-height:30px;color:var(--pswp-icon-color);text-shadow:1px 1px 3px var(--pswp-icon-color-secondary);opacity:.85}.pswp--one-slide .pswp__counter{display:none}.pswp__dynamic-caption{color:#fff;position:absolute;width:100%;left:0;top:0;transition:opacity 120ms linear!important}.pswp-caption-content{display:none}.pswp__dynamic-caption a{color:#fff}.pswp__dynamic-caption--faded{opacity:0!important}.pswp__dynamic-caption--aside{width:auto;max-width:300px;padding:20px 15px 20px 20px;margin-top:70px}.pswp__dynamic-caption--below{width:auto;max-width:700px;padding:15px 0 0}.pswp__dynamic-caption--on-hor-edge{padding-left:15px;padding-right:15px}.pswp__dynamic-caption--mobile{width:100%;background:rgba(0,0,0,.5);padding:10px 15px;right:0;bottom:0;top:auto!important;left:0!important}.lazyload,.lazyloading{opacity:0}.lazyloaded{opacity:1;transition:opacity 300ms}img.lazyload:not([src]){visibility:hidden}
+--------------------------------------------------------------------------------
+
+FILE: resources/_gen/assets/css/main.scss_77b10c8e87ff110a62c52933fe3f7f11.json
+----------------------------------------
+{"Target":"/css/main.min.929a37b4f846bf86c1bf9935695bb75dbed775e4c8f11304661afa14f26407c0.css","MediaType":"text/css","Data":{"Integrity":"sha256-kpo3tPhGv4bBv5k1aVu3Xb7XdeTI8RMEZhr6FPJkB8A="}}
+--------------------------------------------------------------------------------
+
+FILE: content/_index.md
+----------------------------------------
+---
+title: "Moje Portfolio"
+---
+--------------------------------------------------------------------------------
+
+FILE: public/.DS_Store
+----------------------------------------
+[SKIPPED (binary)]
+--------------------------------------------------------------------------------
+
+FILE: public/404.html
+----------------------------------------
+<!doctype html>
+<html class="" lang="en-us">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>404 Page not found - My New Hugo Site</title>
+  <link rel="canonical" href="http://localhost:1313/404.html" />
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
+  <link rel="icon" type="image/png" href="/images/favicon.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />
+  <meta name="description" content="" />
+  
+  
+    <meta name="robots" content="index, follow" />
+  
+  <meta property="og:url" content="http://localhost:1313/404.html" />
+  <meta property="og:site_name" content="My New Hugo Site" />
+  <meta property="og:title" content="404 Page not found" />
+  <meta property="og:locale" content="en_us" />
+  <meta property="og:type" content="website" />
+
+
+  
+  <link rel="stylesheet" href="/css/main.min.929a37b4f846bf86c1bf9935695bb75dbed775e4c8f11304661afa14f26407c0.css" />
+  
+  
+  <script src="/js/main.0de0d73fb334e8aef574046cb537325b517c7abcd818150338b9a53e8d3b8dc2.js" defer></script></head>
+
+  <body>
+    <header>
+  
+    <a class="btn btn-square" href="/" title="My New Hugo Site">
+      <svg width="24" height="24" data-slot="icon" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path clip-rule="evenodd" fill-rule="evenodd" d="M11.03 3.97a.75.75 0 0 1 0 1.06l-6.22 6.22H21a.75.75 0 0 1 0 1.5H4.81l6.22 6.22a.75.75 0 1 1-1.06 1.06l-7.5-7.5a.75.75 0 0 1 0-1.06l7.5-7.5a.75.75 0 0 1 1.06 0Z"></path>
+      </svg>
+    </a>
+  
+  
+</header>
+
+
+
+    <main>
+      
+  <hgroup>
+    <h1>404</h1>
+    <p>Page not found</p>
+  </hgroup>
+
+    </main>
+    <footer>
+  
+
+  <section>
+    
+    
+  </section>
+</footer>
+
+  </body>
+</html>
+
+--------------------------------------------------------------------------------
+
+FILE: public/index.html
+----------------------------------------
+<!doctype html>
+<html class="" lang="en-us">
+  <head>
+	<meta name="generator" content="Hugo 0.155.3"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My New Hugo Site - My New Hugo Site</title>
+  <link rel="canonical" href="http://localhost:1313/" />
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
+  <link rel="icon" type="image/png" href="/images/favicon.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />
+  <meta name="description" content="" />
+  
+  
+    <meta name="robots" content="index, follow" />
+  
+  <link rel="alternate" type="application/rss+xml" href="http://localhost:1313/index.xml" title="My New Hugo Site" />
+  <meta property="og:url" content="http://localhost:1313/" />
+  <meta property="og:site_name" content="My New Hugo Site" />
+  <meta property="og:title" content="My New Hugo Site" />
+  <meta property="og:locale" content="en_us" />
+  <meta property="og:type" content="website" />
+
+
+  
+  <link rel="stylesheet" href="/css/main.min.929a37b4f846bf86c1bf9935695bb75dbed775e4c8f11304661afa14f26407c0.css" />
+  
+  
+  <script src="/js/main.0de0d73fb334e8aef574046cb537325b517c7abcd818150338b9a53e8d3b8dc2.js" defer></script></head>
+
+  <body>
+    <header>
+  
+    <a class="btn" href="/">
+      My New Hugo Site
+    </a>
+  
+  
+</header>
+
+
+
+    <main>
+      
+  
+  <hgroup>
+    <h1>My New Hugo Site</h1>
+    
+  </hgroup>
+
+
+  
+
+  
+
+  <section class="galleries">
+    
+  </section>
+
+    </main>
+    <footer>
+  
+
+  <section>
+    
+    
+  </section>
+</footer>
+
+  </body>
+</html>
+
+--------------------------------------------------------------------------------
+
+FILE: public/index.xml
+----------------------------------------
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>My New Hugo Site</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content on My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>
+--------------------------------------------------------------------------------
+
+FILE: public/sitemap.xml
+----------------------------------------
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>http://localhost:1313/categories/</loc>
+  </url><url>
+    <loc>http://localhost:1313/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
+  </url>
+</urlset>
+--------------------------------------------------------------------------------
+
+FILE: public/css/main.min.929a37b4f846bf86c1bf9935695bb75dbed775e4c8f11304661afa14f26407c0.css
+----------------------------------------
+*,::before,::after{box-sizing:border-box;border-width:0}html{line-height:1.5;font-family:ui-sans-serif,system-ui,sans-serif;-webkit-text-size-adjust:100%;tab-size:4}body{margin:0}h1,h2,h3,h4,h5,h6{font-weight:inherit;font-size:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}button,input{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button{-webkit-appearance:button;background-image:none;background-color:initial;cursor:pointer}:disabled{cursor:default}:-moz-focusring{outline:1px dotted ButtonText}h1,h2,h3,figure,p{margin:0}ul,menu{margin:0;padding:0;list-style:none}img,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}:root{color-scheme:light dark;--surface-1-light:#fff;--surface-2-light:#e5e5e5;--text-1-light:#0a0a0a;--text-2-light:#737373;--border-light:#bbb;--surface-1-dark:#0a0a0a;--surface-2-dark:#404040;--text-1-dark:#fafafa;--text-2-dark:#a3a3a3;--border-dark:#606060;--surface-1:var(--surface-1-light);--surface-2:var(--surface-2-light);--text-1:var(--text-1-light);--text-2:var(--text-2-light);--border:var(--border-light)}@media(prefers-color-scheme:dark){:root{--surface-1:var(--surface-1-dark);--surface-2:var(--surface-2-dark);--text-1:var(--text-1-dark);--text-2:var(--text-2-dark);--border:var(--border-dark)}}html.light{color-scheme:light;--surface-1:var(--surface-1-light);--surface-2:var(--surface-2-light);--text-1:var(--text-1-light);--text-2:var(--text-2-light);--border:var(--border-light)}html.dark{color-scheme:dark;--surface-1:var(--surface-1-dark);--surface-2:var(--surface-2-dark);--text-1:var(--text-1-dark);--text-2:var(--text-2-dark);--border:var(--border-dark)}html{height:100%}body{display:flex;flex-direction:column;width:100%;min-height:100%;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;background-color:var(--surface-1);color:var(--text-1)}body>header{display:flex;justify-content:space-between;align-items:center;padding:.5rem;margin-bottom:2rem;width:100%;min-height:4rem}@media(min-width:640px){body>header{margin-bottom:3rem}}body>header ul{display:inline-flex}body>header .btn{display:inline-flex;justify-content:center;align-items:center;border-radius:.5rem;padding-right:1rem;padding-left:1rem;height:3rem;font-weight:600;font-size:1.25rem;user-select:none}body>header .btn-square{padding:0;width:3rem}body>menu{margin:0 auto 5rem;padding-right:1.5rem;padding-left:1.5rem;width:100%;max-width:768px;color:var(--text-2);font-weight:600;font-size:1.25rem;line-height:1.4;user-select:none;text-align:center}body>menu a{display:block;padding-top:.5rem;padding-bottom:.5rem}body>menu a:hover,body>menu a[aria-current=true]{color:var(--text-1)}body>main{flex-grow:1;width:100%;height:100%}main>section{margin:0 auto 3rem;padding-right:1.5rem;padding-left:1.5rem}@media(min-width:640px){main>section{margin-bottom:4rem}}body>footer{margin-right:auto;margin-left:auto;color:var(--text-2);font-size:.875rem;line-height:1.4286}body>footer section:last-of-type{display:flex;flex-flow:row wrap;justify-content:center;gap:1rem;padding:2.5rem}body>footer section:last-of-type a:hover{text-decoration-line:underline}hgroup{display:flex;flex-direction:column;align-items:center;gap:1.5rem;margin:0 auto 3rem;padding-right:1.5rem;padding-left:1.5rem;max-width:1024px;text-align:center}hgroup h1{font-weight:600;font-size:clamp(2rem,calc(1.667rem + 1.481vw),3rem);line-height:clamp(2.25rem,calc(1.833rem + 1.852vw),3.5rem);text-wrap:balance}hgroup h2{font-weight:600;font-size:clamp(1.5rem,calc(1.333rem + .741vw),2rem);line-height:clamp(1.75rem,calc(1.5rem + 1.111vw),2.5rem);text-wrap:balance}hgroup p{color:var(--text-2);font-size:1.0625rem;line-height:1.5556;text-wrap:balance}@media(min-width:640px){hgroup{width:83.3333%;margin-bottom:4rem}}section.galleries{display:grid;grid-template-columns:repeat(1,minmax(0,1fr));gap:2rem 1.5rem;max-width:1280px}@media(min-width:640px){section.galleries{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:3rem}}@media(min-width:1024px){section.galleries{grid-template-columns:repeat(3,minmax(0,1fr))}}section.gallery{padding-right:0;padding-left:0}.prose{max-width:768px;color:var(--text-1);font-size:1rem;line-height:1.75}.prose a{color:var(--text-1);font-weight:500;text-decoration:underline}.prose p{margin-top:1.25em;margin-bottom:1.25em}.prose img{margin-top:2em;margin-bottom:2em}.prose h3{margin-top:1.6em;margin-bottom:.6em;color:var(--text-1);font-weight:600;font-size:1.25em;line-height:1.6}.prose ul{margin-top:1.25em;margin-bottom:1.25em;padding-left:1.625em;list-style-type:disc}.prose ul>li{margin-top:.5em;margin-bottom:.5em;padding-left:.375em}.prose ul li::marker{color:var(--text-2);font-variant-numeric:tabular-nums;unicode-bidi:isolate;text-align:start!important;text-align-last:start!important;text-indent:0!important;text-transform:none}.prose h3+*{margin-top:0}.prose figure{margin-top:2em;margin-bottom:2em}.prose figure>*{margin-top:0;margin-bottom:0}.prose>:first-child{margin-top:0}.prose>:last-child{margin-bottom:0}.card{display:flex;flex-direction:column;border-radius:1rem}.card>figure{aspect-ratio:3/2;width:100%;border-radius:1rem}.card>img,.card figure>img{box-shadow:0 1px 2px rgba(0,0,0,5%);border-radius:1rem;aspect-ratio:3/2;width:100%;overflow:hidden;object-fit:cover}.card>img:hover,.card figure>img:hover{box-shadow:0 10px 15px -3px rgba(0,0,0,.1),0 4px 6px -4px rgba(0,0,0,.1)}.card>div{display:flex;flex:auto;flex-direction:column;gap:.75rem;padding:1rem}.card>div>h2{font-weight:600;font-size:1.125rem;line-height:1.375}.card>div>p{color:var(--text-2);font-size:.875rem;line-height:1.4286}.gallery-item{cursor:zoom-in}.hidden{display:none}#menu-toggle[aria-expanded=true] .icon-menu{display:none}#menu-toggle[aria-expanded=true] .icon-close{display:block}section.social-icons{display:flex;flex-wrap:wrap;gap:1.5rem;justify-content:center;margin-top:2rem;padding-right:1.5rem;padding-left:1.5rem}section.featured{padding-right:1.5rem;padding-left:1.5rem;max-width:1280px;color:var(--text-1-dark)}.featured-card{display:flex;box-shadow:0 1px 2px rgba(0,0,0,5%);border-radius:1rem;background-position:50%;background-size:cover;aspect-ratio:1/1;width:100%;overflow:hidden}@media(min-width:640px){.featured-card{aspect-ratio:16/9}}.featured-card>div{display:flex;flex-direction:column;justify-content:flex-end;gap:1rem;background-image:linear-gradient(to top,RGB(0 0 0/.8) 10%,transparent 50%);padding:1.5rem;width:100%;height:100%}.featured-card>div>h2{font-weight:600;font-size:clamp(1.5rem,calc(1.375rem + .556vw),1.875rem);line-height:1.2}.featured-card>div>p{font-size:.875rem;line-height:1.4286}.featured-card:hover{box-shadow:0 10px 15px -3px rgba(0,0,0,.1),0 4px 6px -4px rgba(0,0,0,.1)}nav.categories{padding-right:1.5rem;padding-left:1.5rem;margin:0 auto 3rem}nav.categories>ul{display:flex;flex-flow:row wrap;justify-content:center;gap:.75rem}nav.categories>ul li{max-width:100%}nav.categories>ul li>a{display:block;padding:.5rem .75rem;border-radius:9999px;border:1px solid var(--border);font-size:.875rem;line-height:1.4286;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}@media(min-width:640px){nav.categories>ul li>a{padding:.75rem 1rem;font-size:1rem;line-height:1.25}}@media(min-width:640px){nav.categories{margin-bottom:4rem}}/*!PhotoSwipe main CSS by Dmytro Semenov | photoswipe.com*/.pswp{--pswp-bg:#000;--pswp-placeholder-bg:#222;--pswp-root-z-index:100000;--pswp-preloader-color:rgba(79, 79, 79, 0.4);--pswp-preloader-color-secondary:rgba(255, 255, 255, 0.9);--pswp-icon-color:#fff;--pswp-icon-color-secondary:#4f4f4f;--pswp-icon-stroke-color:#4f4f4f;--pswp-icon-stroke-width:2px;--pswp-error-text-color:var(--pswp-icon-color)}.pswp{position:fixed;top:0;left:0;width:100%;height:100%;z-index:var(--pswp-root-z-index);display:none;touch-action:none;outline:0;opacity:.003;contain:layout style size;-webkit-tap-highlight-color:transparent}.pswp:focus{outline:0}.pswp *{box-sizing:border-box}.pswp img{max-width:none}.pswp--open{display:block}.pswp,.pswp__bg{transform:translateZ(0);will-change:opacity}.pswp__bg{opacity:.005;background:var(--pswp-bg)}.pswp,.pswp__scroll-wrap{overflow:hidden}.pswp__scroll-wrap,.pswp__bg,.pswp__container,.pswp__item,.pswp__content,.pswp__img,.pswp__zoom-wrap{position:absolute;top:0;left:0;width:100%;height:100%}.pswp__img,.pswp__zoom-wrap{width:auto;height:auto}.pswp--click-to-zoom.pswp--zoom-allowed .pswp__img{cursor:-webkit-zoom-in;cursor:-moz-zoom-in;cursor:zoom-in}.pswp--click-to-zoom.pswp--zoomed-in .pswp__img{cursor:move;cursor:-webkit-grab;cursor:-moz-grab;cursor:grab}.pswp--click-to-zoom.pswp--zoomed-in .pswp__img:active{cursor:-webkit-grabbing;cursor:-moz-grabbing;cursor:grabbing}.pswp--no-mouse-drag.pswp--zoomed-in .pswp__img,.pswp--no-mouse-drag.pswp--zoomed-in .pswp__img:active,.pswp__img{cursor:-webkit-zoom-out;cursor:-moz-zoom-out;cursor:zoom-out}.pswp__container,.pswp__img,.pswp__button,.pswp__counter{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.pswp__item{z-index:1;overflow:hidden}.pswp__hidden{display:none!important}.pswp__content{pointer-events:none}.pswp__content>*{pointer-events:auto}.pswp__error-msg-container{display:grid}.pswp__error-msg{margin:auto;font-size:1em;line-height:1;color:var(--pswp-error-text-color)}.pswp .pswp__hide-on-close{opacity:.005;will-change:opacity;transition:opacity var(--pswp-transition-duration)cubic-bezier(.4,0,.22,1);z-index:10;pointer-events:none}.pswp--ui-visible .pswp__hide-on-close{opacity:1;pointer-events:auto}.pswp__button{position:relative;display:block;width:50px;height:60px;padding:0;margin:0;overflow:hidden;cursor:pointer;background:0 0;border:0;box-shadow:none;opacity:.85;-webkit-appearance:none;-webkit-touch-callout:none}.pswp__button:hover,.pswp__button:active,.pswp__button:focus{transition:none;padding:0;background:0 0;border:0;box-shadow:none;opacity:1}.pswp__button:disabled{opacity:.3;cursor:auto}.pswp__icn{fill:var(--pswp-icon-color);color:var(--pswp-icon-color-secondary)}.pswp__icn{position:absolute;top:14px;left:9px;width:32px;height:32px;overflow:hidden;pointer-events:none}.pswp__icn-shadow{stroke:var(--pswp-icon-stroke-color);stroke-width:var(--pswp-icon-stroke-width);fill:none}.pswp__icn:focus{outline:0}div.pswp__img--placeholder,.pswp__img--with-bg{background:var(--pswp-placeholder-bg)}.pswp__top-bar{position:absolute;left:0;top:0;width:100%;height:60px;display:flex;flex-direction:row;justify-content:flex-end;z-index:10;pointer-events:none!important}.pswp__top-bar>*{pointer-events:auto;will-change:opacity}.pswp__button--close{margin-right:6px}.pswp__button--arrow{position:absolute;top:0;width:75px;height:100px;top:50%;margin-top:-50px}.pswp__button--arrow:disabled{display:none;cursor:default}.pswp__button--arrow .pswp__icn{top:50%;margin-top:-30px;width:60px;height:60px;background:0 0;border-radius:0}.pswp--one-slide .pswp__button--arrow{display:none}.pswp--touch .pswp__button--arrow{visibility:hidden}.pswp--has_mouse .pswp__button--arrow{visibility:visible}.pswp__button--arrow--prev{right:auto;left:0}.pswp__button--arrow--next{right:0}.pswp__button--arrow--next .pswp__icn{left:auto;right:14px;transform:scale(-1,1)}.pswp__button--zoom{display:none}.pswp--zoom-allowed .pswp__button--zoom{display:block}.pswp--zoomed-in .pswp__zoom-icn-bar-v{display:none}.pswp__preloader{position:relative;overflow:hidden;width:50px;height:60px;margin-right:auto}.pswp__preloader .pswp__icn{opacity:0;transition:opacity .2s linear;animation:pswp-clockwise 600ms linear infinite}.pswp__preloader--active .pswp__icn{opacity:.85}@keyframes pswp-clockwise{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}.pswp__counter{height:30px;margin-top:15px;margin-inline-start:20px;font-size:14px;line-height:30px;color:var(--pswp-icon-color);text-shadow:1px 1px 3px var(--pswp-icon-color-secondary);opacity:.85}.pswp--one-slide .pswp__counter{display:none}.pswp__dynamic-caption{color:#fff;position:absolute;width:100%;left:0;top:0;transition:opacity 120ms linear!important}.pswp-caption-content{display:none}.pswp__dynamic-caption a{color:#fff}.pswp__dynamic-caption--faded{opacity:0!important}.pswp__dynamic-caption--aside{width:auto;max-width:300px;padding:20px 15px 20px 20px;margin-top:70px}.pswp__dynamic-caption--below{width:auto;max-width:700px;padding:15px 0 0}.pswp__dynamic-caption--on-hor-edge{padding-left:15px;padding-right:15px}.pswp__dynamic-caption--mobile{width:100%;background:rgba(0,0,0,.5);padding:10px 15px;right:0;bottom:0;top:auto!important;left:0!important}.lazyload,.lazyloading{opacity:0}.lazyloaded{opacity:1;transition:opacity 300ms}img.lazyload:not([src]){visibility:hidden}
+--------------------------------------------------------------------------------
+
+FILE: public/images/favicon.svg
+----------------------------------------
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" width="24" height="24"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+  <path d="M12 9a3.75 3.75 0 100 7.5A3.75 3.75 0 0012 9z"></path>
+  <path fill-rule="evenodd" d="M9.344 3.071a49.52 49.52 0 015.312 0c.967.052 1.83.585 2.332 1.39l.821 1.317c.24.383.645.643 1.11.71.386.054.77.113 1.152.177 1.432.239 2.429 1.493 2.429 2.909V18a3 3 0 01-3 3h-15a3 3 0 01-3-3V9.574c0-1.416.997-2.67 2.429-2.909.382-.064.766-.123 1.151-.178a1.56 1.56 0 001.11-.71l.822-1.315a2.942 2.942 0 012.332-1.39zM6.75 12.75a5.25 5.25 0 1110.5 0 5.25 5.25 0 01-10.5 0zm12-1.5a.75.75 0 100-1.5.75.75 0 000 1.5z" clip-rule="evenodd"></path>
+</svg><style>@media (prefers-color-scheme: light) { :root { filter: none; } }
+@media (prefers-color-scheme: dark) { :root { filter: invert(100%); } }
+</style></svg>
+--------------------------------------------------------------------------------
+
+FILE: public/tags/index.html
+----------------------------------------
+<!doctype html>
+<html class="" lang="en-us">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tags - My New Hugo Site</title>
+  <link rel="canonical" href="http://localhost:1313/tags/" />
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
+  <link rel="icon" type="image/png" href="/images/favicon.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />
+  <meta name="description" content="" />
+  
+  
+    <meta name="robots" content="index, follow" />
+  
+  <link rel="alternate" type="application/rss+xml" href="http://localhost:1313/tags/index.xml" title="My New Hugo Site" />
+  <meta property="og:url" content="http://localhost:1313/tags/" />
+  <meta property="og:site_name" content="My New Hugo Site" />
+  <meta property="og:title" content="Tags" />
+  <meta property="og:locale" content="en_us" />
+  <meta property="og:type" content="website" />
+
+
+  
+  <link rel="stylesheet" href="/css/main.min.929a37b4f846bf86c1bf9935695bb75dbed775e4c8f11304661afa14f26407c0.css" />
+  
+  
+  <script src="/js/main.0de0d73fb334e8aef574046cb537325b517c7abcd818150338b9a53e8d3b8dc2.js" defer></script></head>
+
+  <body>
+    <header>
+  
+    <a class="btn btn-square" href="/" title="My New Hugo Site">
+      <svg width="24" height="24" data-slot="icon" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path clip-rule="evenodd" fill-rule="evenodd" d="M11.03 3.97a.75.75 0 0 1 0 1.06l-6.22 6.22H21a.75.75 0 0 1 0 1.5H4.81l6.22 6.22a.75.75 0 1 1-1.06 1.06l-7.5-7.5a.75.75 0 0 1 0-1.06l7.5-7.5a.75.75 0 0 1 1.06 0Z"></path>
+      </svg>
+    </a>
+  
+  
+</header>
+
+
+
+    <main>
+      
+  
+  <hgroup>
+    <h1>Tags</h1>
+    
+  </hgroup>
+
+
+  <section class="galleries">
+    
+  </section>
+
+    </main>
+    <footer>
+  
+
+  <section>
+    
+    
+  </section>
+</footer>
+
+  </body>
+</html>
+
+--------------------------------------------------------------------------------
+
+FILE: public/tags/index.xml
+----------------------------------------
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on My New Hugo Site</title>
+    <link>http://localhost:1313/tags/</link>
+    <description>Recent content in Tags on My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>
+--------------------------------------------------------------------------------
+
+FILE: public/categories/index.html
+----------------------------------------
+<!doctype html>
+<html class="" lang="en-us">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Categories - My New Hugo Site</title>
+  <link rel="canonical" href="http://localhost:1313/categories/" />
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
+  <link rel="icon" type="image/png" href="/images/favicon.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />
+  <meta name="description" content="" />
+  
+  
+    <meta name="robots" content="index, follow" />
+  
+  <link rel="alternate" type="application/rss+xml" href="http://localhost:1313/categories/index.xml" title="My New Hugo Site" />
+  <meta property="og:url" content="http://localhost:1313/categories/" />
+  <meta property="og:site_name" content="My New Hugo Site" />
+  <meta property="og:title" content="Categories" />
+  <meta property="og:locale" content="en_us" />
+  <meta property="og:type" content="website" />
+
+
+  
+  <link rel="stylesheet" href="/css/main.min.929a37b4f846bf86c1bf9935695bb75dbed775e4c8f11304661afa14f26407c0.css" />
+  
+  
+  <script src="/js/main.0de0d73fb334e8aef574046cb537325b517c7abcd818150338b9a53e8d3b8dc2.js" defer></script></head>
+
+  <body>
+    <header>
+  
+    <a class="btn btn-square" href="/" title="My New Hugo Site">
+      <svg width="24" height="24" data-slot="icon" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path clip-rule="evenodd" fill-rule="evenodd" d="M11.03 3.97a.75.75 0 0 1 0 1.06l-6.22 6.22H21a.75.75 0 0 1 0 1.5H4.81l6.22 6.22a.75.75 0 1 1-1.06 1.06l-7.5-7.5a.75.75 0 0 1 0-1.06l7.5-7.5a.75.75 0 0 1 1.06 0Z"></path>
+      </svg>
+    </a>
+  
+  
+</header>
+
+
+
+    <main>
+      
+  
+  <hgroup>
+    <h1>Categories</h1>
+    
+  </hgroup>
+
+
+  <section class="galleries">
+    
+  </section>
+
+    </main>
+    <footer>
+  
+
+  <section>
+    
+    
+  </section>
+</footer>
+
+  </body>
+</html>
+
+--------------------------------------------------------------------------------
+
+FILE: public/categories/index.xml
+----------------------------------------
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on My New Hugo Site</title>
+    <link>http://localhost:1313/categories/</link>
+    <description>Recent content in Categories on My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>
+--------------------------------------------------------------------------------
+
+FILE: assets/jsconfig.json
+----------------------------------------
+{
+ "compilerOptions": {
+  "baseUrl": ".",
+  "paths": {
+   "*": [
+    "../themes/gallery/assets/*"
+   ]
+  }
+ }
+}
+--------------------------------------------------------------------------------
+
+FILE: themes/.DS_Store
+----------------------------------------
+[SKIPPED (binary)]
+--------------------------------------------------------------------------------
+
+FILE: themes/gallery/.git
+----------------------------------------
+gitdir: ../../.git/modules/themes/gallery
+
+--------------------------------------------------------------------------------
+
+FILE: themes/gallery/.prettierignore
+----------------------------------------
+assets/jsconfig.json
+assets/js/justified-layout/
+assets/js/photoswipe/
+assets/css/photoswipe/
+exampleSite/resources/
+exampleSite/public/
+
+--------------------------------------------------------------------------------
+
+FILE: themes/gallery/.stylelintrc.json
+----------------------------------------
+{
+  "extends": ["stylelint-config-standard-scss"],
+  "rules": {
+    "alpha-value-notation": "number",
+    "color-function-notation": null,
+    "color-function-alias-notation": null,
+    "media-feature-range-notation": "prefix",
+    "property-no-vendor-prefix": null,
+    "function-name-case": null,
+    "no-descending-specificity": null
+  }
+}
+
+--------------------------------------------------------------------------------
+
+FILE: themes/gallery/go.mod
+----------------------------------------
+module github.com/nicokaiser/hugo-theme-gallery/v4
+
+go 1.20
+
+--------------------------------------------------------------------------------
+
+FILE: themes/gallery/LICENSE
+----------------------------------------
+MIT License
+
+Copyright (c) 2023-2025 Nico Kaiser
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+--------------------------------------------------------------------------------
+
+FILE: themes/gallery/package.json
+----------------------------------------
+{
+  "devDependencies": {
+    "prettier": "^3.8.1",
+    "prettier-plugin-css-order": "^2.2.0",
+    "prettier-plugin-go-template": "^0.0.15",
+    "prettier-plugin-organize-attributes": "^1.0.0",
+    "stylelint": "^17.3.0",
+    "stylelint-config-standard-scss": "^17.0.0"
+  },
+  "private": "true",
+  "scripts": {
+    "prettier": "prettier . --write",
+    "lint": "stylelint assets/css/*.{css,scss}"
+  },
+  "version": "4.9.3"
+}
+
+--------------------------------------------------------------------------------
+
+FILE: themes/gallery/prettier.config.js
+----------------------------------------
+/** @type {import('prettier').Config} */
+module.exports = {
+  plugins: ["prettier-plugin-go-template", "prettier-plugin-organize-attributes", "prettier-plugin-css-order"],
+  printWidth: 1000,
+  tabWidth: 2,
+  overrides: [
+    {
+      files: ["*.html"],
+      options: {
+        parser: "go-template",
+      },
+    },
+  ],
+  cssDeclarationSorterCustomOrder: ["concentric-css"],
+};
+
+--------------------------------------------------------------------------------
+
+FILE: themes/gallery/README.md
+----------------------------------------
+# Hugo Gallery Theme
+
+A very simple and opinionated photo gallery theme for Hugo.
+
+- [Demo](https://nicokaiser.github.io/hugo-theme-gallery/)
+- [Example site source](https://github.com/nicokaiser/hugo-theme-gallery/tree/main/exampleSite)
+
+---
+
+![Screenshot](https://github.com/nicokaiser/hugo-theme-gallery/raw/main/images/screenshot.jpg)
+
+---
+
+## Features
+
+- Responsive design
+- Dark color scheme (can be set per page)
+- Private albums
+- Justified album views with [Flickr's Justified Layout](https://github.com/flickr/justified-layout)
+- Lightbox with [PhotoSwipe](https://photoswipe.com/)
+- SEO with Open Graph tags
+- Automatic (or manual) selection of feature/cover images
+
+**Important note: do not try to use WebP images.** The golang WebP implementation used in Hugo has a bug which leads to wrong image levels (dull looking images) upon resize. See [nicokaiser/hugo-theme-gallery#102](https://github.com/nicokaiser/hugo-theme-gallery/issues/102) for more details.
+
+## Installation
+
+This theme requires Hugo Extended >= 0.123.0. Dependencies are bundled, so no Node.js/NPM and PostCSS is needed.
+
+### As a Hugo Module
+
+Requires the Go binary installed.
+
+```sh
+hugo mod init github.com/<your_user>/<your_project>
+```
+
+Then add the theme to your `hugo.toml`:
+
+```toml
+[module]
+  [[module.imports]]
+    path = "github.com/nicokaiser/hugo-theme-gallery/v4"
+```
+
+### As Git Submodule
+
+```sh
+git submodule add --depth=1 https://github.com/nicokaiser/hugo-theme-gallery.git themes/gallery
+```
+
+## Usage
+
+Page bundles which contain at least one image are listed as album or gallery:
+
+```plain
+content/
+├── _index.md
+├── about.md             <-- not listed in album list
+├── animals/
+│   ├── _index.md
+│   ├── cats/
+│   |   ├── index.md
+│   |   ├── cat1.jpg
+│   |   └── feature.jpg  <-- album cover
+│   ├── dogs/
+│   |   ├── index.md
+│   |   ├── dog1.jpg     <-- album cover
+│   |   └── dog2.jpg
+│   └── feature.jpg
+├── bridge.jpg           <-- site thumbnail (OpenGraph, etc.)
+└── nature/
+    ├── index.md         <-- contains `cover: true` for `tree.jpg`
+    ├── nature1.jpg
+    ├── nature2.jpg
+    └── tree.jpg         <-- album thumbnail
+```
+
+- `/about.md` is not a Page Bundle and does not have image resources. It is not displayed in the album list.
+- `/nature` is a Leaf Bundle (has `index.md` and no children) => displayed as gallery (`single` layout).
+- `/animals` is a Branch Bundle (has `_index.md` and has children) => displayed as album list (`list` layout).
+- The image resource with `*feature*` in its name or the first image found is used as thumbnail image for album lists.
+- Albums without an image are not shown.
+
+### Front matter
+
+- `title` -- title of the album, shown in the album list and on the album page.
+- `date` -- album date, used for sorting (newest first).
+- `description` -- description shown on the album page. Rendered as markdown to enable adding links and some formatting.
+- `weight` -- can be used to adjust sort order.
+- `params.featured_image` -- name of the image file used for the album thumbnail. If not set, the first image which contains `feature` in its filename is used, otherwise the first image in the album. (Deprecated, use `resources.params.cover`)
+- `params.private` -- if set to `true`, this album is not shown in the album overview and is excluded from RSS feeds.
+- `params.featured` -- if set to `true`, this album is featured on the homepage (even if private).
+- `params.sort_by` -- property used for sorting images in an album. Default is `Name` (filename), but can also be `Date`.
+- `params.sort_order` -- sort order. Default is `asc`.
+- `params.theme` -- color theme for this page. Defaults to `defaultTheme` from configuration.
+
+### Album Cover
+
+By default, the cover image of an album is the first image in its folder. To select a specific image (which must be part of the album), use the `cover` resource parameter in the front matter:
+
+```plain
+---
+title: Nature
+resources:
+  - src: tree.jpg
+    params:
+      cover: true
+---
+```
+
+You can hide images from the gallery and use them only as cover image:
+
+```plain
+---
+title: Nature
+resources:
+  - src: nature-cover.jpg
+    params:
+      cover: true
+      hidden: true
+---
+```
+
+### Image Metadata
+
+Image titles for the lightbox view are either taken from the `ImageDescription` EXIF tag, or the `title` in the resource metadata.
+
+EXIF tags can be written using software like Adobe Lightroom or by using command line tools like exiftool:
+
+```sh
+exiftool -ImageDescription="A closeup of a gray cat's face" cat-4.jpg
+```
+
+Alternatively, the image title can be set in the front matter:
+
+```plain
+---
+date: 2024-02-18T14:12:44+0100
+title: Cats
+resources:
+  - src: cat-1.jpg
+    title: Brown tabby cat on white stairs
+    params:
+      date: 2024-02-18T13:04:30+0100
+  - src: cat-4.jpg
+    title: A closeup of a gray cat's face
+---
+```
+
+This also enables custom ordering:
+
+```plain
+---
+sort_by: Params.weight
+resources:
+  - src: image-1.jpg
+    params:
+      weight: 20
+  - src: image-2.jpg
+    params:
+      weight: 10
+---
+```
+
+### Categories
+
+If you use categories in your albums, the homepage displays a list of categories.
+Make sure `term` is not included in `disabledKinds` in the site config.
+
+content/dogs/index.md:
+
+```plain
+---
+date: 2023-01-12
+title: Dogs
+categories: ["animals", "nature"]
+resources:
+  - src: dogs-title-image.jpg
+    params:
+      cover: true
+---
+```
+
+Categories can also have custom titles and descriptions (by default, the "animals" category will have "Animals" as title and no description). Just create a `content/categories/<category>/_index.md`:
+
+content/categories/animals/\_index.md:
+
+```plain
+---
+title: Cute Animals
+description: This is the description text of the "animals" category.
+---
+```
+
+#### List of Categories
+
+To enable a list of categories, each category must at least have an image in the `content/categores/<category>/` folder. Also, `taxonomy` must _not_ be included in the `disableKinds` in the site config.
+
+Then, `/categories` displays a list of categories, with their cover image.
+
+#### Other Taxonomies
+
+You can also use other taxonomies like `series`. Note that only `categories` and `tags` are enabled by Hugo's default settings. Using `series` as additional taxonomy is left as an exercise for the reader.
+
+### Featured Content on the Homepage
+
+Albums (and also taxonomy pages like categories) can be marked as "featured":
+
+```plain
+---
+title: Featured Album
+params:
+  featured: true
+---
+```
+
+When used in combination with `private: true` this album is only shown as featured album on the homepage, and not in any album list.
+
+Note that also categories or any other taxonomy term can be marked as featured, so you can feature a whole category, series, etc.
+
+By default, the homepage displays
+
+- the site title,
+- links to all categories (if categories are enabled and used)
+- the most recent featured content (even if private)
+- all non-private top-level albums
+
+This can easily be adjusted by using a local version of `layouts/_default/home.html`.
+
+### Related Content
+
+If related content is available for your site (e.g. when keywords or tags are used), related albums are shown below each gallery. Read more about this in the [Hugo Docs](https://gohugo.io/content-management/related/#configure-related-content).
+
+Here is an example section in `config/_default/hugo.toml` to enable related content:
+
+```toml
+[related]
+  includeNewer = true
+  threshold = 10
+  toLower = false
+  [[related.indices]]
+    applyFilter = false
+    cardinalityThreshold = 0
+    name = 'categories'
+    pattern = ''
+    toLower = false
+    type = 'basic'
+    weight = 10
+  [[related.indices]]
+    applyFilter = false
+    cardinalityThreshold = 0
+    name = 'keywords'
+    pattern = ''
+    toLower = false
+    type = 'basic'
+    weight = 50
+```
+
+### Social Icons
+
+Use the `socialIcons` configuration key to add social icons on the bottom of each page:
+
+```toml
+[params]
+  ...
+  [params.socialIcons]
+    facebook = "https://www.facebook.com/"
+    instagram = "https://www.instagram.com/"
+    github = "https://github.com/nicokaiser/hugo-theme-gallery/"
+    youtube = "https://www.youtube.com/"
+    email = "mailto:user@example.com"
+    linkedin = "https://linkedin.com/"
+```
+
+### Exclude original photos
+
+To exclude the original photos from the published site, and to disable the "Download" button, you can use the `build.publishResources` configuration option. Either add it to a specific album, or use `cascade` to omit the originals from all sub-albums. With `publishResources: false` only the resized images (without any metadata) are included in the published site, which can save quite some disk space.
+
+```toml
+cascade:
+  build:
+    publishResources: false
+```
+
+### Custom CSS
+
+CSS is generated with Hugo Pipes, so you can add additional CSS in `assets/css/custom.css` (see example in `exampleSite`).
+
+### Custom JavaScript
+
+You can add additional JavaScript in `assets/js/custom.js`.
+
+## Author
+
+- [Nico Kaiser](https://kaiser.me/)
+
+--------------------------------------------------------------------------------
+
+FILE: themes/gallery/theme.toml
+----------------------------------------
+name = "Gallery"
+license = "MIT"
+licenselink = "https://github.com/nicokaiser/hugo-theme-gallery/blob/main/LICENSE"
+description = "A very simple and opinionated photo gallery theme for Hugo"
+homepage = "https://github.com/nicokaiser/hugo-theme-gallery"
+demosite = "https://nicokaiser.github.io/hugo-theme-gallery/"
+tags = ["gallery", "responsive", "minimal", "dark"]
+min_version = "0.123.0"
+
+[author]
+  name = "Nico Kaiser"
+  homepage = "https://kaiser.me"
+
+--------------------------------------------------------------------------------
+
+FILE: themes/gallery/exampleSite/go.mod
+----------------------------------------
+module github.com/nicokaiser/hugo-gallery-starter
+
+go 1.20
+
+require github.com/nicokaiser/hugo-theme-gallery/v4 v4.9.1 // indirect
+
+replace github.com/nicokaiser/hugo-theme-gallery/v4 => ../
+
+--------------------------------------------------------------------------------
+
+FILE: themes/gallery/exampleSite/package.json
+----------------------------------------
+{
+  "private": "true",
+  "scripts": {
+    "build": "hugo --gc --minify",
+    "dev": "hugo server"
+  }
+}
+
+--------------------------------------------------------------------------------
+
+FILE: themes/gallery/exampleSite/README.md
+----------------------------------------
+# Example site for hugo-theme-gallery
+
+## Installation
+
+```
+# Install Hugo module
+hugo mod get
+
+# Pull example images from Unsplash
+./pull-images.sh
+```
+
+--------------------------------------------------------------------------------
+
+FILE: themes/gallery/exampleSite/config/_default/hugo.toml
+----------------------------------------
+copyright = "© Your Name"
+defaultContentLanguage = "en"
+disableKinds = ["taxonomy"]
+enableRobotsTXT = true
+languageCode = "en"
+timeZone = "Europe/Berlin"
+timeout = "120s"
+title = "Gallery"
+
+[params]
+  defaultTheme = "dark"
+  description = "Example site for hugo-theme-gallery"
+  title = "My Gallery"
+  [params.author]
+    email = "user@example.com"
+    name = "Your Name"
+  [params.socialIcons]
+    facebook = "https://www.facebook.com/"
+    instagram = "https://www.instagram.com/"
+    github = "https://github.com/nicokaiser/hugo-theme-gallery/"
+    youtube = "https://www.youtube.com/"
+    email = "mailto:user@example.com"
+    #website = "https://example.com"
+    #mastodon = "https://example.com"
+    #pixelfed = "https://example.com"
+    #mixcloud = "https://example.com"
+    #flickr = "https://www.flickr.com"
+    #500px = "https://500px"
+    #whatsapp = "1234567890"
+  [params.gallery]
+    #boxSpacing = 10
+    #targetRowHeight = 288
+    #targetRowHeightTolerance = 0.25
+
+[outputs]
+  home = ["HTML", "RSS"]
+  page = ["HTML"]
+  section = ["HTML"]
+
+[imaging]
+  quality = 75
+  resampleFilter = "CatmullRom"
+  [imaging.exif]
+    disableDate = false
+    disableLatLong = true
+    includeFields = "ImageDescription|Orientation"
+
+[module]
+  [module.hugoVersion]
+    min = "0.121.2"
+  [[module.imports]]
+    path = "github.com/nicokaiser/hugo-theme-gallery/v4"
+
+[menu]
+  [[menu.footer]]
+    name = "GitHub"
+    url = "https://github.com/nicokaiser/hugo-theme-gallery/"
+    weight = 3
+
+[services]
+  [services.rss]
+    limit = 100
+
+--------------------------------------------------------------------------------
+
+FILE: themes/gallery/exampleSite/content/_index.md
+----------------------------------------
+---
+description: An example site for hugo-theme-gallery. Images from Unsplash.
+#lastmod: 2023-07-05
+title: Hugo Gallery
+resources:
+  - src: martin-martz-wRuhOOaG-Z4-unsplash.jpg
+    params:
+      cover: true # cover of the home page is used for OpenGraph cards, etc.
+menus:
+  main:
+    name: Home
+    weight: -1
+# sub-galleries on list pages are sorted by date and weight (descending)
+#cascade:
+#  build:
+#    publishResources: false # do not include full images. Also disable download
+---
+
+--------------------------------------------------------------------------------
+
+FILE: themes/gallery/exampleSite/content/about.md
+----------------------------------------
+---
+layout: prose
+rss_ignore: true
+title: About
+menu:
+  main:
+    weight: 90
+---
+
+This is a demonstration site for the Hugo Gallery theme.
+
+--------------------------------------------------------------------------------
+
+FILE: themes/gallery/exampleSite/content/imprint.md
+----------------------------------------
+---
+title: Imprint
+rss_ignore: true
+layout: prose
+menu:
+  footer:
+    weight: 1
+---
+
+(Put your imprint here)
+
+--------------------------------------------------------------------------------
+
+FILE: themes/gallery/exampleSite/content/fashion-beauty/index.md
+----------------------------------------
+---
+description: Fashion and Beauty are a powerful form of self-expression. This category documents style through inspiring shots of street fashion, skincare products, avant-garde editorial photographs, and more.
+menus: "main"
+title: Fashion & Beauty
+weight: 2
+categories: ["beauty", "fashion"]
+params:
+  theme: light
+resources:
+  - src: mina-rad-V94CguEmeos-unsplash.jpg
+    params:
+      cover: true
+---
+
+--------------------------------------------------------------------------------
+
+FILE: themes/gallery/exampleSite/content/nature/index.md
+----------------------------------------
+---
+description: Through photography, the beauty of Mother Nature can be frozen in time. This category celebrates the magic of our planet and beyond — from the immensity of the great outdoors, to miraculous moments in your own backyard.
+menus: "main"
+title: Nature
+categories: ["nature"]
+weight: 3
+params:
+  featured_image: azzedine-rouichi-ZS_XuDZmxpM-unsplash.jpg
+  theme: dark
+  sort_order: desc
+  sort_by: Name # Exif.Date
+resources:
+  - src: azzedine-rouichi-ZS_XuDZmxpM-unsplash.jpg
+    params:
+      cover: true
+---
+
+--------------------------------------------------------------------------------
+
+FILE: themes/gallery/exampleSite/content/private/index.md
+----------------------------------------
+---
+description: A private gallery that is only available by direct link.
+title: Private
+params:
+  private: true # This gallery does not show in lists, RSS, sitemaps, etc. On list pages, use cascade to hide descendants.
+---
+
+--------------------------------------------------------------------------------
+
+FILE: themes/gallery/exampleSite/content/animals/_index.md
+----------------------------------------
+---
+description: This is the "Animals" album. It has two sub-albums.
+keywords: [Animals, Photos, Cats, Dogs]
+title: Animals
+weight: 1
+menus: "main"
+# list pages require at least one image to be displayed.
+resources:
+  - src: janis-ringli-UC1pzyJFyvs-unsplash.jpg
+    params:
+      cover: true
+---
+
+--------------------------------------------------------------------------------
+
+FILE: themes/gallery/exampleSite/content/animals/dogs/index.md
+----------------------------------------
+---
+date: 2023-01-12
+title: Dogs
+categories: ["animals", "nature"]
+resources:
+  - src: milli-2l0CWTpcChI-unsplash.jpg
+    params:
+      cover: true
+---
+
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+
+--------------------------------------------------------------------------------
+
+FILE: themes/gallery/exampleSite/content/animals/cats/index.md
+----------------------------------------
+---
+date: 2023-04-01
+title: Cats
+sort_by: Name
+categories: ["animals", "nature"]
+resources:
+  - src: alexander-london-mJaD10XeD7w-unsplash.jpg
+    title: Brown tabby cat on white stairs by Alexander London
+  - src: amber-kipp-75715CVEJhI-unsplash.jpg
+    title: Selective focus photography of orange and white cat on brown table by Amber Kipp
+  - src: manja-vitolic-gKXKBY-C-Dk-unsplash.jpg
+    title: "Gipsy the Cat was sitting on a bookshelf one afternoon and just stared right at me, kinda saying: “Will you take a picture already?”"
+    params:
+      cover: true
+      hidden: true
+  - src: michael-sum-LEpfefQf4rU-unsplash.jpg
+    title: This is the cutest and loveliest cat I have ever met in my life. He is BU BU, a cat with 6 fingers, which is unusual, but in fact, smarter than any cat. He meows every time he sees me, and jumps to my bed and sits with me.
+---
+
+--------------------------------------------------------------------------------
+
+FILE: themes/gallery/exampleSite/content/categories/animals/_index.md
+----------------------------------------
+---
+title: Animals
+description: Categories can also have custom titles and descriptions. The description of the Animals category lives in `content/categories/animals/_index.md`.
+---
+
+--------------------------------------------------------------------------------
+
+FILE: themes/gallery/exampleSite/content/featured-album/index.md
+----------------------------------------
+---
+date: 2023-01-12
+title: Featured Album
+params:
+  featured: true
+  private: true # do not show in list, only as feature
+description: This is a featured album. It is private, so it is only shown on the homepage.
+resources:
+  - src: jeremy-bishop-pjszS6Q2g_Y-unsplash.jpg
+    params:
+      cover: true
+---
+
+--------------------------------------------------------------------------------
+
+FILE: themes/gallery/exampleSite/layouts/partials/head-custom.html
+----------------------------------------
+<!-- Custom <head> tags (e.g. analytics code) -->
+
+--------------------------------------------------------------------------------
+
+FILE: themes/gallery/exampleSite/assets/css/custom.css
+----------------------------------------
+/* High contrast colours
+:root {
+  --surface-1-light: #fff;
+  --surface-2-light: #f5f5f5;
+  --text-1-light: #000;
+  --text-2-light: #737373;
+  --border-light: #bbb;
+  --surface-1-dark: #000;
+  --surface-2-dark: #171717;
+  --text-1-dark: #fff;
+  --text-2-dark: #a3a3a3;
+  --border-dark: #606060;
+}
+*/
+
+/* Set maximum width for galleries to 1536px, add padding
+section.gallery {
+  max-width: 1536px;
+  @media (min-width: 640px) {
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+  }
+}
+*/
+
+/* Larger header with circled buttons
+body > header {
+  padding: 1.5rem;
+  .btn-square {
+    background: var(--surface-2);
+    border-radius: 9999px;
+  }
+  margin-bottom: 0;
+}
+*/
+
+--------------------------------------------------------------------------------
+
+FILE: themes/gallery/layouts/404.html
+----------------------------------------
+{{ define "main" }}
+  <hgroup>
+    <h1>404</h1>
+    <p>{{ T "pageNotFound" }}</p>
+  </hgroup>
+{{ end }}
+
+--------------------------------------------------------------------------------
+
+FILE: themes/gallery/layouts/_default/baseof.html
+----------------------------------------
+<!doctype html>
+{{- $theme := .Params.theme | default .Site.Params.defaultTheme }}
+<html class="{{- if (eq $theme "light") -}}light{{- else if (eq $theme "dark") }}dark{{ end }}" lang="{{- site.LanguageCode | default "en" -}}">
+  {{ partial "head.html" . }}
+  <body>
+    {{ block "header" . }}{{ partial "header.html" . }}{{ end }}
+    <main>
+      {{ block "main" . }}{{ end }}
+    </main>
+    {{ block "footer" . }}{{ partialCached "footer.html" . }}{{ end }}
+  </body>
+</html>
+
+--------------------------------------------------------------------------------
+
+FILE: themes/gallery/layouts/_default/home.html
+----------------------------------------
+{{ define "main" }}
+  {{ partial "title.html" . }}
+  {{ partial "categories.html" }}
+  {{ partial "featured.html" . }}
+  <section class="galleries">
+    {{ range where .Pages "Params.private" "ne" true }}
+      {{ partial "album-card.html" . }}
+    {{ end }}
+  </section>
+{{ end }}
+
+--------------------------------------------------------------------------------
+
+FILE: themes/gallery/layouts/_default/list.html
+----------------------------------------
+{{ define "main" }}
+  {{ partial "title.html" . }}
+  <section class="galleries">
+    {{ range where .Pages "Params.private" "ne" true }}
+      {{ partial "album-card.html" . }}
+    {{ end }}
+  </section>
+{{ end }}
+
+--------------------------------------------------------------------------------
+
+FILE: themes/gallery/layouts/_default/prose.html
+----------------------------------------
+{{ define "main" }}
+  {{ partial "title.html" . }}
+  {{ with .Content }}
+    <section class="prose">
+      {{ . }}
+    </section>
+  {{ end }}
+{{ end }}
+
+--------------------------------------------------------------------------------
+
+FILE: themes/gallery/layouts/_default/rss.xml
+----------------------------------------
+{{- $authorEmail := site.Params.author.email -}}
+{{- $authorName := site.Params.author.name }}
+
+{{- $pctx := . -}}
+{{- if .IsHome -}}{{ $pctx = .Site }}{{- end -}}
+{{- $pages := slice -}}
+{{- if or $.IsHome $.IsSection -}}
+{{- $pages = where $pctx.RegularPages "Params.private" "ne" true }}
+{{- else -}}
+{{- $pages = where $pctx.Pages "Params.private" "ne" true }}
+{{- end -}}
+{{- $pages = where $pages "Params.rss_ignore" "ne" true -}}
+{{- $limit := .Site.Config.Services.RSS.Limit -}}
+{{- if ge $limit 1 -}}
+{{- $pages = $pages | first $limit -}}
+{{- end -}}
+{{- printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>{{ if eq  .Title  .Site.Title }}{{ .Site.Title }}{{ else }}{{ with .Title }}{{.}} on {{ end }}{{ .Site.Title }}{{ end }}</title>
+    <link>{{ .Permalink }}</link>
+    <description>Recent content {{ if ne  .Title  .Site.Title }}{{ with .Title }}in {{.}} {{ end }}{{ end }}on {{ .Site.Title }}</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>{{ site.Language.LanguageCode }}</language>{{ with site.Params.author.email }}
+    <managingEditor>{{.}}{{ with $authorName }} ({{ . }}){{ end }}</managingEditor>{{ end }}{{ with $authorEmail }}
+    <webMaster>{{ . }}{{ with $authorName }} ({{ . }}){{ end }}</webMaster>{{ end }}{{ with .Site.Copyright }}
+    <copyright>{{.}}</copyright>{{end}}{{ if not .Date.IsZero }}
+    <lastBuildDate>{{ (index $pages.ByLastmod.Reverse 0).Lastmod.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</lastBuildDate>{{ end }}
+    {{- with .OutputFormats.Get "RSS" -}}
+    {{ printf "<atom:link href=%q rel=\"self\" type=%q />" .Permalink .MediaType | safeHTML }}
+    {{- end -}}
+    {{- range $pages }}
+    <item>
+      <title>{{ .Title }}</title>
+      <link>{{ .Permalink }}</link>
+      <pubDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</pubDate>
+      {{- with $authorEmail }}<author>{{ . }}{{ with $authorName }} ({{ . }}){{ end }}</author>{{ end }}
+      <guid>{{ .Permalink }}</guid>
+      {{- $images := .Resources.ByType "image" -}}
+      {{- $index := 0 -}}
+      {{- range $i, $image := $images -}}
+        {{- if index $image.Params "cover" -}}
+          {{- $index = $i -}}
+        {{- end -}}
+      {{- end -}}
+      {{- $image := ($images.GetMatch (.Params.featured_image | default "*feature*")) | default (index $images $index) -}}
+      {{- if $image -}}
+        {{ $thumbnail := $image.Filter (slice images.AutoOrient (images.Process "fill 900x600")) }}
+        <media:content url="{{ $thumbnail.Permalink }}" type="image/jpeg"/>
+        <description>
+          &lt;img src=&quot;{{ $thumbnail.Permalink }}&quot; /&gt;
+          &lt;p&gt;{{ .Params.description | html }}&lt;/p&gt;
+        </description>
+      {{- else -}}
+        <description>{{ .Params.description | html }}</description>
+      {{- end -}}
+    </item>
+    {{- end }}
+  </channel>
+</rss>
+--------------------------------------------------------------------------------
+
+FILE: themes/gallery/layouts/_default/single.html
+----------------------------------------
+{{ define "main" }}
+  {{ partial "title.html" . }}
+  {{ partial "gallery.html" . }}
+  {{ partial "related.html" . }}
+  {{ with .Content }}
+    <section class="prose">
+      {{ . }}
+    </section>
+  {{ end }}
+{{ end }}
+
+--------------------------------------------------------------------------------
+
+FILE: themes/gallery/layouts/_default/sitemap.xml
+----------------------------------------
+{{ printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  {{ range where .Data.Pages "Params.private" "ne" true }}
+    {{- if .Permalink -}}
+  <url>
+    <loc>{{ .Permalink }}</loc>{{ if not .Lastmod.IsZero }}
+    <lastmod>{{ safeHTML ( .Lastmod.Format "2006-01-02T15:04:05-07:00" ) }}</lastmod>{{ end }}{{ with .Sitemap.ChangeFreq }}
+    <changefreq>{{ . }}</changefreq>{{ end }}{{ if ge .Sitemap.Priority 0.0 }}
+    <priority>{{ .Sitemap.Priority }}</priority>{{ end }}{{ if .IsTranslated }}{{ range .Translations }}
+    <xhtml:link
+                rel="alternate"
+                hreflang="{{ .Language.LanguageCode }}"
+                href="{{ .Permalink }}"
+                />{{ end }}
+    <xhtml:link
+                rel="alternate"
+                hreflang="{{ .Language.LanguageCode }}"
+                href="{{ .Permalink }}"
+                />{{ end }}
+  </url>
+    {{- end -}}
+  {{ end }}
+</urlset>
+--------------------------------------------------------------------------------
+
+FILE: themes/gallery/layouts/partials/album-card.html
+----------------------------------------
+{{ $gallery := partial "get-gallery.html" . }}
+{{ with $gallery }}
+  <a class="card" href="{{ .page.RelPermalink }}" title="{{ .page.Title }}">
+    <figure style="background-color: {{ .color }}">
+      <img class="lazyload" width="{{ .thumbnail.Width }}" height="{{ .thumbnail.Height }}" data-src="{{ .thumbnail.RelPermalink }}" alt="{{ .page.Title }}" />
+    </figure>
+    <div>
+      <h2>{{ .page.Title }}</h2>
+      <p>
+        {{ if gt .albumCount 0 }}
+          {{ T "albumCount" (dict "count" (.albumCount | lang.FormatNumber 0) "photoCount" (.imageCount | lang.FormatNumber 0 | lang.Translate "photoCount")) }}
+        {{ else }}
+          {{ T "photoCount" (.imageCount | lang.FormatNumber 0) }}
+        {{ end }}
+      </p>
+    </div>
+  </a>
+{{ end }}
+
+--------------------------------------------------------------------------------
+
+FILE: themes/gallery/layouts/partials/categories.html
+----------------------------------------
+{{ with site.Taxonomies.categories }}
+  <nav class="categories">
+    <ul>
+      {{ range . }}
+        <li><a href="{{ .Page.RelPermalink }}">{{ .Page.Title }}</a></li>
+      {{ end }}
+    </ul>
+  </nav>
+{{ end }}
+
+--------------------------------------------------------------------------------
+
+FILE: themes/gallery/layouts/partials/featured.html
+----------------------------------------
+{{ range where site.Pages.ByDate.Reverse "Params.featured" "=" true }}
+  {{ $gallery := partial "get-gallery.html" . }}
+  {{ if $gallery }}
+    {{ $covers := where (.Resources.ByType "image") "Params.cover" "eq" true }}
+    {{ $cover := "" }}
+    {{ if ge (len $covers) 0 }}
+      {{ $cover = index $covers 0 }}
+    {{ end }}
+    {{ $featured := $cover | default ((.Resources.ByType "image").GetMatch (.Params.featured_image | default "*feature*")) | default (index $gallery.images 0) }}
+    {{ $thumbnail := $featured.Filter (slice images.AutoOrient (images.Process "fit 1600x1600")) }}
+    {{ $color := index $thumbnail.Colors 0 | default "transparent" }}
+    <section class="featured">
+      <a class="featured-card" href="{{ .RelPermalink }}" style="background-color: {{ $color }}; background-image: url({{ $thumbnail.RelPermalink }})">
+        <div>
+          <h2>{{ .Title }}</h2>
+          <p>
+            {{ if gt $gallery.albumCount 0 }}
+              {{ T "albumCount" (dict "count" ($gallery.albumCount | lang.FormatNumber 0) "photoCount" ($gallery.imageCount | lang.FormatNumber 0 | lang.Translate "photoCount")) }}
+            {{ else }}
+              {{ T "photoCount" ($gallery.imageCount | lang.FormatNumber 0) }}
+            {{ end }}
+          </p>
+        </div>
+      </a>
+    </section>
+  {{ end }}
+{{ end }}
+
+--------------------------------------------------------------------------------
+
+FILE: themes/gallery/layouts/partials/footer.html
+----------------------------------------
+<footer>
+  {{ partialCached "social-icons.html" . }}
+  <section>
+    {{ .Site.Copyright }}
+    {{ range .Site.Menus.footer }}
+      <a {{ with .Params.rel -}}rel="{{ . }}"{{ end -}} href="{{ .URL }}">
+        {{ .Name }}
+      </a>
+    {{ end }}
+  </section>
+</footer>
+
+--------------------------------------------------------------------------------
+
+FILE: themes/gallery/layouts/partials/gallery.html
+----------------------------------------
+<section class="gallery">
+  <div id="gallery" style="visibility: hidden; height: 1px; overflow: hidden">
+    {{ $images := slice }}
+    {{ range $image := where (.Resources.ByType "image") "Params.hidden" "ne" true }}
+      {{ $title := "" }}
+      {{ $date := "" }}
+      {{ with $image.Exif }}
+        {{ $date = .Date }}
+        {{ with .Tags.ImageDescription }}
+          {{/* Title from EXIF ImageDescription */}}
+          {{ $title = . }}
+        {{ end }}
+      {{ end }}
+      {{ if ne $image.Title $image.Name }}
+        {{/* Title from front matter */}}
+        {{ $title = $image.Title }}
+      {{ end }}
+      {{ if $image.Params.Date }}
+        {{/* Date from front matter */}}
+        {{ $date = time $image.Params.Date }}
+      {{ end }}
+      {{ $images = $images | append (dict
+        "Name" $image.Name
+        "Title" $title
+        "Date" $date
+        "image" $image
+        "Params" $image.Params
+        )
+      }}
+    {{ end }}
+    {{ $publishResources := default true .Params.build.publishResources }}
+    {{ range sort $images (.Params.sort_by | default "Name") (.Params.sort_order | default "asc") }}
+      {{ $image := .image }}
+      {{ $thumbnail := $image.Filter (slice images.AutoOrient (images.Process "fit 600x600")) }}
+      {{ $full := $image.Filter (slice images.AutoOrient (images.Process "fit 1600x1600")) }}
+      {{ $color := index $thumbnail.Colors 0 | default "transparent" }}
+      <a class="gallery-item" href="{{ if $publishResources }}{{ $image.RelPermalink }}{{ else }}{{ $full.RelPermalink }}{{ end }}" data-pswp-src="{{ $full.RelPermalink }}" data-pswp-width="{{ $full.Width }}" data-pswp-height="{{ $full.Height }}" data-pswp-target="{{ $image.Name | urlize }}" title="{{ .Title }}" itemscope itemtype="https://schema.org/ImageObject" style="aspect-ratio: {{ $thumbnail.Width }} / {{ $thumbnail.Height }}">
+        <figure style="background-color: {{ $color }}; aspect-ratio: {{ $thumbnail.Width }} / {{ $thumbnail.Height }}">
+          <img class="lazyload" width="{{ $thumbnail.Width }}" height="{{ $thumbnail.Height }}" data-src="{{ $thumbnail.RelPermalink }}" alt="{{ .Title }}" />
+        </figure>
+        <meta itemprop="contentUrl" content="{{ if $publishResources }}{{ $image.RelPermalink }}{{ else }}{{ $full.RelPermalink }}{{ end }}" />
+        {{ with site.Params.Author }}
+          <span itemprop="creator" itemtype="https://schema.org/Person" itemscope>
+            <meta itemprop="name" content="{{ site.Params.Author.name }}" />
+          </span>
+        {{ end }}
+      </a>
+    {{ end }}
+  </div>
+</section>
+
+--------------------------------------------------------------------------------
+
+FILE: themes/gallery/layouts/partials/get-gallery.html
+----------------------------------------
+{{ $gallery := "" }}
+{{ $images :=  where (.Resources.ByType "image") "Params.hidden" "ne" true }}
+{{ if gt (len $images) 0 }}
+  {{ $covers := where (.Resources.ByType "image") "Params.cover" "eq" true }}
+  {{ $cover := "" }}
+  {{ if ge (len $covers) 0 }}
+    {{ $cover = index $covers 0 }}
+  {{ end }}
+  {{ $featured := $cover | default ((.Resources.ByType "image").GetMatch (.Params.featured_image | default "*feature*")) | default (index $images 0) }}
+  {{ $thumbnail := $featured.Filter (slice images.AutoOrient (images.Process "fit 600x600")) }}
+  {{ $color := index $thumbnail.Colors 0 | default "transparent" }}
+  {{ $imageCount := 0 }}
+  {{ $albumCount := 0 }}
+  {{ if .IsPage }}
+    {{ $imageCount = len $images }}
+  {{ else }}
+    {{ range where .RegularPagesRecursive "Params.private" "ne" true }}
+      {{ $albumCount = add $albumCount 1 }}
+      {{ $imageCount = add $imageCount (len (where (.Resources.ByType "image") "Params.hidden" "ne" true)) }}
+    {{ end }}
+  {{ end }}
+  {{ $gallery = dict
+    "page" $
+    "images" $images
+    "thumbnail" $thumbnail
+    "color" $color
+    "albumCount" $albumCount
+    "imageCount" $imageCount
+  }}
+{{ end }}
+{{ return $gallery }}
+
+--------------------------------------------------------------------------------
+
+FILE: themes/gallery/layouts/partials/head-custom.html
+----------------------------------------
+[OK (utf-8)]
+--------------------------------------------------------------------------------
+
+FILE: themes/gallery/layouts/partials/head.html
+----------------------------------------
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{{ with .Title }}{{ . }} -{{ end }} {{ .Site.Title }}</title>
+  <link rel="canonical" href="{{ .Permalink }}" />
+  <link rel="icon" type="image/svg+xml" href="{{ "images/favicon.svg" | relURL }}" />
+  <link rel="icon" type="image/png" href="{{ "images/favicon.png" | relURL }}" />
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ "images/apple-touch-icon.png" | relURL }}" />
+  <meta name="description" content="{{ with .Description }}{{ . | markdownify | plainify }}{{ else }}{{ with .Site.Params.description }}{{ . | markdownify | plainify }}{{ end }}{{ end }}" />
+  {{ if .Params.keywords }}
+    <meta name="keywords" content="{{ delimit .Params.keywords `, ` }}" />
+  {{ end }}
+  {{ if .Params.private }}
+    <meta name="robots" content="noindex, nofollow" />
+  {{ else }}
+    <meta name="robots" content="index, follow" />
+  {{ end }}
+  {{ range .AlternativeOutputFormats -}}
+    {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+  {{ end -}}
+  {{ partial "opengraph.html" . }}
+  {{ $css := resources.Get "/css/main.scss" | toCSS | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ $css.RelPermalink }}" />
+  {{ $params := dict
+    "closeTitle" (i18n "closeTitle")
+    "zoomTitle" (i18n "zoomTitle")
+    "arrowPrevTitle" (i18n "arrowPrevTitle")
+    "arrowNextTitle" (i18n "arrowNextTitle")
+    "errorMsg" (i18n "errorMsg")
+    "downloadTitle" (i18n "downloadTitle")
+    "boxSpacing" (default 8 .Site.Params.gallery.boxSpacing)
+    "targetRowHeight" (default 288 .Site.Params.gallery.targetRowHeight)
+    "targetRowHeightTolerance" (default 0.25 .Site.Params.gallery.targetRowHeightTolerance)
+    "enableDownload" (default true .Params.build.publishResources)
+  }}
+  {{ $js := resources.Get "js/main.js" | js.Build (dict "minify" true "params" $params) | resources.Fingerprint }}
+  <script src="{{ $js.RelPermalink }}" defer></script>
+  {{- partial "head-custom.html" . -}}
+</head>
+
+--------------------------------------------------------------------------------
+
+FILE: themes/gallery/layouts/partials/header.html
+----------------------------------------
+<header>
+  {{ with .Parent }}
+    <a class="btn btn-square" href="{{ .RelPermalink | default .Site.Home.RelPermalink }}" title="{{ .Title }}">
+      <svg width="24" height="24" data-slot="icon" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path clip-rule="evenodd" fill-rule="evenodd" d="M11.03 3.97a.75.75 0 0 1 0 1.06l-6.22 6.22H21a.75.75 0 0 1 0 1.5H4.81l6.22 6.22a.75.75 0 1 1-1.06 1.06l-7.5-7.5a.75.75 0 0 1 0-1.06l7.5-7.5a.75.75 0 0 1 1.06 0Z"></path>
+      </svg>
+    </a>
+  {{ else }}
+    <a class="btn" href="{{ .Site.Home.RelPermalink }}">
+      {{ .Site.Title }}
+    </a>
+  {{ end }}
+  {{ if site.Menus.main }}
+    <ul>
+      <li>
+        <button class="btn btn-square" id="menu-toggle" aria-expanded="false" type="button" title="{{ T "menu" }}">
+          <svg class="icon-menu" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path clip-rule="evenodd" fill-rule="evenodd" d="M3 6.75A.75.75 0 0 1 3.75 6h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 6.75ZM3 12a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 12Zm0 5.25a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75a.75.75 0 0 1-.75-.75Z"></path>
+          </svg>
+          <svg class="icon-close hidden" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path clip-rule="evenodd" fill-rule="evenodd" d="M5.47 5.47a.75.75 0 0 1 1.06 0L12 10.94l5.47-5.47a.75.75 0 1 1 1.06 1.06L13.06 12l5.47 5.47a.75.75 0 1 1-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 0 1-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 0 1 0-1.06Z"></path>
+          </svg>
+        </button>
+      </li>
+    </ul>
+  {{ end }}
+</header>
+{{ partial "menu.html" . }}
+
+--------------------------------------------------------------------------------
+
+FILE: themes/gallery/layouts/partials/menu.html
+----------------------------------------
+{{ with site.Menus.main }}
+  <menu class="hidden" id="menu">
+    {{ range . }}
+      <li itemscope itemtype="http://www.schema.org/SiteNavigationElement">
+        <a aria-current="{{ or (page.IsMenuCurrent .Menu .) (page.HasMenuCurrent .Menu .) }}" href="{{ .URL }}" itemprop="url">
+          <span itemprop="name">{{ .Name }}</span>
+        </a>
+      </li>
+    {{ end }}
+  </menu>
+{{ end }}
+
+--------------------------------------------------------------------------------
+
+FILE: themes/gallery/layouts/partials/opengraph.html
+----------------------------------------
+<meta property="og:url" content="{{ .Permalink }}" />
+
+{{- with or site.Title site.Params.title | plainify }}
+  <meta property="og:site_name" content="{{ . }}" />
+{{- end }}
+
+{{- with or .Title site.Title site.Params.title | plainify }}
+  <meta property="og:title" content="{{ . }}" />
+{{- end }}
+
+{{- with or .Description .Summary site.Params.description | plainify | htmlUnescape }}
+  <meta property="og:description" content="{{ trim . "\n\r\t " }}" />
+{{- end }}
+
+{{- with or .Params.locale site.Language.LanguageCode }}
+  <meta property="og:locale" content="{{ replace . `-` `_` }}" />
+{{- end }}
+
+{{- if .IsPage }}
+  <meta property="og:type" content="article" />
+  {{- with .Section }}
+    <meta property="article:section" content="{{ . }}" />
+  {{- end }}
+  {{- $ISO8601 := "2006-01-02T15:04:05-07:00" -}}
+  {{- with .PublishDate }}
+    <meta property="article:published_time" {{ .Format $ISO8601 | printf "content=%q" | safeHTMLAttr }} />
+  {{- end }}
+  {{- with .Lastmod }}
+    <meta property="article:modified_time" {{ .Format $ISO8601 | printf "content=%q" | safeHTMLAttr }} />
+  {{- end }}
+{{- else }}
+  <meta property="og:type" content="website" />
+{{- end }}
+
+{{- $images := $.Resources.ByType "image" -}}
+{{ $index := 0 }}
+{{ range $i, $image := $images }}
+  {{ if index $image.Params "cover" }}
+    {{ $index = $i }}
+  {{ end }}
+{{ end }}
+{{ $image := ($images.GetMatch (.Params.featured_image | default "*feature*")) | default (index $images $index) }}
+{{- with $image -}}
+  {{ $full := $image.Filter (slice images.AutoOrient (images.Process "fit 1600x1600")) }}
+  <meta property="og:image" content="{{ $full.Permalink }}" />
+{{- end -}}
+
+--------------------------------------------------------------------------------
+
+FILE: themes/gallery/layouts/partials/related.html
+----------------------------------------
+{{ $related := where (site.RegularPages.Related .) "Params.private" "ne" true | first 3 }}
+{{ with $related }}
+  <hgroup style="margin-top: 8rem">
+    <h2>{{ T "relatedAlbums" }}</h2>
+  </hgroup>
+  <section class="galleries">
+    {{ range . }}
+      {{ partial "album-card.html" . }}
+    {{ end }}
+  </section>
+{{ end }}
+
+--------------------------------------------------------------------------------
+
+FILE: themes/gallery/layouts/partials/social-icons.html
+----------------------------------------
+{{ with .Site.Params.socialIcons }}
+  <section class="social-icons">
+    {{ with .website }}
+      <a target="_blank" rel="noopener" title="Website" href="{{ . }}">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
+          <path fill="currentColor" d="M8.904 16.5h6.192C14.476 19.773 13.235 22 12 22c-1.197 0-2.4-2.094-3.038-5.204zh6.192zm-5.838.001h4.306c.364 2.082.983 3.854 1.792 5.093a10.029 10.029 0 0 1-5.952-4.814zm13.563 0h4.305a10.028 10.028 0 0 1-6.097 5.093c.755-1.158 1.344-2.778 1.715-4.681zh4.305zm.302-6.5h4.87a10.047 10.047 0 0 1-.257 5H16.84a28.676 28.676 0 0 0 .13-4.344zh4.87zM2.2 10h4.87a28.211 28.211 0 0 0 .033 4.42l.057.58H2.456a10.047 10.047 0 0 1-.258-5m6.377 0h6.849a25.838 25.838 0 0 1-.037 4.425l-.062.575H8.674a25.987 25.987 0 0 1-.132-4.512zh6.849zm6.368-7.424l-.108-.17A10.027 10.027 0 0 1 21.373 8.5h-4.59c-.316-2.416-.957-4.492-1.838-5.923l-.108-.17zm-5.902-.133l.122-.037c-.88 1.351-1.535 3.33-1.883 5.654l-.062.44H2.63a10.028 10.028 0 0 1 6.413-6.057l.122-.037zM12 2.002c1.319 0 2.646 2.542 3.214 6.183l.047.315H8.739C9.28 4.691 10.644 2.002 12 2.002" />
+        </svg>
+      </a>
+    {{ end }}
+    {{ with .mastodon }}
+      <a rel="me" target="_blank" rel="noopener" title="Mastodon" href="{{ . }}">
+        <svg width="24" height="24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" aria-hidden="true">
+          <path d="M433 179.1c0-97.2-63.7-125.7-63.7-125.7-62.5-28.7-228.6-28.4-290.5 0 0 0-63.7 28.5-63.7 125.7 0 115.7-6.6 259.4 105.6 289.1 40.5 10.7 75.3 13 103.3 11.4 50.8-2.8 79.3-18.1 79.3-18.1l-1.7-36.9s-36.3 11.4-77.1 10.1c-40.4-1.4-83-4.4-89.6-54a102.5 102.5 0 0 1 -.9-13.9c85.6 20.9 158.7 9.1 178.8 6.7 56.1-6.7 105-41.3 111.2-72.9 9.8-49.8 9-121.5 9-121.5zm-75.1 125.2h-46.6v-114.2c0-49.7-64-51.6-64 6.9v62.5h-46.3V197c0-58.5-64-56.6-64-6.9v114.2H90.2c0-122.1-5.2-147.9 18.4-175 25.9-28.9 79.8-30.8 103.8 6.1l11.6 19.5 11.6-19.5c24.1-37.1 78.1-34.8 103.8-6.1 23.7 27.3 18.4 53 18.4 175z" />
+        </svg>
+      </a>
+    {{ end }}
+    {{ with .pixelfed }}
+      <a rel="me" target="_blank" rel="noopener" title="Pixelfed" href="{{ . }}">
+        <svg width="24" height="24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 80 1034 1024">
+          <path fill="currentColor" d="M500 176q-115 0 -215 58q-96 57 -152 153q-58 99 -58 214.5t58 214.5q56 96 152 152q100 58 215 58t215 -58q96 -56 152 -152q58 -99 58 -214.5t-58 -214.5q-56 -96 -152 -153q-100 -58 -215 -58zM432 435h112q36 0 66.5 17.5t48.5 47t18 65t-18 65t-48.5 47t-66.5 17.5 h-78l-111 106v-290q0 -31 22.5 -53t54.5 -22z" />
+        </svg>
+      </a>
+    {{ end }}
+    {{ with .facebook }}
+      <a target="_blank" rel="noopener" title="Facebook" href="{{ . }}">
+        <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd"></path>
+        </svg>
+      </a>
+    {{ end }}
+    {{ with .instagram }}
+      <a target="_blank" rel="noopener" title="Instagram" href="{{ . }}">
+        <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path
+            fill-rule="evenodd"
+            d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"
+            clip-rule="evenodd"
+          ></path>
+        </svg>
+      </a>
+    {{ end }}
+    {{ with .github }}
+      <a target="_blank" rel="noopener" title="GitHub" href="{{ . }}">
+        <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path>
+        </svg>
+      </a>
+    {{ end }}
+    {{ with .twitter }}
+      <a target="_blank" rel="noopener" title="Twitter/X" href="{{ . }}">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
+          <path fill="currentColor" d="M10.488 14.651L15.25 21h7l-7.858-10.478L20.93 3h-2.65l-5.117 5.886L8.75 3h-7l7.51 10.015L2.32 21h2.65zM16.25 19L5.75 5h2l10.5 14z" />
+        </svg>
+      </a>
+    {{ end }}
+    {{ with .youtube }}
+      <a target="_blank" rel="noopener" title="YouTube" href="{{ . }}">
+        <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path fill-rule="evenodd" d="M19.812 5.418c.861.23 1.538.907 1.768 1.768C21.998 8.746 22 12 22 12s0 3.255-.418 4.814a2.504 2.504 0 0 1-1.768 1.768c-1.56.419-7.814.419-7.814.419s-6.255 0-7.814-.419a2.505 2.505 0 0 1-1.768-1.768C2 15.255 2 12 2 12s0-3.255.417-4.814a2.507 2.507 0 0 1 1.768-1.768C5.744 5 11.998 5 11.998 5s6.255 0 7.814.418ZM15.194 12 10 15V9l5.194 3Z" clip-rule="evenodd"></path>
+        </svg>
+      </a>
+    {{ end }}
+    {{ with .linkedin }}
+      <a target="_blank" rel="noopener" title="LinkedIn" href="{{ . }}">
+        <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+        </svg>
+      </a>
+    {{ end }}
+    {{ with .email }}
+      <a title="E-Mail" href="{{ . }}">
+        <svg width="24" height="24" fill="currentColor" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M2.5 3A1.5 1.5 0 0 0 1 4.5v.793c.026.009.051.02.076.032L7.674 8.51c.206.1.446.1.652 0l6.598-3.185A.755.755 0 0 1 15 5.293V4.5A1.5 1.5 0 0 0 13.5 3h-11Z"></path>
+          <path d="M15 6.954 8.978 9.86a2.25 2.25 0 0 1-1.956 0L1 6.954V11.5A1.5 1.5 0 0 0 2.5 13h11a1.5 1.5 0 0 0 1.5-1.5V6.954Z"></path>
+        </svg>
+      </a>
+    {{ end }}
+    {{ with .mixcloud }}
+      <a target="_blank" rel="noopener" title="Mixcloud" href="{{ . }}">
+        <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path
+            d="M21.95 19.062c-.154 0-.31-.045-.445-.135-.369-.25-.465-.75-.225-1.11.738-1.094 1.125-2.381 1.125-3.719s-.387-2.625-1.125-3.721c-.249-.368-.145-.866.216-1.106.375-.249.87-.146 1.108.214.917 1.365 1.396 2.97 1.396 4.62 0 1.648-.479 3.254-1.396 4.619-.135.239-.39.359-.645.359l-.009-.021zM19.66 17.768c-.153 0-.308-.045-.445-.139-.369-.239-.463-.734-.215-1.094.489-.721.747-1.545.747-2.43 0-.855-.258-1.695-.747-2.431-.248-.36-.154-.854.215-1.095s.857-.15 1.106.225c.669.99 1.021 2.145 1.021 3.314 0 1.201-.352 2.34-1.021 3.315-.146.24-.406.36-.661.36v-.025zm-3.73-7.153c-.314-3.197-3.016-5.699-6.3-5.699-2.721 0-5.13 1.748-5.995 4.283C1.588 9.501 0 11.269 0 13.4c0 2.344 1.912 4.254 4.26 4.254h10.908c1.964 0 3.566-1.594 3.566-3.557 0-1.706-1.2-3.129-2.805-3.48v-.002zm-.762 5.446H4.263c-1.466 0-2.669-1.191-2.669-2.658 0-1.465 1.193-2.658 2.669-2.658.71 0 1.381.285 1.886.781.3.314.811.314 1.125 0 .3-.301.3-.811 0-1.125-.555-.542-1.231-.931-1.965-1.111.75-1.665 2.43-2.774 4.305-2.774 2.609 0 4.74 2.129 4.74 4.738 0 .512-.075 1.006-.24 1.486-.135.42.09.869.51 1.02.074.03.165.045.24.045.33 0 .645-.211.75-.54.105-.315.18-.63.225-.96.734.285 1.26 1.005 1.26 1.83 0 1.096-.885 1.979-1.965 1.979l.034-.053z"
+          />
+        </svg>
+      </a>
+    {{ end }}
+    {{ with .flickr }}
+      <a target="_blank" rel="noopener" title="Flickr" href="{{ . }}">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M11 12a5 5 0 1 1-10 0a5 5 0 0 1 10 0m12 0a5 5 0 1 1-10 0a5 5 0 0 1 10 0" /></svg>
+      </a>
+    {{ end }}
+    {{ with index . "500px" }}
+      <a target="_blank" rel="noopener" title="500px" href="{{ . }}">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+          <path
+            fill="currentColor"
+            d="M7 15.14a1.4 1.4 0 0 0 .17.44a6.3 6.3 0 0 0 1.39 2.08a6.7 6.7 0 0 0 2.09 1.4a6.2 6.2 0 0 0 2.54.52a6.3 6.3 0 0 0 2.55-.52a6.6 6.6 0 0 0 2.08-1.4a6.4 6.4 0 0 0 1.41-2.08a6.55 6.55 0 0 0 .46-2.58a6.8 6.8 0 0 0-.51-2.56a6.4 6.4 0 0 0-1.41-2.07a6.46 6.46 0 0 0-4.63-1.92a6.6 6.6 0 0 0-2.58.55a7 7 0 0 0-1.2.68a7 7 0 0 0-1.14.94V3.23h9.05c.22 0 .34-.21.34-.62S17.48 2 17.26 2H7.47a.37.37 0 0 0-.3.13a.4.4 0 0 0-.12.29V10a.39.39 0 0 0 .17.3a1.1 1.1 0 0 0 .41.18a.73.73 0 0 0 .43 0a1 1 0 0 0 .24-.11a1 1 0 0 0 .14-.17a7 7 0 0 1 .86-1a5.15 5.15 0 0 1 3.79-1.56a5.15 5.15 0 0 1 3.81 1.61A5.17 5.17 0 0 1 18.48 13a5.3 5.3 0 0 1-.41 2a5.36 5.36 0 0 1-2.9 3a5.4 5.4 0 0 1-2.06.4a5.1 5.1 0 0 1-2.7-.75V13a2.66 2.66 0 0 1 .71-1.79a2.53 2.53 0 0 1 2-.89a2.65 2.65 0 0 1 2 .79a2.55 2.55 0 0 1 .75 1.89a2.73 2.73 0 0 1-2.77 2.74h-.34l-.37-.07h-.15c-.21-.06-.37.1-.49.48s-.07.6.14.68a4.3 4.3 0 0 0 1.25.18a3.84 3.84 0 0 0 2.8-1.16A3.8 3.8 0 0 0 17.1 13a3.73 3.73 0 0 0-1.16-2.78a3.8 3.8 0 0 0-2.8-1.15a3.86 3.86 0 0 0-2.82 1.15a3.57 3.57 0 0 0-1.14 2.59v3.8a5.6 5.6 0 0 1-1.08-1.86c-.08-.21-.3-.25-.67-.13s-.55.29-.48.49Zm6.25-11a8.2 8.2 0 0 0-3.34.64a.25.25 0 0 0-.23.22a1.3 1.3 0 0 0 .09.43c.14.35.3.48.5.41a8.1 8.1 0 0 1 2.93-.55a7.5 7.5 0 0 1 3.08.63a8.7 8.7 0 0 1 2.31 1.48a.25.25 0 0 0 .18.08c.09 0 .24-.1.43-.29l.19-.19a.37.37 0 0 0 .06-.21a.3.3 0 0 0-.1-.2a8.6 8.6 0 0 0-2.62-1.69a9 9 0 0 0-3.53-.76Zm-1.61 9.91a.46.46 0 0 0 .2.33a.52.52 0 0 0 .35.18a.24.24 0 0 0 .17-.06l.73-.73l.7.68a.28.28 0 0 0 .21.11a.58.58 0 0 0 .36-.19c.2-.21.23-.39.07-.55l-.7-.7l.74-.74c.12-.12.08-.29-.13-.49s-.4-.27-.53-.14l-.73.72l-.72-.74a.3.3 0 0 0-.15-.05a.56.56 0 0 0-.34.2c-.23.22-.28.38-.16.5l.74.74l-.74.72a.35.35 0 0 0-.12.21Zm7.93 4.57a1.2 1.2 0 0 0-.37-.25a.28.28 0 0 0-.28.07l-.07.07a8 8 0 0 1-2.51 1.69a7.94 7.94 0 0 1-8.68-1.69A7.5 7.5 0 0 1 5.91 16a9.3 9.3 0 0 1-.51-1.77c0-.21-.25-.29-.63-.23s-.56.2-.53.4a8.5 8.5 0 0 0 .6 2.11a8.8 8.8 0 0 0 2 2.88a9 9 0 0 0 2.89 2a9.1 9.1 0 0 0 3.54.71a9.3 9.3 0 0 0 3.54-.71a9 9 0 0 0 2.89-2l.06-.06c.09-.22.02-.44-.24-.71Z"
+          />
+        </svg>
+      </a>
+    {{ end }}
+    {{ with .whatsapp }}
+      <a target="_blank" rel="noopener" title="Whatsapp" href="https://wa.me/{{ . | urlize }}">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+          <path
+            fill="currentColor"
+            d="M12.001 2c5.523 0 10 4.477 10 10s-4.477 10-10 10a9.95 9.95 0 0 1-5.03-1.355L2.005 22l1.352-4.968A9.95 9.95 0 0 1 2.001 12c0-5.523 4.477-10 10-10M8.593 7.3l-.2.008a1 1 0 0 0-.372.1a1.3 1.3 0 0 0-.294.228c-.12.113-.188.211-.261.306A2.73 2.73 0 0 0 6.9 9.62c.002.49.13.967.33 1.413c.409.902 1.082 1.857 1.97 2.742c.214.213.424.427.65.626a9.45 9.45 0 0 0 3.84 2.046l.568.087c.185.01.37-.004.556-.013a2 2 0 0 0 .833-.231a5 5 0 0 0 .383-.22q.001.002.125-.09c.135-.1.218-.171.33-.288q.126-.13.21-.302c.078-.163.156-.474.188-.733c.024-.198.017-.306.014-.373c-.004-.107-.093-.218-.19-.265l-.582-.261s-.87-.379-1.402-.621a.5.5 0 0 0-.176-.041a.48.48 0 0 0-.378.127c-.005-.002-.072.055-.795.931a.35.35 0 0 1-.368.13a1.4 1.4 0 0 1-.191-.066c-.124-.052-.167-.072-.252-.108a6 6 0 0 1-1.575-1.003c-.126-.11-.243-.23-.363-.346a6.3 6.3 0 0 1-1.02-1.268l-.059-.095a1 1 0 0 1-.102-.205c-.038-.147.061-.265.061-.265s.243-.266.356-.41c.11-.14.203-.276.263-.373c.118-.19.155-.385.093-.536q-.42-1.026-.868-2.041c-.059-.134-.234-.23-.393-.249q-.081-.01-.162-.016a3 3 0 0 0-.403.004z"
+          />
+        </svg>
+      </a>
+    {{ end }}
+  </section>
+{{ end }}
+
+--------------------------------------------------------------------------------
+
+FILE: themes/gallery/layouts/partials/title.html
+----------------------------------------
+{{ if .Title }}
+  <hgroup>
+    <h1>{{ .Title }}</h1>
+    {{ with .Params.Description }}
+      <p>{{ . | markdownify }}</p>
+    {{ end }}
+  </hgroup>
+{{ end }}
+
+--------------------------------------------------------------------------------
+
+FILE: themes/gallery/static/images/favicon.svg
+----------------------------------------
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" width="24" height="24"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+  <path d="M12 9a3.75 3.75 0 100 7.5A3.75 3.75 0 0012 9z"></path>
+  <path fill-rule="evenodd" d="M9.344 3.071a49.52 49.52 0 015.312 0c.967.052 1.83.585 2.332 1.39l.821 1.317c.24.383.645.643 1.11.71.386.054.77.113 1.152.177 1.432.239 2.429 1.493 2.429 2.909V18a3 3 0 01-3 3h-15a3 3 0 01-3-3V9.574c0-1.416.997-2.67 2.429-2.909.382-.064.766-.123 1.151-.178a1.56 1.56 0 001.11-.71l.822-1.315a2.942 2.942 0 012.332-1.39zM6.75 12.75a5.25 5.25 0 1110.5 0 5.25 5.25 0 01-10.5 0zm12-1.5a.75.75 0 100-1.5.75.75 0 000 1.5z" clip-rule="evenodd"></path>
+</svg><style>@media (prefers-color-scheme: light) { :root { filter: none; } }
+@media (prefers-color-scheme: dark) { :root { filter: invert(100%); } }
+</style></svg>
+--------------------------------------------------------------------------------
+
+FILE: themes/gallery/.github/FUNDING.yml
+----------------------------------------
+github: nicokaiser
+ko_fi: nicokaiser
+liberapay: nicokaiser
+
+--------------------------------------------------------------------------------
+
+FILE: themes/gallery/.github/workflows/hugo.yml
+----------------------------------------
+name: Deploy to Pages
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      HUGO_VERSION: 0.123.0
+    steps:
+      - name: Install Hugo
+        run: |
+          wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb \
+          && sudo dpkg -i ${{ runner.temp }}/hugo.deb
+      - name: Checkout
+        uses: actions/checkout@v5
+      - name: Cache example images
+        id: cache-images
+        uses: actions/cache@v4
+        with:
+          path: ./exampleSite/content
+          key: images-${{ hashFiles('exampleSite/content/**') }}
+      - name: Download example images
+        if: steps.cache-images.outputs.cache-hit != 'true'
+        working-directory: ./exampleSite
+        run: ./pull-images.sh
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v5
+      - name: Build with Hugo
+        working-directory: ./exampleSite
+        env:
+          HUGO_ENVIRONMENT: production
+          HUGO_ENV: production
+        run: hugo --gc --minify --baseURL "${{ steps.pages.outputs.base_url }}/"
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: ./exampleSite/public
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+--------------------------------------------------------------------------------
+
+FILE: themes/gallery/i18n/da.yaml
+----------------------------------------
+menu: Menu
+home: Hjem
+pageNotFound: Siden blev ikke fundet
+toHomepage: Til forsiden
+closeTitle: Luk
+zoomTitle: Zoom
+arrowPrevTitle: Forrige
+arrowNextTitle: Næste
+errorMsg: Billedet kunne ikke indlæses
+downloadTitle: Download
+relatedAlbums: Lignende albums
+photoCount:
+  one: 1 billede
+  other: "{{ . }} billeder"
+albumCount:
+  one: "{{ .photoCount }} i {{ .count }} album"
+  other: "{{ .photoCount }} i {{ .count }} albummer"
+
+--------------------------------------------------------------------------------
+
+FILE: themes/gallery/i18n/de.yaml
+----------------------------------------
+menu: Menü
+home: Home
+pageNotFound: Seite nicht gefunden
+toHomepage: Zur Startseite
+closeTitle: Schließen
+zoomTitle: Vergrößern
+arrowPrevTitle: Zurück
+arrowNextTitle: Weiter
+errorMsg: Das Bild konnte nicht geladen werden
+downloadTitle: Download
+relatedAlbums: Ähnliche Alben
+photoCount:
+  one: 1 Foto
+  other: "{{ . }} Fotos"
+albumCount:
+  one: "{{ .photoCount }} in {{ .count }} Album"
+  other: "{{ .photoCount }} in {{ .count }} Alben"
+
+--------------------------------------------------------------------------------
+
+FILE: themes/gallery/i18n/en.yaml
+----------------------------------------
+menu: Menu
+home: Home
+pageNotFound: Page not found
+toHomepage: Go to homepage
+closeTitle: Close
+zoomTitle: Zoom
+arrowPrevTitle: Previous
+arrowNextTitle: Next
+errorMsg: The photo cannot be loaded
+downloadTitle: Download
+relatedAlbums: Related albums
+photoCount:
+  one: 1 photo
+  other: "{{ . }} photos"
+albumCount:
+  one: "{{ .photoCount }} in {{ .count }} album"
+  other: "{{ .photoCount }} in {{ .count }} albums"
+
+--------------------------------------------------------------------------------
+
+FILE: themes/gallery/i18n/es.yaml
+----------------------------------------
+menu: Menú
+home: Inicio
+pageNotFound: Página no encontrada
+toHomepage: Ir al inicio
+closeTitle: Cerrar
+zoomTitle: Ampliar
+arrowPrevTitle: Anterior
+arrowNextTitle: Siguiente
+errorMsg: La foto no puede ser cargada
+downloadTitle: Descargar
+relatedAlbums: Álbumes relacionados
+photoCount:
+  one: 1 foto
+  other: "{{ . }} fotos"
+albumCount:
+  one: "{{ .photoCount }} en {{ .count }} álbum"
+  other: "{{ .photoCount }} en {{ .count }} álbumes"
+
+--------------------------------------------------------------------------------
+
+FILE: themes/gallery/i18n/fr.yaml
+----------------------------------------
+menu: Menu
+home: Accueil
+pageNotFound: Page non trouvée
+toHomepage: Aller à l'accueil
+closeTitle: Fermer
+zoomTitle: Zoom
+arrowPrevTitle: Retour
+arrowNextTitle: Suivant
+errorMsg: L'image n'a pas pu être chargée
+downloadTitle: Télécharger
+relatedAlbums: Albums similaires
+photoCount:
+  one: 1 photo
+  other: "{{ . }} photos"
+albumCount:
+  one: "{{ .photoCount }} dans {{ .count }} album"
+  other: "{{ .photoCount }} dans {{ .count }} albums"
+
+--------------------------------------------------------------------------------
+
+FILE: themes/gallery/i18n/it.yaml
+----------------------------------------
+menu: Menu
+home: Home
+pageNotFound: Pagina non trovata
+toHomepage: Vai alla home
+closeTitle: Chiudi
+zoomTitle: Zoom
+arrowPrevTitle: Indietro
+arrowNextTitle: Avanti
+errorMsg: La foto non può essere scaricata
+downloadTitle: Download
+relatedAlbums: Album correlati
+photoCount:
+  one: 1 foto
+  other: "{{ . }} foto"
+albumCount:
+  one: "{{ .photoCount }} in {{ .count }} album"
+  other: "{{ .photoCount }} in {{ .count }} album"
+
+--------------------------------------------------------------------------------
+
+FILE: themes/gallery/i18n/ja.yaml
+----------------------------------------
+menu: メニュー
+home: ホーム
+pageNotFound: ページが見つかりません
+toHomepage: ホームに戻る
+closeTitle: 閉める
+zoomTitle: ズーム
+arrowPrevTitle: 前
+arrowNextTitle: 次
+errorMsg: 写真を読み込めませんでした
+downloadTitle: ダウンロード
+relatedAlbums: 似たようなアルバム
+photoCount:
+  other: "写真{{ . }}枚"
+albumCount:
+  other: "{{ .count }}枚のアルバムに{{ .photoCount }}"
+
+--------------------------------------------------------------------------------
+
+FILE: themes/gallery/i18n/nb.yaml
+----------------------------------------
+menu: Meny
+home: Start
+pageNotFound: Side ikke funnt
+toHomepage: Gå til start
+closeTitle: Steng
+zoomTitle: Zoom
+arrowPrevTitle: Forrige
+arrowNextTitle: Neste
+errorMsg: Bildet kan ikke vises
+downloadTitle: Last ned
+relatedAlbums: Lignende album
+photoCount:
+  one: 1 photo
+  other: "{{ . }} fotos"
+albumCount:
+  one: "{{ .photoCount }} i {{ .count }} album"
+  other: "{{ .photoCount }} i {{ .count }} album"
+
+--------------------------------------------------------------------------------
+
+FILE: themes/gallery/i18n/pt.yaml
+----------------------------------------
+menu: Menu
+home: Home
+pageNotFound: Página não encontrada
+toHomepage: Ir para a página inicial
+closeTitle: Fechar
+zoomTitle: Zoom
+arrowPrevTitle: Anterior
+arrowNextTitle: Próxima
+errorMsg: A foto não pode ser carregada
+downloadTitle: Download
+relatedAlbums: Álbums Relacionados
+photoCount:
+  one: 1 foto
+  other: "{{ . }} fotos"
+albumCount:
+  one: "{{ .photoCount }} em {{ .count }} álbum"
+  other: "{{ .photoCount }} em {{ .count }} álbums"
+
+--------------------------------------------------------------------------------
+
+FILE: themes/gallery/i18n/uk.yaml
+----------------------------------------
+menu: Меню
+home: Головна
+pageNotFound: Сторінку не знайдено
+toHomepage: Перейти на головну сторінку
+closeTitle: Закрити
+zoomTitle: Масштабувати
+arrowPrevTitle: Попередній
+arrowNextTitle: Наступний
+errorMsg: Фото не вдалося завантажити
+downloadTitle: Завантажити
+relatedAlbums: Схожі альбоми
+photoCount:
+  one: 1 фото
+  other: "{{ . }} фото"
+albumCount:
+  one: "{{ .photoCount }} в {{ .count }} альбомі"
+  other: "{{ .photoCount }} в {{ .count }} альбомах"
+
+--------------------------------------------------------------------------------
+
+FILE: themes/gallery/i18n/zh.yaml
+----------------------------------------
+menu: 菜单
+home: 主页
+pageNotFound: 页面不存在
+toHomepage: 返回主页
+closeTitle: 关闭
+zoomTitle: 缩放
+arrowPrevTitle: 前一张
+arrowNextTitle: 后一张
+errorMsg: 照片无法加载
+downloadTitle: 下载
+relatedAlbums: 相关相册
+photoCount:
+  other: "{{ . }} 张照片"
+albumCount:
+  other: "{{ .count }} 个相册，共计 {{ .photoCount }}"
+
+--------------------------------------------------------------------------------
+
+FILE: themes/gallery/assets/jsconfig.json
+----------------------------------------
+{
+ "compilerOptions": {
+  "baseUrl": ".",
+  "paths": {
+   "*": [
+    "*"
+   ]
+  }
+ }
+}
+--------------------------------------------------------------------------------
+
+FILE: themes/gallery/assets/css/_colors.scss
+----------------------------------------
+:root {
+  color-scheme: light dark;
+
+  --surface-1-light: #fff;
+  --surface-2-light: #e5e5e5;
+  --text-1-light: #0a0a0a;
+  --text-2-light: #737373;
+  --border-light: #bbb;
+  --surface-1-dark: #0a0a0a;
+  --surface-2-dark: #404040;
+  --text-1-dark: #fafafa;
+  --text-2-dark: #a3a3a3;
+  --border-dark: #606060;
+  --surface-1: var(--surface-1-light);
+  --surface-2: var(--surface-2-light);
+  --text-1: var(--text-1-light);
+  --text-2: var(--text-2-light);
+  --border: var(--border-light);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --surface-1: var(--surface-1-dark);
+    --surface-2: var(--surface-2-dark);
+    --text-1: var(--text-1-dark);
+    --text-2: var(--text-2-dark);
+    --border: var(--border-dark);
+  }
+}
+
+html.light {
+  color-scheme: light;
+
+  --surface-1: var(--surface-1-light);
+  --surface-2: var(--surface-2-light);
+  --text-1: var(--text-1-light);
+  --text-2: var(--text-2-light);
+  --border: var(--border-light);
+}
+
+html.dark {
+  color-scheme: dark;
+
+  --surface-1: var(--surface-1-dark);
+  --surface-2: var(--surface-2-dark);
+  --text-1: var(--text-1-dark);
+  --text-2: var(--text-2-dark);
+  --border: var(--border-dark);
+}
+
+--------------------------------------------------------------------------------
+
+FILE: themes/gallery/assets/css/_normalize.scss
+----------------------------------------
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  border-width: 0;
+}
+
+html {
+  line-height: 1.5;
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  -webkit-text-size-adjust: 100%;
+  tab-size: 4;
+}
+
+body {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+button,
+input {
+  font-family: inherit;
+  font-feature-settings: inherit;
+  font-variation-settings: inherit;
+  font-size: 100%;
+  font-weight: inherit;
+  line-height: inherit;
+  color: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+button,
+select {
+  text-transform: none;
+}
+
+button {
+  -webkit-appearance: button;
+  background-image: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+:disabled {
+  cursor: default;
+}
+
+:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+h1,
+h2,
+h3,
+figure,
+p {
+  margin: 0;
+}
+
+ul,
+menu {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+img,
+svg,
+video {
+  display: block;
+  vertical-align: middle;
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+--------------------------------------------------------------------------------
+
+FILE: themes/gallery/assets/css/_styles.scss
+----------------------------------------
+html {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--surface-1);
+  color: var(--text-1);
+}
+
+body > header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  margin-bottom: 2rem;
+  width: 100%;
+  min-height: 4rem;
+
+  @media (min-width: 640px) {
+    margin-bottom: 3rem;
+  }
+
+  ul {
+    display: inline-flex;
+  }
+
+  .btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.5rem;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    height: 3rem;
+    font-weight: 600;
+    font-size: 1.25rem;
+    user-select: none;
+  }
+
+  .btn-square {
+    padding: 0;
+    width: 3rem;
+  }
+}
+
+body > menu {
+  margin: 0 auto 5rem;
+  padding-right: 1.5rem;
+  padding-left: 1.5rem;
+  width: 100%;
+  max-width: 768px;
+  color: var(--text-2);
+  font-weight: 600;
+  font-size: 1.25rem;
+  line-height: 1.4;
+  user-select: none;
+  text-align: center;
+
+  a {
+    display: block;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+
+    &:hover,
+    &[aria-current="true"] {
+      color: var(--text-1);
+    }
+  }
+}
+
+body > main {
+  flex-grow: 1;
+  width: 100%;
+  height: 100%;
+}
+
+main > section {
+  margin: 0 auto 3rem;
+  padding-right: 1.5rem;
+  padding-left: 1.5rem;
+
+  @media (min-width: 640px) {
+    margin-bottom: 4rem;
+  }
+}
+
+body > footer {
+  margin-right: auto;
+  margin-left: auto;
+  color: var(--text-2);
+  font-size: 0.875rem;
+  line-height: 1.4286;
+
+  section:last-of-type {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 1rem;
+    padding: 2.5rem;
+
+    a:hover {
+      text-decoration-line: underline;
+    }
+  }
+}
+
+hgroup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  margin: 0 auto 3rem;
+  padding-right: 1.5rem;
+  padding-left: 1.5rem;
+  max-width: 1024px;
+  text-align: center;
+
+  h1 {
+    font-weight: 600;
+    font-size: clamp(2rem, calc(1.667rem + 1.481vw), 3rem);
+    line-height: clamp(2.25rem, calc(1.833rem + 1.852vw), 3.5rem);
+    text-wrap: balance;
+  }
+
+  h2 {
+    font-weight: 600;
+    font-size: clamp(1.5rem, calc(1.333rem + 0.741vw), 2rem);
+    line-height: clamp(1.75rem, calc(1.5rem + 1.111vw), 2.5rem);
+    text-wrap: balance;
+  }
+
+  p {
+    color: var(--text-2);
+    font-size: 1.0625rem;
+    line-height: 1.5556;
+    text-wrap: balance;
+  }
+
+  @media (min-width: 640px) {
+    width: 83.3333%;
+    margin-bottom: 4rem;
+  }
+}
+
+section.galleries {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 2rem 1.5rem;
+  max-width: 1280px;
+
+  @media (min-width: 640px) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: 3rem;
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+section.gallery {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.prose {
+  max-width: 768px;
+  color: var(--text-1);
+  font-size: 1rem;
+  line-height: 1.75;
+
+  a {
+    color: var(--text-1);
+    font-weight: 500;
+    text-decoration: underline;
+  }
+
+  p {
+    margin-top: 1.25em;
+    margin-bottom: 1.25em;
+  }
+
+  img {
+    margin-top: 2em;
+    margin-bottom: 2em;
+  }
+
+  h3 {
+    margin-top: 1.6em;
+    margin-bottom: 0.6em;
+    color: var(--text-1);
+    font-weight: 600;
+    font-size: 1.25em;
+    line-height: 1.6;
+  }
+
+  ul {
+    margin-top: 1.25em;
+    margin-bottom: 1.25em;
+    padding-left: 1.625em;
+    list-style-type: disc;
+
+    & > li {
+      margin-top: 0.5em;
+      margin-bottom: 0.5em;
+      padding-left: 0.375em;
+    }
+
+    li::marker {
+      color: var(--text-2);
+      font-variant-numeric: tabular-nums;
+      unicode-bidi: isolate;
+      text-align: start !important;
+      text-align-last: start !important;
+      text-indent: 0 !important;
+      text-transform: none;
+    }
+  }
+
+  h3 + * {
+    margin-top: 0;
+  }
+
+  figure {
+    margin-top: 2em;
+    margin-bottom: 2em;
+  }
+
+  figure > * {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  > :first-child {
+    margin-top: 0;
+  }
+
+  > :last-child {
+    margin-bottom: 0;
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 1rem;
+
+  & > figure {
+    aspect-ratio: 3/2;
+    width: 100%;
+    border-radius: 1rem;
+  }
+
+  & > img,
+  & figure > img {
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    border-radius: 1rem;
+    aspect-ratio: 3/2;
+    width: 100%;
+    overflow: hidden;
+    object-fit: cover;
+
+    &:hover {
+      box-shadow:
+        0 10px 15px -3px rgba(0, 0, 0, 0.1),
+        0 4px 6px -4px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  & > div {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 1rem;
+
+    & > h2 {
+      font-weight: 600;
+      font-size: 1.125rem;
+      line-height: 1.375;
+    }
+
+    & > p {
+      color: var(--text-2);
+      font-size: 0.875rem;
+      line-height: 1.4286;
+    }
+  }
+}
+
+.gallery-item {
+  cursor: zoom-in;
+}
+
+.hidden {
+  display: none;
+}
+
+#menu-toggle[aria-expanded="true"] {
+  .icon-menu {
+    display: none;
+  }
+
+  .icon-close {
+    display: block;
+  }
+}
+
+section.social-icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-top: 2rem;
+  padding-right: 1.5rem;
+  padding-left: 1.5rem;
+}
+
+section.featured {
+  padding-right: 1.5rem;
+  padding-left: 1.5rem;
+  max-width: 1280px;
+  color: var(--text-1-dark);
+}
+
+.featured-card {
+  display: flex;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  border-radius: 1rem;
+  background-position: center;
+  background-size: cover;
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  overflow: hidden;
+
+  @media (min-width: 640px) {
+    aspect-ratio: 16/9;
+  }
+
+  & > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 1rem;
+    background-image: linear-gradient(to top, RGB(0 0 0 / 0.8) 10%, transparent 50%);
+    padding: 1.5rem;
+    width: 100%;
+    height: 100%;
+
+    & > h2 {
+      font-weight: 600;
+      font-size: clamp(1.5rem, calc(1.375rem + 0.556vw), 1.875rem);
+      line-height: 1.2;
+    }
+
+    & > p {
+      font-size: 0.875rem;
+      line-height: 1.4286;
+    }
+  }
+
+  &:hover {
+    box-shadow:
+      0 10px 15px -3px rgba(0, 0, 0, 0.1),
+      0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  }
+}
+
+nav.categories {
+  padding-right: 1.5rem;
+  padding-left: 1.5rem;
+  margin: 0 auto 3rem;
+
+  & > ul {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 0.75rem;
+
+    li {
+      max-width: 100%;
+
+      & > a {
+        display: block;
+        padding: 0.5rem 0.75rem;
+        border-radius: 9999px;
+        border: 1px solid var(--border);
+        font-size: 0.875rem;
+        line-height: 1.4286;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+
+        @media (min-width: 640px) {
+          padding: 0.75rem 1rem;
+          font-size: 1rem;
+          line-height: 1.25;
+        }
+      }
+    }
+  }
+
+  @media (min-width: 640px) {
+    margin-bottom: 4rem;
+  }
+}
+
+--------------------------------------------------------------------------------
+
+FILE: themes/gallery/assets/css/custom.css
+----------------------------------------
+/* custom.css */
+
+--------------------------------------------------------------------------------
+
+FILE: themes/gallery/assets/css/main.scss
+----------------------------------------
+@import "normalize";
+@import "colors";
+@import "styles";
+@import "photoswipe/photoswipe";
+@import "photoswipe/photoswipe-dynamic-caption-plugin";
+@import "custom";
+
+.lazyload,
+.lazyloading {
+  opacity: 0;
+}
+
+.lazyloaded {
+  opacity: 1;
+  transition: opacity 300ms;
+}
+
+img.lazyload:not([src]) {
+  visibility: hidden;
+}
+
+--------------------------------------------------------------------------------
+
+FILE: themes/gallery/assets/css/photoswipe/photoswipe-dynamic-caption-plugin.css
+----------------------------------------
+.pswp__dynamic-caption {
+  color: #fff;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  transition: opacity 120ms linear !important; /* override default */
+}
+
+.pswp-caption-content {
+  display: none;
+}
+
+.pswp__dynamic-caption a {
+  color: #fff;
+}
+
+.pswp__dynamic-caption--faded {
+  opacity: 0 !important;
+}
+
+.pswp__dynamic-caption--aside {
+  width: auto;
+  max-width: 300px;
+  padding: 20px 15px 20px 20px;
+  margin-top: 70px;
+}
+
+.pswp__dynamic-caption--below {
+  width: auto;
+  max-width: 700px;
+  padding: 15px 0 0;
+}
+
+.pswp__dynamic-caption--on-hor-edge {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.pswp__dynamic-caption--mobile {
+  width: 100%;
+  background: rgba(0,0,0,0.5);
+  padding: 10px 15px;
+
+  right: 0;
+  bottom: 0;
+
+  /* override styles that were set via JS.
+    as they interfere with size measurement */
+  top: auto !important; 
+  left: 0 !important;
+}
+--------------------------------------------------------------------------------
+
+FILE: themes/gallery/assets/css/photoswipe/photoswipe.css
+----------------------------------------
+/*! PhotoSwipe main CSS by Dmytro Semenov | photoswipe.com */
+
+.pswp {
+  --pswp-bg: #000;
+  --pswp-placeholder-bg: #222;
+  
+
+  --pswp-root-z-index: 100000;
+  
+  --pswp-preloader-color: rgba(79, 79, 79, 0.4);
+  --pswp-preloader-color-secondary: rgba(255, 255, 255, 0.9);
+  
+  /* defined via js:
+  --pswp-transition-duration: 333ms; */
+  
+  --pswp-icon-color: #fff;
+  --pswp-icon-color-secondary: #4f4f4f;
+  --pswp-icon-stroke-color: #4f4f4f;
+  --pswp-icon-stroke-width: 2px;
+
+  --pswp-error-text-color: var(--pswp-icon-color);
+}
+
+
+/*
+	Styles for basic PhotoSwipe (pswp) functionality (sliding area, open/close transitions)
+*/
+
+.pswp {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: var(--pswp-root-z-index);
+	display: none;
+	touch-action: none;
+	outline: 0;
+	opacity: 0.003;
+	contain: layout style size;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+/* Prevents focus outline on the root element,
+  (it may be focused initially) */
+.pswp:focus {
+  outline: 0;
+}
+
+.pswp * {
+  box-sizing: border-box;
+}
+
+.pswp img {
+  max-width: none;
+}
+
+.pswp--open {
+	display: block;
+}
+
+.pswp,
+.pswp__bg {
+	transform: translateZ(0);
+	will-change: opacity;
+}
+
+.pswp__bg {
+  opacity: 0.005;
+	background: var(--pswp-bg);
+}
+
+.pswp,
+.pswp__scroll-wrap {
+	overflow: hidden;
+}
+
+.pswp__scroll-wrap,
+.pswp__bg,
+.pswp__container,
+.pswp__item,
+.pswp__content,
+.pswp__img,
+.pswp__zoom-wrap {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.pswp__img,
+.pswp__zoom-wrap {
+	width: auto;
+	height: auto;
+}
+
+.pswp--click-to-zoom.pswp--zoom-allowed .pswp__img {
+	cursor: -webkit-zoom-in;
+	cursor: -moz-zoom-in;
+	cursor: zoom-in;
+}
+
+.pswp--click-to-zoom.pswp--zoomed-in .pswp__img {
+	cursor: move;
+	cursor: -webkit-grab;
+	cursor: -moz-grab;
+	cursor: grab;
+}
+
+.pswp--click-to-zoom.pswp--zoomed-in .pswp__img:active {
+  cursor: -webkit-grabbing;
+  cursor: -moz-grabbing;
+  cursor: grabbing;
+}
+
+/* :active to override grabbing cursor */
+.pswp--no-mouse-drag.pswp--zoomed-in .pswp__img,
+.pswp--no-mouse-drag.pswp--zoomed-in .pswp__img:active,
+.pswp__img {
+	cursor: -webkit-zoom-out;
+	cursor: -moz-zoom-out;
+	cursor: zoom-out;
+}
+
+
+/* Prevent selection and tap highlights */
+.pswp__container,
+.pswp__img,
+.pswp__button,
+.pswp__counter {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.pswp__item {
+	/* z-index for fade transition */
+	z-index: 1;
+	overflow: hidden;
+}
+
+.pswp__hidden {
+	display: none !important;
+}
+
+/* Allow to click through pswp__content element, but not its children */
+.pswp__content {
+  pointer-events: none;
+}
+.pswp__content > * {
+  pointer-events: auto;
+}
+
+
+/*
+
+  PhotoSwipe UI
+
+*/
+
+/*
+	Error message appears when image is not loaded
+	(JS option errorMsg controls markup)
+*/
+.pswp__error-msg-container {
+  display: grid;
+}
+.pswp__error-msg {
+	margin: auto;
+	font-size: 1em;
+	line-height: 1;
+	color: var(--pswp-error-text-color);
+}
+
+/*
+class pswp__hide-on-close is applied to elements that
+should hide (for example fade out) when PhotoSwipe is closed
+and show (for example fade in) when PhotoSwipe is opened
+ */
+.pswp .pswp__hide-on-close {
+	opacity: 0.005;
+	will-change: opacity;
+	transition: opacity var(--pswp-transition-duration) cubic-bezier(0.4, 0, 0.22, 1);
+	z-index: 10; /* always overlap slide content */
+	pointer-events: none; /* hidden elements should not be clickable */
+}
+
+/* class pswp--ui-visible is added when opening or closing transition starts */
+.pswp--ui-visible .pswp__hide-on-close {
+	opacity: 1;
+	pointer-events: auto;
+}
+
+/* <button> styles, including css reset */
+.pswp__button {
+	position: relative;
+	display: block;
+	width: 50px;
+	height: 60px;
+	padding: 0;
+	margin: 0;
+	overflow: hidden;
+	cursor: pointer;
+	background: none;
+	border: 0;
+	box-shadow: none;
+	opacity: 0.85;
+	-webkit-appearance: none;
+	-webkit-touch-callout: none;
+}
+
+.pswp__button:hover,
+.pswp__button:active,
+.pswp__button:focus {
+  transition: none;
+  padding: 0;
+  background: none;
+  border: 0;
+  box-shadow: none;
+  opacity: 1;
+}
+
+.pswp__button:disabled {
+  opacity: 0.3;
+  cursor: auto;
+}
+
+.pswp__icn {
+  fill: var(--pswp-icon-color);
+  color: var(--pswp-icon-color-secondary);
+}
+
+.pswp__icn {
+  position: absolute;
+  top: 14px;
+  left: 9px;
+  width: 32px;
+  height: 32px;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.pswp__icn-shadow {
+  stroke: var(--pswp-icon-stroke-color);
+  stroke-width: var(--pswp-icon-stroke-width);
+  fill: none;
+}
+
+.pswp__icn:focus {
+	outline: 0;
+}
+
+/*
+	div element that matches size of large image,
+	large image loads on top of it,
+	used when msrc is not provided
+*/
+div.pswp__img--placeholder,
+.pswp__img--with-bg {
+	background: var(--pswp-placeholder-bg);
+}
+
+.pswp__top-bar {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 60px;
+	display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+	z-index: 10;
+
+	/* allow events to pass through top bar itself */
+	pointer-events: none !important;
+}
+.pswp__top-bar > * {
+  pointer-events: auto;
+  /* this makes transition significantly more smooth,
+     even though inner elements are not animated */
+  will-change: opacity;
+}
+
+
+/*
+
+  Close button
+
+*/
+.pswp__button--close {
+  margin-right: 6px;
+}
+
+
+/*
+
+  Arrow buttons
+
+*/
+.pswp__button--arrow {
+  position: absolute;
+  top: 0;
+  width: 75px;
+  height: 100px;
+  top: 50%;
+  margin-top: -50px;
+}
+
+.pswp__button--arrow:disabled {
+  display: none;
+  cursor: default;
+}
+
+.pswp__button--arrow .pswp__icn {
+  top: 50%;
+  margin-top: -30px;
+  width: 60px;
+  height: 60px;
+  background: none;
+  border-radius: 0;
+}
+
+.pswp--one-slide .pswp__button--arrow {
+  display: none;
+}
+
+/* hide arrows on touch screens */
+.pswp--touch .pswp__button--arrow {
+  visibility: hidden;
+}
+
+/* show arrows only after mouse was used */
+.pswp--has_mouse .pswp__button--arrow {
+  visibility: visible;
+}
+
+.pswp__button--arrow--prev {
+  right: auto;
+  left: 0px;
+}
+
+.pswp__button--arrow--next {
+  right: 0px;
+}
+.pswp__button--arrow--next .pswp__icn {
+  left: auto;
+  right: 14px;
+  /* flip horizontally */
+  transform: scale(-1, 1);
+}
+
+/*
+
+  Zoom button
+
+*/
+.pswp__button--zoom {
+  display: none;
+}
+
+.pswp--zoom-allowed .pswp__button--zoom {
+  display: block;
+}
+
+/* "+" => "-" */
+.pswp--zoomed-in .pswp__zoom-icn-bar-v {
+  display: none;
+}
+
+
+/*
+
+  Loading indicator
+
+*/
+.pswp__preloader {
+  position: relative;
+  overflow: hidden;
+  width: 50px;
+  height: 60px;
+  margin-right: auto;
+}
+
+.pswp__preloader .pswp__icn {
+  opacity: 0;
+  transition: opacity 0.2s linear;
+  animation: pswp-clockwise 600ms linear infinite;
+}
+
+.pswp__preloader--active .pswp__icn {
+  opacity: 0.85;
+}
+
+@keyframes pswp-clockwise {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+/*
+
+  "1 of 10" counter
+
+*/
+.pswp__counter {
+  height: 30px;
+  margin-top: 15px;
+  margin-inline-start: 20px;
+  font-size: 14px;
+  line-height: 30px;
+  color: var(--pswp-icon-color);
+  text-shadow: 1px 1px 3px var(--pswp-icon-color-secondary);
+  opacity: 0.85;
+}
+
+.pswp--one-slide .pswp__counter {
+  display: none;
+}
+
+--------------------------------------------------------------------------------
+
+FILE: themes/gallery/assets/js/custom.js
+----------------------------------------
+/* custom.js */
+
+--------------------------------------------------------------------------------
+
+FILE: themes/gallery/assets/js/gallery.js
+----------------------------------------
+import justifiedLayout from "./justified-layout.js";
+import * as params from "@params";
+
+const gallery = document.getElementById("gallery");
+
+if (gallery) {
+  let containerWidth = 0;
+  const items = gallery.querySelectorAll(".gallery-item");
+
+  const aspectRatios = Array.from(items).map((item) => {
+    const img = item.querySelector("img");
+    img.style.width = "100%";
+    img.style.height = "auto";
+    return parseFloat(img.getAttribute("width")) / parseFloat(img.getAttribute("height"));
+  });
+
+  function updateGallery() {
+    if (containerWidth === gallery.getBoundingClientRect().width) return;
+    containerWidth = gallery.getBoundingClientRect().width;
+
+    const layout = justifiedLayout(aspectRatios, {
+      rowWidth: containerWidth,
+      spacing: Number.isInteger(params.boxSpacing) ? params.boxSpacing : 8,
+      rowHeight: params.targetRowHeight || 288,
+      heightTolerance: Number.isInteger(params.targetRowHeightTolerance) ? params.targetRowHeightTolerance : 0.25,
+    });
+
+    items.forEach((item, i) => {
+      const { width, height, top, left } = layout.boxes[i];
+      item.style.position = "absolute";
+      item.style.width = width + "px";
+      item.style.height = height + "px";
+      item.style.top = top + "px";
+      item.style.left = left + "px";
+      item.style.overflow = "hidden";
+    });
+
+    gallery.style.position = "relative";
+    gallery.style.height = layout.containerHeight + "px";
+    gallery.style.visibility = "";
+  }
+
+  window.addEventListener("resize", updateGallery);
+  window.addEventListener("orientationchange", updateGallery);
+
+  // Call twice to adjust for scrollbars appearing after first call
+  updateGallery();
+  updateGallery();
+}
+
+--------------------------------------------------------------------------------
+
+FILE: themes/gallery/assets/js/justified-layout.ts
+----------------------------------------
+/*!
+ * Original work Copyright 2019 SmugMug, Inc.
+ * Modified work Copyright 2025 Nico Kaiser
+ * Licensed under the terms of the MIT license.
+ */
+
+export interface LayoutOptions {
+  rowHeight: number;
+  rowWidth: number;
+  spacing: number;
+  heightTolerance: number;
+}
+
+/**
+ * Row
+ * Wrapper for each row in a justified layout.
+ * Stores relevant values and provides methods for calculating layout of individual rows.
+ */
+class Row {
+  top: number;
+  rowWidth: number;
+  spacing: number;
+  rowHeight: number;
+  heightTolerance: number;
+  minAspectRatio: number;
+  maxAspectRatio: number;
+  items: {
+    aspectRatio: number;
+    top?: number;
+    width?: number;
+    height?: number;
+    left?: number;
+  }[] = [];
+  height = 0;
+
+  constructor(params: LayoutOptions & { top: number }) {
+    this.top = params.top;
+
+    this.rowWidth = params.rowWidth;
+    this.spacing = params.spacing;
+    this.rowHeight = params.rowHeight;
+    this.heightTolerance = params.heightTolerance;
+
+    this.minAspectRatio = (this.rowWidth / params.rowHeight) * (1 - params.heightTolerance);
+    this.maxAspectRatio = (this.rowWidth / params.rowHeight) * (1 + params.heightTolerance);
+  }
+
+  /**
+   * Attempt to add a single item to the row.
+   * This is the heart of the justified algorithm.
+   * This method is direction-agnostic; it deals only with sizes, not positions.
+   *
+   * If the item fits in the row, without pushing row height beyond min/max tolerance,
+   * the item is added and the method returns true.
+   *
+   * If the item leaves row height too high, there may be room to scale it down and add another item.
+   * In this case, the item is added and the method returns true, but the row is incomplete.
+   *
+   * If the item leaves row height too short, there are too many items to fit within tolerance.
+   * The method will either accept or reject the new item, favoring the resulting row height closest to within tolerance.
+   * If the item is rejected, left/right padding will be required to fit the row height within tolerance;
+   * if the item is accepted, top/bottom cropping will be required to fit the row height within tolerance.
+   *
+   * @return {boolean} True if successfully added; false if rejected.
+   */
+  addItem(aspectRatio: number): boolean {
+    const itemData = { aspectRatio };
+
+    const newItems = this.items.concat(itemData);
+
+    // Calculate aspect ratios for items only; exclude spacing
+    const rowWidthWithoutSpacing = this.rowWidth - (newItems.length - 1) * this.spacing;
+    const newAspectRatio = newItems.reduce(function (sum, item) {
+      return sum + item.aspectRatio;
+    }, 0);
+    const targetAspectRatio = rowWidthWithoutSpacing / this.rowHeight;
+
+    if (newAspectRatio < this.minAspectRatio) {
+      // New aspect ratio is too narrow / scaled row height is too tall.
+      // Accept this item and leave row open for more items.
+      this.items.push(itemData);
+      return true;
+    } else if (newAspectRatio > this.maxAspectRatio) {
+      // New aspect ratio is too wide / scaled row height will be too short.
+      // Accept item if the resulting aspect ratio is closer to target than it would be without the item.
+      // NOTE: Any row that falls into this block will require cropping/padding on individual items.
+      if (this.items.length === 0) {
+        // When there are no existing items, force acceptance of the new item and complete the layout.
+        // This is the pano special case.
+        this.items.push(itemData);
+        this.completeLayout(rowWidthWithoutSpacing / newAspectRatio);
+        return true;
+      }
+
+      // Calculate width/aspect ratio for row before adding new item
+      const previousRowWidthWithoutSpacing = this.rowWidth - (this.items.length - 1) * this.spacing;
+      const previousAspectRatio = this.items.reduce(function (sum, item) {
+        return sum + item.aspectRatio;
+      }, 0);
+      const previousTargetAspectRatio = previousRowWidthWithoutSpacing / this.rowHeight;
+
+      if (Math.abs(newAspectRatio - targetAspectRatio) > Math.abs(previousAspectRatio - previousTargetAspectRatio)) {
+        // Row with new item is us farther away from target than row without; complete layout and reject item.
+        this.completeLayout(previousRowWidthWithoutSpacing / previousAspectRatio);
+        return false;
+      } else {
+        // Row with new item is closer to target than row without;
+        // accept the new item and complete the row layout.
+        this.items.push(itemData);
+        this.completeLayout(rowWidthWithoutSpacing / newAspectRatio);
+        return true;
+      }
+    } else {
+      // New aspect ratio / scaled row height is within tolerance;
+      // accept the new item and complete the row layout.
+      this.items.push(itemData);
+      this.completeLayout(rowWidthWithoutSpacing / newAspectRatio);
+      return true;
+    }
+  }
+
+  /**
+   * Set row height and compute item geometry from that height.
+   */
+  completeLayout(newHeight: number) {
+    const rowWidthWithoutSpacing = this.rowWidth - (this.items.length - 1) * this.spacing;
+    let clampedToNativeRatio;
+
+    // Clamp row height to edge case minimum/maximum.
+    const clampedHeight = Math.max(0.5 * this.rowHeight, Math.min(newHeight, 2 * this.rowHeight));
+
+    if (newHeight !== clampedHeight) {
+      // If row height was clamped, the resulting row/item aspect ratio will be off,
+      // so force it to fit the width (recalculate aspectRatio to match clamped height).
+      // NOTE: this will result in cropping/padding commensurate to the amount of clamping.
+      this.height = clampedHeight;
+      clampedToNativeRatio = rowWidthWithoutSpacing / clampedHeight / (rowWidthWithoutSpacing / newHeight);
+    } else {
+      // If not clamped, leave ratio at 1.0.
+      this.height = newHeight;
+      clampedToNativeRatio = 1.0;
+    }
+
+    // Compute item geometry based on newHeight.
+    let itemWidthSum = 0;
+    for (const item of this.items) {
+      item.top = this.top;
+      item.width = item.aspectRatio * this.height * clampedToNativeRatio;
+      item.height = this.height;
+      item.left = itemWidthSum;
+      itemWidthSum += item.width + this.spacing;
+    }
+  }
+}
+
+/**
+ * Takes in a bunch of box data and config. Returns
+ * geometry to lay them out in a justified view.
+ */
+export default function (aspectRatios: number[], layoutOptions: LayoutOptions) {
+  let containerHeight = 0;
+  let boxes: {
+    aspectRatio: number;
+    top?: number;
+    width?: number;
+    height?: number;
+    left?: number;
+  }[] = [];
+
+  let currentRow;
+  let lastRowHeight = 0;
+
+  for (const aspectRatio of aspectRatios) {
+    // If not currently building up a row, make a new one.
+    if (!currentRow) {
+      currentRow = new Row({ top: containerHeight, ...layoutOptions });
+    }
+
+    // Attempt to add item to the current row.
+    let itemAdded = currentRow.addItem(aspectRatio);
+
+    if (currentRow.height > 0) {
+      // Row is filled; add it and start a new one
+      lastRowHeight = currentRow.height;
+      boxes = boxes.concat(currentRow.items);
+      containerHeight += currentRow.height + layoutOptions.spacing;
+      currentRow = new Row({ top: containerHeight, ...layoutOptions });
+
+      // Item was rejected; add it to its own row
+      if (!itemAdded) {
+        itemAdded = currentRow.addItem(aspectRatio);
+
+        if (currentRow.height > 0) {
+          // If the rejected item fills a row on its own, add the row and start another new one
+          lastRowHeight = currentRow.height;
+          boxes = boxes.concat(currentRow.items);
+          containerHeight += currentRow.height + layoutOptions.spacing;
+          currentRow = new Row({ top: containerHeight, ...layoutOptions });
+        }
+      }
+    }
+  }
+
+  // Handle any leftover content (orphans) depending on where they lie
+  // in this layout update, and in the total content set.
+  if (currentRow && currentRow.items.length) {
+    currentRow.completeLayout(lastRowHeight || layoutOptions.rowHeight);
+    boxes = boxes.concat(currentRow.items);
+    containerHeight += currentRow.height + layoutOptions.spacing;
+  }
+
+  // Remove the height added for box spacing
+  containerHeight -= layoutOptions.spacing;
+
+  return { containerHeight, boxes };
+}
+
+--------------------------------------------------------------------------------
+
+FILE: themes/gallery/assets/js/lazysizes.js
+----------------------------------------
+(function (window, factory) {
+  var lazySizes = factory(window, window.document, Date);
+  window.lazySizes = lazySizes;
+  if (typeof module == "object" && module.exports) {
+    module.exports = lazySizes;
+  }
+})(
+  typeof window != "undefined" ? window : {},
+  /**
+   * import("./types/global")
+   * @typedef { import("./types/lazysizes-config").LazySizesConfigPartial } LazySizesConfigPartial
+   */
+  function l(window, document, Date) {
+    // Pass in the window Date function also for SSR because the Date class can be lost
+    "use strict";
+    /*jshint eqnull:true */
+
+    var lazysizes,
+      /**
+       * @type { LazySizesConfigPartial }
+       */
+      lazySizesCfg;
+
+    (function () {
+      var prop;
+
+      var lazySizesDefaults = {
+        lazyClass: "lazyload",
+        loadedClass: "lazyloaded",
+        loadingClass: "lazyloading",
+        preloadClass: "lazypreload",
+        errorClass: "lazyerror",
+        //strictClass: 'lazystrict',
+        autosizesClass: "lazyautosizes",
+        fastLoadedClass: "ls-is-cached",
+        iframeLoadMode: 0,
+        srcAttr: "data-src",
+        srcsetAttr: "data-srcset",
+        sizesAttr: "data-sizes",
+        //preloadAfterLoad: false,
+        minSize: 40,
+        customMedia: {},
+        init: true,
+        expFactor: 1.5,
+        hFac: 0.8,
+        loadMode: 2,
+        loadHidden: true,
+        ricTimeout: 0,
+        throttleDelay: 125,
+      };
+
+      lazySizesCfg = window.lazySizesConfig || window.lazysizesConfig || {};
+
+      for (prop in lazySizesDefaults) {
+        if (!(prop in lazySizesCfg)) {
+          lazySizesCfg[prop] = lazySizesDefaults[prop];
+        }
+      }
+    })();
+
+    if (!document || !document.getElementsByClassName) {
+      return {
+        init: function () {},
+        /**
+         * @type { LazySizesConfigPartial }
+         */
+        cfg: lazySizesCfg,
+        /**
+         * @type { true }
+         */
+        noSupport: true,
+      };
+    }
+
+    var docElem = document.documentElement;
+
+    var supportPicture = window.HTMLPictureElement;
+
+    var _addEventListener = "addEventListener";
+
+    var _getAttribute = "getAttribute";
+
+    /**
+     * Update to bind to window because 'this' becomes null during SSR
+     * builds.
+     */
+    var addEventListener = window[_addEventListener].bind(window);
+
+    var setTimeout = window.setTimeout;
+
+    var requestAnimationFrame = window.requestAnimationFrame || setTimeout;
+
+    var requestIdleCallback = window.requestIdleCallback;
+
+    var regPicture = /^picture$/i;
+
+    var loadEvents = ["load", "error", "lazyincluded", "_lazyloaded"];
+
+    var regClassCache = {};
+
+    var forEach = Array.prototype.forEach;
+
+    /**
+     * @param ele {Element}
+     * @param cls {string}
+     */
+    var hasClass = function (ele, cls) {
+      if (!regClassCache[cls]) {
+        regClassCache[cls] = new RegExp("(\\s|^)" + cls + "(\\s|$)");
+      }
+      return regClassCache[cls].test(ele[_getAttribute]("class") || "") && regClassCache[cls];
+    };
+
+    /**
+     * @param ele {Element}
+     * @param cls {string}
+     */
+    var addClass = function (ele, cls) {
+      if (!hasClass(ele, cls)) {
+        ele.setAttribute("class", (ele[_getAttribute]("class") || "").trim() + " " + cls);
+      }
+    };
+
+    /**
+     * @param ele {Element}
+     * @param cls {string}
+     */
+    var removeClass = function (ele, cls) {
+      var reg;
+      if ((reg = hasClass(ele, cls))) {
+        ele.setAttribute("class", (ele[_getAttribute]("class") || "").replace(reg, " "));
+      }
+    };
+
+    var addRemoveLoadEvents = function (dom, fn, add) {
+      var action = add ? _addEventListener : "removeEventListener";
+      if (add) {
+        addRemoveLoadEvents(dom, fn);
+      }
+      loadEvents.forEach(function (evt) {
+        dom[action](evt, fn);
+      });
+    };
+
+    /**
+     * @param elem { Element }
+     * @param name { string }
+     * @param detail { any }
+     * @param noBubbles { boolean }
+     * @param noCancelable { boolean }
+     * @returns { CustomEvent }
+     */
+    var triggerEvent = function (elem, name, detail, noBubbles, noCancelable) {
+      var event = document.createEvent("Event");
+
+      if (!detail) {
+        detail = {};
+      }
+
+      detail.instance = lazysizes;
+
+      event.initEvent(name, !noBubbles, !noCancelable);
+
+      event.detail = detail;
+
+      elem.dispatchEvent(event);
+      return event;
+    };
+
+    var updatePolyfill = function (el, full) {
+      var polyfill;
+      if (!supportPicture && (polyfill = window.picturefill || lazySizesCfg.pf)) {
+        if (full && full.src && !el[_getAttribute]("srcset")) {
+          el.setAttribute("srcset", full.src);
+        }
+        polyfill({ reevaluate: true, elements: [el] });
+      } else if (full && full.src) {
+        el.src = full.src;
+      }
+    };
+
+    var getCSS = function (elem, style) {
+      return (getComputedStyle(elem, null) || {})[style];
+    };
+
+    /**
+     *
+     * @param elem { Element }
+     * @param parent { Element }
+     * @param [width] {number}
+     * @returns {number}
+     */
+    var getWidth = function (elem, parent, width) {
+      width = width || elem.offsetWidth;
+
+      while (width < lazySizesCfg.minSize && parent && !elem._lazysizesWidth) {
+        width = parent.offsetWidth;
+        parent = parent.parentNode;
+      }
+
+      return width;
+    };
+
+    var rAF = (function () {
+      var running, waiting;
+      var firstFns = [];
+      var secondFns = [];
+      var fns = firstFns;
+
+      var run = function () {
+        var runFns = fns;
+
+        fns = firstFns.length ? secondFns : firstFns;
+
+        running = true;
+        waiting = false;
+
+        while (runFns.length) {
+          runFns.shift()();
+        }
+
+        running = false;
+      };
+
+      var rafBatch = function (fn, queue) {
+        if (running && !queue) {
+          fn.apply(this, arguments);
+        } else {
+          fns.push(fn);
+
+          if (!waiting) {
+            waiting = true;
+            (document.hidden ? setTimeout : requestAnimationFrame)(run);
+          }
+        }
+      };
+
+      rafBatch._lsFlush = run;
+
+      return rafBatch;
+    })();
+
+    var rAFIt = function (fn, simple) {
+      return simple
+        ? function () {
+            rAF(fn);
+          }
+        : function () {
+            var that = this;
+            var args = arguments;
+            rAF(function () {
+              fn.apply(that, args);
+            });
+          };
+    };
+
+    var throttle = function (fn) {
+      var running;
+      var lastTime = 0;
+      var gDelay = lazySizesCfg.throttleDelay;
+      var rICTimeout = lazySizesCfg.ricTimeout;
+      var run = function () {
+        running = false;
+        lastTime = Date.now();
+        fn();
+      };
+      var idleCallback =
+        requestIdleCallback && rICTimeout > 49
+          ? function () {
+              requestIdleCallback(run, { timeout: rICTimeout });
+
+              if (rICTimeout !== lazySizesCfg.ricTimeout) {
+                rICTimeout = lazySizesCfg.ricTimeout;
+              }
+            }
+          : rAFIt(function () {
+              setTimeout(run);
+            }, true);
+      return function (isPriority) {
+        var delay;
+
+        if ((isPriority = isPriority === true)) {
+          rICTimeout = 33;
+        }
+
+        if (running) {
+          return;
+        }
+
+        running = true;
+
+        delay = gDelay - (Date.now() - lastTime);
+
+        if (delay < 0) {
+          delay = 0;
+        }
+
+        if (isPriority || delay < 9) {
+          idleCallback();
+        } else {
+          setTimeout(idleCallback, delay);
+        }
+      };
+    };
+
+    //based on http://modernjavascript.blogspot.de/2013/08/building-better-debounce.html
+    var debounce = function (func) {
+      var timeout, timestamp;
+      var wait = 99;
+      var run = function () {
+        timeout = null;
+        func();
+      };
+      var later = function () {
+        var last = Date.now() - timestamp;
+
+        if (last < wait) {
+          setTimeout(later, wait - last);
+        } else {
+          (requestIdleCallback || run)(run);
+        }
+      };
+
+      return function () {
+        timestamp = Date.now();
+
+        if (!timeout) {
+          timeout = setTimeout(later, wait);
+        }
+      };
+    };
+
+    var loader = (function () {
+      var preloadElems, isCompleted, resetPreloadingTimer, loadMode, started;
+
+      var eLvW, elvH, eLtop, eLleft, eLright, eLbottom, isBodyHidden;
+
+      var regImg = /^img$/i;
+      var regIframe = /^iframe$/i;
+
+      var supportScroll = "onscroll" in window && !/(gle|ing)bot/.test(navigator.userAgent);
+
+      var shrinkExpand = 0;
+      var currentExpand = 0;
+
+      var isLoading = 0;
+      var lowRuns = -1;
+
+      var resetPreloading = function (e) {
+        isLoading--;
+        if (!e || isLoading < 0 || !e.target) {
+          isLoading = 0;
+        }
+      };
+
+      var isVisible = function (elem) {
+        if (isBodyHidden == null) {
+          isBodyHidden = getCSS(document.body, "visibility") == "hidden";
+        }
+
+        return isBodyHidden || !(getCSS(elem.parentNode, "visibility") == "hidden" && getCSS(elem, "visibility") == "hidden");
+      };
+
+      var isNestedVisible = function (elem, elemExpand) {
+        var outerRect;
+        var parent = elem;
+        var visible = isVisible(elem);
+
+        eLtop -= elemExpand;
+        eLbottom += elemExpand;
+        eLleft -= elemExpand;
+        eLright += elemExpand;
+
+        while (visible && (parent = parent.offsetParent) && parent != document.body && parent != docElem) {
+          visible = (getCSS(parent, "opacity") || 1) > 0;
+
+          if (visible && getCSS(parent, "overflow") != "visible") {
+            outerRect = parent.getBoundingClientRect();
+            visible = eLright > outerRect.left && eLleft < outerRect.right && eLbottom > outerRect.top - 1 && eLtop < outerRect.bottom + 1;
+          }
+        }
+
+        return visible;
+      };
+
+      var checkElements = function () {
+        var eLlen, i, rect, autoLoadElem, loadedSomething, elemExpand, elemNegativeExpand, elemExpandVal, beforeExpandVal, defaultExpand, preloadExpand, hFac;
+        var lazyloadElems = lazysizes.elements;
+
+        if ((loadMode = lazySizesCfg.loadMode) && isLoading < 8 && (eLlen = lazyloadElems.length)) {
+          i = 0;
+
+          lowRuns++;
+
+          for (; i < eLlen; i++) {
+            if (!lazyloadElems[i] || lazyloadElems[i]._lazyRace) {
+              continue;
+            }
+
+            if (!supportScroll || (lazysizes.prematureUnveil && lazysizes.prematureUnveil(lazyloadElems[i]))) {
+              unveilElement(lazyloadElems[i]);
+              continue;
+            }
+
+            if (!(elemExpandVal = lazyloadElems[i][_getAttribute]("data-expand")) || !(elemExpand = elemExpandVal * 1)) {
+              elemExpand = currentExpand;
+            }
+
+            if (!defaultExpand) {
+              defaultExpand = !lazySizesCfg.expand || lazySizesCfg.expand < 1 ? (docElem.clientHeight > 500 && docElem.clientWidth > 500 ? 500 : 370) : lazySizesCfg.expand;
+
+              lazysizes._defEx = defaultExpand;
+
+              preloadExpand = defaultExpand * lazySizesCfg.expFactor;
+              hFac = lazySizesCfg.hFac;
+              isBodyHidden = null;
+
+              if (currentExpand < preloadExpand && isLoading < 1 && lowRuns > 2 && loadMode > 2 && !document.hidden) {
+                currentExpand = preloadExpand;
+                lowRuns = 0;
+              } else if (loadMode > 1 && lowRuns > 1 && isLoading < 6) {
+                currentExpand = defaultExpand;
+              } else {
+                currentExpand = shrinkExpand;
+              }
+            }
+
+            if (beforeExpandVal !== elemExpand) {
+              eLvW = innerWidth + elemExpand * hFac;
+              elvH = innerHeight + elemExpand;
+              elemNegativeExpand = elemExpand * -1;
+              beforeExpandVal = elemExpand;
+            }
+
+            rect = lazyloadElems[i].getBoundingClientRect();
+
+            if ((eLbottom = rect.bottom) >= elemNegativeExpand && (eLtop = rect.top) <= elvH && (eLright = rect.right) >= elemNegativeExpand * hFac && (eLleft = rect.left) <= eLvW && (eLbottom || eLright || eLleft || eLtop) && (lazySizesCfg.loadHidden || isVisible(lazyloadElems[i])) && ((isCompleted && isLoading < 3 && !elemExpandVal && (loadMode < 3 || lowRuns < 4)) || isNestedVisible(lazyloadElems[i], elemExpand))) {
+              unveilElement(lazyloadElems[i]);
+              loadedSomething = true;
+              if (isLoading > 9) {
+                break;
+              }
+            } else if (!loadedSomething && isCompleted && !autoLoadElem && isLoading < 4 && lowRuns < 4 && loadMode > 2 && (preloadElems[0] || lazySizesCfg.preloadAfterLoad) && (preloadElems[0] || (!elemExpandVal && (eLbottom || eLright || eLleft || eLtop || lazyloadElems[i][_getAttribute](lazySizesCfg.sizesAttr) != "auto")))) {
+              autoLoadElem = preloadElems[0] || lazyloadElems[i];
+            }
+          }
+
+          if (autoLoadElem && !loadedSomething) {
+            unveilElement(autoLoadElem);
+          }
+        }
+      };
+
+      var throttledCheckElements = throttle(checkElements);
+
+      var switchLoadingClass = function (e) {
+        var elem = e.target;
+
+        if (elem._lazyCache) {
+          delete elem._lazyCache;
+          return;
+        }
+
+        resetPreloading(e);
+        addClass(elem, lazySizesCfg.loadedClass);
+        removeClass(elem, lazySizesCfg.loadingClass);
+        addRemoveLoadEvents(elem, rafSwitchLoadingClass);
+        triggerEvent(elem, "lazyloaded");
+      };
+      var rafedSwitchLoadingClass = rAFIt(switchLoadingClass);
+      var rafSwitchLoadingClass = function (e) {
+        rafedSwitchLoadingClass({ target: e.target });
+      };
+
+      var changeIframeSrc = function (elem, src) {
+        var loadMode = elem.getAttribute("data-load-mode") || lazySizesCfg.iframeLoadMode;
+
+        // loadMode can be also a string!
+        if (loadMode == 0) {
+          elem.contentWindow.location.replace(src);
+        } else if (loadMode == 1) {
+          elem.src = src;
+        }
+      };
+
+      var handleSources = function (source) {
+        var customMedia;
+
+        var sourceSrcset = source[_getAttribute](lazySizesCfg.srcsetAttr);
+
+        if ((customMedia = lazySizesCfg.customMedia[source[_getAttribute]("data-media") || source[_getAttribute]("media")])) {
+          source.setAttribute("media", customMedia);
+        }
+
+        if (sourceSrcset) {
+          source.setAttribute("srcset", sourceSrcset);
+        }
+      };
+
+      var lazyUnveil = rAFIt(function (elem, detail, isAuto, sizes, isImg) {
+        var src, srcset, parent, isPicture, event, firesLoad;
+
+        if (!(event = triggerEvent(elem, "lazybeforeunveil", detail)).defaultPrevented) {
+          if (sizes) {
+            if (isAuto) {
+              addClass(elem, lazySizesCfg.autosizesClass);
+            } else {
+              elem.setAttribute("sizes", sizes);
+            }
+          }
+
+          srcset = elem[_getAttribute](lazySizesCfg.srcsetAttr);
+          src = elem[_getAttribute](lazySizesCfg.srcAttr);
+
+          if (isImg) {
+            parent = elem.parentNode;
+            isPicture = parent && regPicture.test(parent.nodeName || "");
+          }
+
+          firesLoad = detail.firesLoad || ("src" in elem && (srcset || src || isPicture));
+
+          event = { target: elem };
+
+          addClass(elem, lazySizesCfg.loadingClass);
+
+          if (firesLoad) {
+            clearTimeout(resetPreloadingTimer);
+            resetPreloadingTimer = setTimeout(resetPreloading, 2500);
+            addRemoveLoadEvents(elem, rafSwitchLoadingClass, true);
+          }
+
+          if (isPicture) {
+            forEach.call(parent.getElementsByTagName("source"), handleSources);
+          }
+
+          if (srcset) {
+            elem.setAttribute("srcset", srcset);
+          } else if (src && !isPicture) {
+            if (regIframe.test(elem.nodeName)) {
+              changeIframeSrc(elem, src);
+            } else {
+              elem.src = src;
+            }
+          }
+
+          if (isImg && (srcset || isPicture)) {
+            updatePolyfill(elem, { src: src });
+          }
+        }
+
+        if (elem._lazyRace) {
+          delete elem._lazyRace;
+        }
+        removeClass(elem, lazySizesCfg.lazyClass);
+
+        rAF(function () {
+          // Part of this can be removed as soon as this fix is older: https://bugs.chromium.org/p/chromium/issues/detail?id=7731 (2015)
+          var isLoaded = elem.complete && elem.naturalWidth > 1;
+
+          if (!firesLoad || isLoaded) {
+            if (isLoaded) {
+              addClass(elem, lazySizesCfg.fastLoadedClass);
+            }
+            switchLoadingClass(event);
+            elem._lazyCache = true;
+            setTimeout(function () {
+              if ("_lazyCache" in elem) {
+                delete elem._lazyCache;
+              }
+            }, 9);
+          }
+          if (elem.loading == "lazy") {
+            isLoading--;
+          }
+        }, true);
+      });
+
+      /**
+       *
+       * @param elem { Element }
+       */
+      var unveilElement = function (elem) {
+        if (elem._lazyRace) {
+          return;
+        }
+        var detail;
+
+        var isImg = regImg.test(elem.nodeName);
+
+        //allow using sizes="auto", but don't use. it's invalid. Use data-sizes="auto" or a valid value for sizes instead (i.e.: sizes="80vw")
+        var sizes = isImg && (elem[_getAttribute](lazySizesCfg.sizesAttr) || elem[_getAttribute]("sizes"));
+        var isAuto = sizes == "auto";
+
+        if ((isAuto || !isCompleted) && isImg && (elem[_getAttribute]("src") || elem.srcset) && !elem.complete && !hasClass(elem, lazySizesCfg.errorClass) && hasClass(elem, lazySizesCfg.lazyClass)) {
+          return;
+        }
+
+        detail = triggerEvent(elem, "lazyunveilread").detail;
+
+        if (isAuto) {
+          autoSizer.updateElem(elem, true, elem.offsetWidth);
+        }
+
+        elem._lazyRace = true;
+        isLoading++;
+
+        lazyUnveil(elem, detail, isAuto, sizes, isImg);
+      };
+
+      var afterScroll = debounce(function () {
+        lazySizesCfg.loadMode = 3;
+        throttledCheckElements();
+      });
+
+      var altLoadmodeScrollListner = function () {
+        if (lazySizesCfg.loadMode == 3) {
+          lazySizesCfg.loadMode = 2;
+        }
+        afterScroll();
+      };
+
+      var onload = function () {
+        if (isCompleted) {
+          return;
+        }
+        if (Date.now() - started < 999) {
+          setTimeout(onload, 999);
+          return;
+        }
+
+        isCompleted = true;
+
+        lazySizesCfg.loadMode = 3;
+
+        throttledCheckElements();
+
+        addEventListener("scroll", altLoadmodeScrollListner, true);
+      };
+
+      return {
+        _: function () {
+          started = Date.now();
+
+          lazysizes.elements = document.getElementsByClassName(lazySizesCfg.lazyClass);
+          preloadElems = document.getElementsByClassName(lazySizesCfg.lazyClass + " " + lazySizesCfg.preloadClass);
+
+          addEventListener("scroll", throttledCheckElements, true);
+
+          addEventListener("resize", throttledCheckElements, true);
+
+          addEventListener("pageshow", function (e) {
+            if (e.persisted) {
+              var loadingElements = document.querySelectorAll("." + lazySizesCfg.loadingClass);
+
+              if (loadingElements.length && loadingElements.forEach) {
+                requestAnimationFrame(function () {
+                  loadingElements.forEach(function (img) {
+                    if (img.complete) {
+                      unveilElement(img);
+                    }
+                  });
+                });
+              }
+            }
+          });
+
+          if (window.MutationObserver) {
+            new MutationObserver(throttledCheckElements).observe(docElem, { childList: true, subtree: true, attributes: true });
+          } else {
+            docElem[_addEventListener]("DOMNodeInserted", throttledCheckElements, true);
+            docElem[_addEventListener]("DOMAttrModified", throttledCheckElements, true);
+            setInterval(throttledCheckElements, 999);
+          }
+
+          addEventListener("hashchange", throttledCheckElements, true);
+
+          //, 'fullscreenchange'
+          ["focus", "mouseover", "click", "load", "transitionend", "animationend"].forEach(function (name) {
+            document[_addEventListener](name, throttledCheckElements, true);
+          });
+
+          if (/d$|^c/.test(document.readyState)) {
+            onload();
+          } else {
+            addEventListener("load", onload);
+            document[_addEventListener]("DOMContentLoaded", throttledCheckElements);
+            setTimeout(onload, 20000);
+          }
+
+          if (lazysizes.elements.length) {
+            checkElements();
+            rAF._lsFlush();
+          } else {
+            throttledCheckElements();
+          }
+        },
+        checkElems: throttledCheckElements,
+        unveil: unveilElement,
+        _aLSL: altLoadmodeScrollListner,
+      };
+    })();
+
+    var autoSizer = (function () {
+      var autosizesElems;
+
+      var sizeElement = rAFIt(function (elem, parent, event, width) {
+        var sources, i, len;
+        elem._lazysizesWidth = width;
+        width += "px";
+
+        elem.setAttribute("sizes", width);
+
+        if (regPicture.test(parent.nodeName || "")) {
+          sources = parent.getElementsByTagName("source");
+          for (i = 0, len = sources.length; i < len; i++) {
+            sources[i].setAttribute("sizes", width);
+          }
+        }
+
+        if (!event.detail.dataAttr) {
+          updatePolyfill(elem, event.detail);
+        }
+      });
+      /**
+       *
+       * @param elem {Element}
+       * @param dataAttr
+       * @param [width] { number }
+       */
+      var getSizeElement = function (elem, dataAttr, width) {
+        var event;
+        var parent = elem.parentNode;
+
+        if (parent) {
+          width = getWidth(elem, parent, width);
+          event = triggerEvent(elem, "lazybeforesizes", { width: width, dataAttr: !!dataAttr });
+
+          if (!event.defaultPrevented) {
+            width = event.detail.width;
+
+            if (width && width !== elem._lazysizesWidth) {
+              sizeElement(elem, parent, event, width);
+            }
+          }
+        }
+      };
+
+      var updateElementsSizes = function () {
+        var i;
+        var len = autosizesElems.length;
+        if (len) {
+          i = 0;
+
+          for (; i < len; i++) {
+            getSizeElement(autosizesElems[i]);
+          }
+        }
+      };
+
+      var debouncedUpdateElementsSizes = debounce(updateElementsSizes);
+
+      return {
+        _: function () {
+          autosizesElems = document.getElementsByClassName(lazySizesCfg.autosizesClass);
+          addEventListener("resize", debouncedUpdateElementsSizes);
+        },
+        checkElems: debouncedUpdateElementsSizes,
+        updateElem: getSizeElement,
+      };
+    })();
+
+    var init = function () {
+      if (!init.i && document.getElementsByClassName) {
+        init.i = true;
+        autoSizer._();
+        loader._();
+      }
+    };
+
+    setTimeout(function () {
+      if (lazySizesCfg.init) {
+        init();
+      }
+    });
+
+    lazysizes = {
+      /**
+       * @type { LazySizesConfigPartial }
+       */
+      cfg: lazySizesCfg,
+      autoSizer: autoSizer,
+      loader: loader,
+      init: init,
+      uP: updatePolyfill,
+      aC: addClass,
+      rC: removeClass,
+      hC: hasClass,
+      fire: triggerEvent,
+      gW: getWidth,
+      rAF: rAF,
+    };
+
+    return lazysizes;
+  },
+);
+
+--------------------------------------------------------------------------------
+
+FILE: themes/gallery/assets/js/lightbox.js
+----------------------------------------
+import PhotoSwipeLightbox from "./photoswipe/photoswipe-lightbox.esm.js";
+import PhotoSwipe from "./photoswipe/photoswipe.esm.js";
+import PhotoSwipeDynamicCaption from "./photoswipe/photoswipe-dynamic-caption-plugin.esm.min.js";
+import * as params from "@params";
+
+const gallery = document.getElementById("gallery");
+
+if (gallery) {
+  const lightbox = new PhotoSwipeLightbox({
+    gallery,
+    children: ".gallery-item",
+    showHideAnimationType: "zoom",
+    bgOpacity: 1,
+    pswpModule: PhotoSwipe,
+    imageClickAction: "close",
+    closeTitle: params.closeTitle,
+    zoomTitle: params.zoomTitle,
+    arrowPrevTitle: params.arrowPrevTitle,
+    arrowNextTitle: params.arrowNextTitle,
+    errorMsg: params.errorMsg,
+  });
+
+  if (params.enableDownload) {
+    lightbox.on("uiRegister", () => {
+      lightbox.pswp.ui.registerElement({
+        name: "download-button",
+        order: 8,
+        isButton: true,
+        tagName: "a",
+        html: {
+          isCustomSVG: true,
+          inner: '<path d="M20.5 14.3 17.1 18V10h-2.2v7.9l-3.4-3.6L10 16l6 6.1 6-6.1ZM23 23H9v2h14Z" id="pswp__icn-download"/>',
+          outlineID: "pswp__icn-download",
+        },
+        onInit: (el, pswp) => {
+          el.setAttribute("download", "");
+          el.setAttribute("target", "_blank");
+          el.setAttribute("rel", "noopener");
+          el.setAttribute("title", params.downloadTitle || "Download");
+          pswp.on("change", () => {
+            el.href = pswp.currSlide.data.element.href;
+          });
+        },
+      });
+    });
+  }
+
+  lightbox.on("change", () => {
+    const target = lightbox.pswp.currSlide?.data?.element?.dataset["pswpTarget"];
+    history.replaceState("", document.title, "#" + target);
+  });
+
+  lightbox.on("close", () => {
+    history.replaceState("", document.title, window.location.pathname);
+  });
+
+  new PhotoSwipeDynamicCaption(lightbox, {
+    mobileLayoutBreakpoint: 700,
+    type: "auto",
+    mobileCaptionOverlapRatio: 1,
+  });
+
+  lightbox.init();
+
+  if (window.location.hash.substring(1).length > 1) {
+    const target = window.location.hash.substring(1);
+    const items = gallery.querySelectorAll("a");
+    for (let i = 0; i < items.length; i++) {
+      if (items[i].dataset["pswpTarget"] === target) {
+        lightbox.loadAndOpen(i, { gallery });
+        break;
+      }
+    }
+  }
+}
+
+--------------------------------------------------------------------------------
+
+FILE: themes/gallery/assets/js/main.js
+----------------------------------------
+import "./menu.js";
+import "./gallery.js";
+import "./lazysizes.js";
+import "./lightbox.js";
+import "./custom.js";
+
+--------------------------------------------------------------------------------
+
+FILE: themes/gallery/assets/js/menu.js
+----------------------------------------
+const el = document.getElementById("menu-toggle");
+if (el) {
+  el.addEventListener("click", (event) => {
+    event.preventDefault();
+    const target = document.getElementById("menu");
+    el.ariaExpanded = target.classList.contains("hidden");
+    target.classList.toggle("hidden");
+  });
+}
+
+--------------------------------------------------------------------------------
+
+FILE: themes/gallery/assets/js/photoswipe/photoswipe-dynamic-caption-plugin.esm.min.js
+----------------------------------------
+/*!
+  * PhotoSwipe Dynamic Caption plugin 1.2.7 - https://photoswipe.com
+  * (c) 2022 Dmytro Semenov
+  */
+const t={captionContent:".pswp-caption-content",type:"auto",horizontalEdgeThreshold:20,mobileCaptionOverlapRatio:.3,mobileLayoutBreakpoint:600,verticallyCenterImage:!1};class i{constructor(i,e){this.options={...t,...e},this.lightbox=i,this.lightbox.on("init",(()=>{this.pswp=this.lightbox.pswp,this.initCaption()}))}initCaption(){const{pswp:t}=this;t.on("change",(()=>{this.showCaption(this.pswp.currSlide)})),t.on("calcSlideSize",(t=>this.onCalcSlideSize(t))),t.on("slideDestroy",(t=>{t.slide.dynamicCaption&&(t.slide.dynamicCaption.element&&t.slide.dynamicCaption.element.remove(),delete t.slide.dynamicCaption)})),t.on("zoomPanUpdate",(({slide:i})=>{if(t.opener.isOpen&&i.dynamicCaption){if(i.currZoomLevel>i.zoomLevels.initial?this.hideCaption(i):this.showCaption(i),i.dynamicCaption.element){let t=0;if(i.currZoomLevel<=i.zoomLevels.initial){const e=i.pan.y-i.bounds.center.y;Math.abs(e)>1&&(t=e)}this.setCaptionYOffset(i.dynamicCaption.element,t)}this.adjustPanArea(i,i.currZoomLevel)}})),t.on("beforeZoomTo",(i=>{this.adjustPanArea(t.currSlide,i.destZoomLevel)})),t.on("tapAction",(t=>{t.originalEvent.target.closest(".pswp__dynamic-caption")&&t.preventDefault()}))}adjustPanArea(t,i){t.dynamicCaption&&t.dynamicCaption.adjustedPanAreaSize&&(i>t.zoomLevels.initial?(t.panAreaSize.x=t.dynamicCaption.originalPanAreaSize.x,t.panAreaSize.y=t.dynamicCaption.originalPanAreaSize.y):(t.panAreaSize.x=t.dynamicCaption.adjustedPanAreaSize.x,t.panAreaSize.y=t.dynamicCaption.adjustedPanAreaSize.y))}useMobileLayout(){const{mobileLayoutBreakpoint:t}=this.options;return"function"==typeof t?t.call(this):"number"==typeof t&&window.innerWidth<t}hideCaption(t){if(t.dynamicCaption&&!t.dynamicCaption.hidden){const i=t.dynamicCaption.element;if(!i)return;t.dynamicCaption.hidden=!0,i.classList.add("pswp__dynamic-caption--faded"),t.captionFadeTimeout&&clearTimeout(t.captionFadeTimeout),t.captionFadeTimeout=setTimeout((()=>{i.style.visibility="hidden",delete t.captionFadeTimeout}),400)}}setCaptionYOffset(t,i){t.style.transform=`translateY(${i}px)`}showCaption(t){if(t.dynamicCaption&&t.dynamicCaption.hidden){const i=t.dynamicCaption.element;if(!i)return;t.dynamicCaption.hidden=!1,i.style.visibility="visible",clearTimeout(t.captionFadeTimeout),t.captionFadeTimeout=setTimeout((()=>{i.classList.remove("pswp__dynamic-caption--faded"),delete t.captionFadeTimeout}),50)}}setCaptionPosition(t,i,e){const s=i<=this.options.horizontalEdgeThreshold;t.classList[s?"add":"remove"]("pswp__dynamic-caption--on-hor-edge"),t.style.left=i+"px",t.style.top=e+"px"}setCaptionWidth(t,i){i?t.style.width=i+"px":t.style.removeProperty("width")}setCaptionType(t,i){const e=t.dataset.pswpCaptionType;i!==e&&(t.classList.add("pswp__dynamic-caption--"+i),t.classList.remove("pswp__dynamic-caption--"+e),t.dataset.pswpCaptionType=i)}updateCaptionPosition(t){if(!t.dynamicCaption||!t.dynamicCaption.type||!t.dynamicCaption.element)return;if("mobile"===t.dynamicCaption.type)return this.setCaptionType(t.dynamicCaption.element,t.dynamicCaption.type),t.dynamicCaption.element.style.removeProperty("left"),t.dynamicCaption.element.style.removeProperty("top"),void this.setCaptionWidth(t.dynamicCaption.element,!1);const i=t.zoomLevels.initial,e=Math.ceil(t.width*i),s=Math.ceil(t.height*i);this.setCaptionType(t.dynamicCaption.element,t.dynamicCaption.type),"aside"===t.dynamicCaption.type?(this.setCaptionPosition(t.dynamicCaption.element,t.bounds.center.x+e,t.bounds.center.y),this.setCaptionWidth(t.dynamicCaption.element,!1)):"below"===t.dynamicCaption.type&&(this.setCaptionPosition(t.dynamicCaption.element,t.bounds.center.x,t.bounds.center.y+s),this.setCaptionWidth(t.dynamicCaption.element,e))}onCalcSlideSize(t){const{slide:i}=t;let e,s;if(!i.dynamicCaption){i.dynamicCaption={element:void 0,type:!1,hidden:!1};const t=this.getCaptionHTML(i);if(!t)return;i.dynamicCaption.element=document.createElement("div"),i.dynamicCaption.element.className="pswp__dynamic-caption pswp__hide-on-close",i.dynamicCaption.element.innerHTML=t,this.pswp.dispatch("dynamicCaptionUpdateHTML",{captionElement:i.dynamicCaption.element,slide:i}),i.holderElement.appendChild(i.dynamicCaption.element)}if(!i.dynamicCaption.element)return;this.storeOriginalPanAreaSize(i),i.bounds.update(i.zoomLevels.initial),this.useMobileLayout()?(i.dynamicCaption.type="mobile",s=!0):"auto"===this.options.type?i.bounds.center.x>i.bounds.center.y?i.dynamicCaption.type="aside":i.dynamicCaption.type="below":i.dynamicCaption.type=this.options.type;const o=Math.ceil(i.width*i.zoomLevels.initial),n=Math.ceil(i.height*i.zoomLevels.initial);if(this.setCaptionType(i.dynamicCaption.element,i.dynamicCaption.type),"aside"===i.dynamicCaption.type){this.setCaptionWidth(i.dynamicCaption.element,!1),e=this.measureCaptionSize(i.dynamicCaption.element,t.slide);const s=e.x,n=o+i.bounds.center.x;i.panAreaSize.x-n<=s&&(i.panAreaSize.x-=s,this.recalculateZoomLevelAndBounds(i))}else if("below"===i.dynamicCaption.type||s){this.setCaptionWidth(i.dynamicCaption.element,s?this.pswp.viewportSize.x:o),e=this.measureCaptionSize(i.dynamicCaption.element,t.slide);const a=e.y;if(this.options.verticallyCenterImage)i.panAreaSize.y-=a,this.recalculateZoomLevelAndBounds(i);else{const t=n+i.bounds.center.y,e=i.panAreaSize.y-t,o=i.panAreaSize.y;if(e<=a){i.panAreaSize.y-=Math.min(2*(a-e),a),this.recalculateZoomLevelAndBounds(i);const t=i.panAreaSize.x*this.options.mobileCaptionOverlapRatio/2;s&&i.bounds.center.x>t&&(i.panAreaSize.y=o,this.recalculateZoomLevelAndBounds(i))}}}this.storeAdjustedPanAreaSize(i),this.updateCaptionPosition(i)}measureCaptionSize(t,i){const e=t.getBoundingClientRect();return this.pswp.dispatch("dynamicCaptionMeasureSize",{captionEl:t,slide:i,captionSize:{x:e.width,y:e.height}}).captionSize}recalculateZoomLevelAndBounds(t){t.zoomLevels.update(t.width,t.height,t.panAreaSize),t.bounds.update(t.zoomLevels.initial)}storeAdjustedPanAreaSize(t){t.dynamicCaption&&(t.dynamicCaption.adjustedPanAreaSize||(t.dynamicCaption.adjustedPanAreaSize={}),t.dynamicCaption.adjustedPanAreaSize.x=t.panAreaSize.x,t.dynamicCaption.adjustedPanAreaSize.y=t.panAreaSize.y)}storeOriginalPanAreaSize(t){t.dynamicCaption&&(t.dynamicCaption.originalPanAreaSize||(t.dynamicCaption.originalPanAreaSize={}),t.dynamicCaption.originalPanAreaSize.x=t.panAreaSize.x,t.dynamicCaption.originalPanAreaSize.y=t.panAreaSize.y)}getCaptionHTML(t){if("function"==typeof this.options.captionContent)return this.options.captionContent.call(this,t);const i=t.data.element;let e="";if(i){const t=i.querySelector(this.options.captionContent);if(t)e=t.innerHTML;else{const t=i.querySelector("img");t&&(e=t.getAttribute("alt"))}}return e}}export{i as default};
+
+--------------------------------------------------------------------------------
+

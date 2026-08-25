@@ -1,0 +1,9 @@
+.DS_Store
+__pycache__/
+*.pyc
+
+# Velke zdrojove fotografie zustavaji pouze lokalne.
+fotky-originaly/**
+!fotky-originaly/README.md
+!fotky-originaly/*/
+!fotky-originaly/*/.gitkeep

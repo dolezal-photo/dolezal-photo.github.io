@@ -1,0 +1,85 @@
+{{ define "header" }}
+  <header class="identity-header">
+    <a class="identity-brand" href="/" aria-label="Doležal Photo – úvodní stránka">
+      <span>Doležal</span>
+      <small>Photo</small>
+    </a>
+    <nav class="identity-nav" aria-label="Hlavní navigace">
+      <a href="/">Úvod</a>
+      <a href="#portfolio">Portfolio</a>
+      <a class="active" href="/kdo-jsem/" aria-current="page">Kdo jsem</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+  </header>
+{{ end }}
+
+{{ define "main" }}
+  <article class="identity-page">
+    <section class="about-hero" aria-labelledby="about-title">
+      <div class="about-hero-copy">
+        <p class="eyebrow">Kdo jsem</p>
+        <h1 id="about-title">Za fotoaparátem hledám světlo, atmosféru a skutečné momenty.</h1>
+        <p class="about-lead">
+          Jsem fotograf na volné noze. Zachycuji lidi, energii živých událostí i charakter míst — od ateliéru a koncertních pódií po interiéry a pohledy z výšky.
+        </p>
+        <div class="about-actions">
+          <a class="button button-primary" href="#portfolio">Prohlédnout zaměření</a>
+          <a class="button button-secondary" href="#kontakt">Domluvit spolupráci</a>
+        </div>
+      </div>
+
+      {{ with .Resources.GetMatch "kdo-jsem.jpg" }}
+        <figure class="about-portrait">
+          <img src="{{ .RelPermalink }}" alt="Fotograf Doležal Photo při práci s fotoaparátem" width="{{ .Width }}" height="{{ .Height }}" />
+          <figcaption>Každý příběh si zaslouží vlastní pohled.</figcaption>
+        </figure>
+      {{ end }}
+    </section>
+
+    <section class="about-story" aria-labelledby="story-title">
+      <div>
+        <p class="eyebrow">Můj přístup</p>
+        <h2 id="story-title">Fotografie má působit opravdově, ne naaranžovaně.</h2>
+      </div>
+      <div class="about-story-text">
+        <p>
+          Při focení hledám přirozené momenty, výrazné světlo a detaily, které dávají výsledným snímkům atmosféru. Každou zakázku beru jako samostatný příběh a přizpůsobuji jí svůj způsob práce.
+        </p>
+        <p>
+          Baví mě pestrost fotografie: soustředěná práce v ateliéru, tempo koncertu, přesnost interiérové fotografie i úplně nový pohled, který nabízí dron. U svatebních příběhů propojuji fotografii také s videem.
+        </p>
+      </div>
+    </section>
+
+    <section class="about-focus" id="portfolio" aria-labelledby="focus-title">
+      <div class="section-heading">
+        <p class="eyebrow">Čemu se věnuji</p>
+        <h2 id="focus-title">Lidé, události i prostor.</h2>
+      </div>
+      <div class="focus-grid">
+        <article>
+          <span>01</span>
+          <h3>Lidé a příběhy</h3>
+          <p>Ateliérové focení, portréty a svatební příběhy zachycené fotografií i videem.</p>
+        </article>
+        <article>
+          <span>02</span>
+          <h3>Energie okamžiku</h3>
+          <p>Koncerty a živé události, kde rozhoduje rychlá reakce, světlo a správný moment.</p>
+        </article>
+        <article>
+          <span>03</span>
+          <h3>Prostor a detail</h3>
+          <p>Interiéry, catering a letecké záběry, které ukazují celek i drobnosti s charakterem.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="about-cta" id="kontakt" aria-labelledby="contact-title">
+      <p class="eyebrow">Spolupráce</p>
+      <h2 id="contact-title">Máte příběh, který stojí za zachycení?</h2>
+      <p>Ozvěte se mi. Společně probereme představu, místo i podobu výsledných fotografií nebo videa.</p>
+      <p class="contact-note">Kontaktní údaje doplníme v dalším kroku.</p>
+    </section>
+  </article>
+{{ end }}
