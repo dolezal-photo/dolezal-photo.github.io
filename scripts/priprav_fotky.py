@@ -11,13 +11,14 @@ import sys
 import unicodedata
 from pathlib import Path
 
-from PIL import Image, ImageOps
+from PIL import Image, ImageChops, ImageOps
 
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 SOURCE_ROOT = PROJECT_ROOT / "fotky-originaly"
 MANIFEST_PATH = SOURCE_ROOT / ".komprese.json"
 SETTINGS_PATH = SOURCE_ROOT / "nastaveni.json"
+LOGO_DESTINATION = PROJECT_ROOT / "assets" / "images" / "logo.png"
 
 TARGETS = {
     "kdo-jsem": (PROJECT_ROOT / "content" / "kdo-jsem", "kdo-jsem.jpg"),
@@ -90,7 +91,7 @@ def save_manifest(files: dict[str, dict[str, object]]) -> None:
     os.replace(temp_path, MANIFEST_PATH)
 
 
-def load_settings() -> tuple[str, dict[str, list[str]]]:
+def load_settings() -> tuple[str, str, dict[str, list[str]]]:
     try:
         data = json.loads(SETTINGS_PATH.read_text(encoding="utf-8"))
     except FileNotFoundError as error:
@@ -104,6 +105,12 @@ def load_settings() -> tuple[str, dict[str, list[str]]]:
     portrait = data.get("kdo_jsem", "")
     if not isinstance(portrait, str):
         raise ValueError("Hodnota kdo_jsem musi byt nazev souboru.")
+
+    logo = data.get("logo", "")
+    if not isinstance(logo, str):
+        raise ValueError("Hodnota logo musi byt nazev souboru.")
+    if logo and Path(logo).name != logo:
+        raise ValueError("Hodnota logo musi obsahovat pouze nazev souboru.")
 
     portfolio_data = data.get("portfolio", {})
     if not isinstance(portfolio_data, dict):
@@ -120,7 +127,7 @@ def load_settings() -> tuple[str, dict[str, list[str]]]:
             raise ValueError(f"Poradi pro {album} obsahuje stejny soubor vicekrat.")
         portfolio[album] = order
 
-    return portrait, portfolio
+    return portrait, logo, portfolio
 
 
 def select_sources(
@@ -166,9 +173,12 @@ def select_sources(
 def is_managed_output(relative_path: str) -> bool:
     try:
         output = (PROJECT_ROOT / relative_path).resolve()
-        return output.suffix.lower() == ".jpg" and any(
-            output.is_relative_to(destination_dir.resolve())
-            for destination_dir, _ in TARGETS.values()
+        return output == LOGO_DESTINATION.resolve() or (
+            output.suffix.lower() == ".jpg"
+            and any(
+                output.is_relative_to(destination_dir.resolve())
+                for destination_dir, _ in TARGETS.values()
+            )
         )
     except (OSError, ValueError):
         return False
@@ -229,6 +239,51 @@ def optimize(source: Path, destination: Path, max_edge: int, quality: int) -> No
     os.replace(temp_destination, destination)
 
 
+def optimize_logo(source: Path, destination: Path, max_edge: int) -> None:
+    """Zmensi logo, odstrani prazdne bile okraje a zachova format PNG."""
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    temp_destination = destination.with_name(f".{destination.name}.tmp")
+
+    with Image.open(source) as opened:
+        image = ImageOps.exif_transpose(opened).convert("RGBA")
+
+        # Pro nalezeni obsahu se logo slozi na bile pozadi. Tenkou krajni
+        # linku ignorujeme, aby exportni artefakt nerozbil automaticky orez.
+        white = Image.new("RGBA", image.size, "white")
+        composited = Image.alpha_composite(white, image).convert("RGB")
+        difference = ImageChops.difference(
+            composited, Image.new("RGB", composited.size, "white")
+        ).convert("L")
+        mask = difference.point(lambda value: 255 if value > 12 else 0)
+        width, height = mask.size
+        edge = max(12, round(min(width, height) * 0.005))
+        if width > edge * 2 and height > edge * 2:
+            mask.paste(0, (0, 0, width, edge))
+            mask.paste(0, (0, height - edge, width, height))
+            mask.paste(0, (0, 0, edge, height))
+            mask.paste(0, (width - edge, 0, width, height))
+        content_box = mask.getbbox()
+        if content_box:
+            left, top, right, bottom = content_box
+            padding = max(8, round(max(right - left, bottom - top) * 0.025))
+            crop_box = (
+                max(0, left - padding),
+                max(0, top - padding),
+                min(image.width, right + padding),
+                min(image.height, bottom + padding),
+            )
+            image = image.crop(crop_box)
+
+        image.thumbnail(
+            (min(max_edge, 1800), min(max_edge, 1800)),
+            Image.Resampling.LANCZOS,
+            reducing_gap=3.0,
+        )
+        image.save(temp_destination, format="PNG", optimize=True)
+
+    os.replace(temp_destination, destination)
+
+
 def main() -> int:
     args = parse_args()
     manifest = load_manifest()
@@ -239,10 +294,10 @@ def main() -> int:
     original_bytes = 0
     web_bytes = 0
     removed = 0
-    tasks: list[tuple[Path, Path]] = []
+    tasks: list[tuple[Path, Path, str]] = []
 
     try:
-        portrait, portfolio_order = load_settings()
+        portrait, logo, portfolio_order = load_settings()
     except ValueError as error:
         print(f"CHYBA: {error}", file=sys.stderr)
         return 1
@@ -270,21 +325,38 @@ def main() -> int:
             destination = destination_dir / (
                 fixed_filename or f"{position:02d}-{safe_stem(source.stem)}.jpg"
             )
-            tasks.append((source, destination))
+            tasks.append((source, destination, "photo"))
+
+    if logo:
+        logo_source = SOURCE_ROOT / logo
+        if not logo_source.is_file():
+            print(
+                f"CHYBA: Vybrane logo {logo!r} neni ve slozce fotky-originaly.",
+                file=sys.stderr,
+            )
+            errors += 1
+        elif logo_source.suffix.lower() not in SUPPORTED_EXTENSIONS:
+            print(f"CHYBA: Logo {logo!r} nema podporovany format.", file=sys.stderr)
+            errors += 1
+        else:
+            tasks.append((logo_source, LOGO_DESTINATION, "logo"))
 
     active_source_keys = {
-        source.relative_to(PROJECT_ROOT).as_posix() for source, _ in tasks
+        source.relative_to(PROJECT_ROOT).as_posix() for source, _, _ in tasks
     }
     active_output_paths = {
-        destination.relative_to(PROJECT_ROOT).as_posix() for _, destination in tasks
+        destination.relative_to(PROJECT_ROOT).as_posix()
+        for _, destination, _ in tasks
     }
     obsolete_outputs: set[str] = set()
 
-    for source, destination in tasks:
+    for source, destination, kind in tasks:
 
         source_key = source.relative_to(PROJECT_ROOT).as_posix()
         output_key = destination.relative_to(PROJECT_ROOT).as_posix()
         current_signature = signature(source, args.max_edge, args.quality)
+        if kind == "logo":
+            current_signature["processor"] = "logo-v2"
         manifest_entry = manifest.get(source_key, {})
         old_output = manifest_entry.get("output")
         if isinstance(old_output, str) and old_output != output_key:
@@ -310,7 +382,10 @@ def main() -> int:
             continue
 
         try:
-            optimize(source, destination, args.max_edge, args.quality)
+            if kind == "logo":
+                optimize_logo(source, destination, args.max_edge)
+            else:
+                optimize(source, destination, args.max_edge, args.quality)
             updated_manifest[source_key] = {
                 "signature": current_signature,
                 "output": output_key,

@@ -2,6 +2,7 @@
 
 Do podsložek v tomto adresáři ukládej původní fotografie podle tématu:
 
+- přímo sem — zdrojový soubor loga
 - `kdo-jsem/` — kandidáti na portrét použitý na stránce „Kdo jsem“
 - `atelier/`
 - `koncerty/`
@@ -29,6 +30,7 @@ Nástroj:
 - nepřenáší EXIF ani GPS údaje,
 - uloží hotové kopie do odpovídajících galerií ve složce `content/portfolio/`,
 - portrét ze složky `kdo-jsem/` vždy uloží jako `content/kdo-jsem/kdo-jsem.jpg`.
+- logo zmenší, ořízne prázdné okraje a uloží jako webovou kopii do `assets/images/logo.png`.
 
 ## Výběr obrázků a pořadí
 
@@ -38,6 +40,12 @@ Hodnota `kdo_jsem` obsahuje přesný název vybraného portrétu ze složky `kdo
 
 ```json
 "kdo_jsem": "foto11_atelier_profil22 copy.jpg"
+```
+
+Hodnota `logo` obsahuje přesný název loga uloženého přímo v této složce:
+
+```json
+"logo": "logo dolezal 2026 33.png"
 ```
 
 V části `portfolio` zapisuj názvy fotografií v požadovaném pořadí. První fotografie bude zároveň titulní fotografií kategorie:

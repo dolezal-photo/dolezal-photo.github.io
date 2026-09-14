@@ -1,7 +1,12 @@
 <header class="identity-header">
   <a class="identity-brand" href="{{ site.Home.RelPermalink }}" aria-label="Doležal Photo – úvodní stránka">
-    <span>Doležal</span>
-    <small>Photo</small>
+    {{ with resources.Get "images/logo.png" }}
+      {{ $logo := . | fingerprint }}
+      <img class="identity-logo" src="{{ $logo.RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}" alt="">
+    {{ else }}
+      <span>Doležal</span>
+      <small>Photo</small>
+    {{ end }}
   </a>
   <nav class="identity-nav" aria-label="Hlavní navigace">
     {{ $currentPage := . }}

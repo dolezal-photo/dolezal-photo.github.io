@@ -56,6 +56,14 @@ body > header.identity-header {
   text-transform: uppercase;
 }
 
+.identity-logo {
+  display: block;
+  height: clamp(2.55rem, 4vw, 3.35rem);
+  mix-blend-mode: multiply;
+  object-fit: contain;
+  width: auto;
+}
+
 .identity-nav {
   align-items: center;
   display: flex;
@@ -532,6 +540,11 @@ body > footer {
     flex-direction: column;
     gap: 1rem;
     padding-bottom: 0.85rem;
+  }
+
+  .identity-logo {
+    height: 2.7rem;
+    max-width: 78vw;
   }
 
   .identity-nav {
