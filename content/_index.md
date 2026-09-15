@@ -1,3 +1,3 @@
 ---
-title: "Moje Portfolio"
+theme: light
 ---

@@ -1,0 +1,18 @@
+menu: Menu
+home: Úvod
+pageNotFound: Stránka nenalezena
+toHomepage: Zpět na úvod
+closeTitle: Zavřít
+zoomTitle: Přiblížit
+arrowPrevTitle: Předchozí fotografie
+arrowNextTitle: Další fotografie
+errorMsg: Fotografii se nepodařilo načíst
+downloadTitle: Stáhnout fotografii
+relatedAlbums: Další série
+photoCount:
+  one: 1 fotografie
+  few: "{{ . }} fotografie"
+  other: "{{ . }} fotografií"
+albumCount:
+  one: "{{ .photoCount }} v {{ .count }} albu"
+  other: "{{ .photoCount }} v {{ .count }} albech"

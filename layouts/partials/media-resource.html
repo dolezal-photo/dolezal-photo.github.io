@@ -1,0 +1,20 @@
+{{- $settings := partialCached "settings.html" . -}}
+{{- $mediaID := .id -}}
+{{- $media := index $settings.media $mediaID -}}
+{{- if not $media -}}
+  {{- errorf "Nezname media %q v nastaveni.json" $mediaID -}}
+{{- end -}}
+{{- $resource := false -}}
+{{- if eq $media.typ "logo" -}}
+  {{- $resource = resources.Get "images/logo.png" -}}
+{{- else -}}
+  {{- $sourceSection := index (split $media.soubor "/") 0 -}}
+  {{- $page := site.GetPage (cond (eq $sourceSection "kdo-jsem") "/kdo-jsem" (printf "/portfolio/%s" $sourceSection)) -}}
+  {{- with $page -}}
+    {{- $resource = .Resources.GetMatch (printf "%s.jpg" $mediaID) -}}
+  {{- end -}}
+{{- end -}}
+{{- if not $resource -}}
+  {{- errorf "Chybi webova kopie media %q; spust python3 scripts/priprav_fotky.py" $mediaID -}}
+{{- end -}}
+{{- return $resource -}}

@@ -1,17 +1,23 @@
 {{ define "main" }}
+  {{ $settings := partialCached "settings.html" . }}
+  {{ $contact := $settings.kontakt }}
   <article class="contact-page">
     <section class="contact-intro">
       <div>
-        <p class="eyebrow">Kontakt</p>
-        <h1>Pojďme zachytit váš příběh.</h1>
+        <p class="eyebrow">{{ $contact.stit }}</p>
+        <h1>{{ $contact.nadpis }}</h1>
       </div>
       <div class="contact-copy">
-        <p>Máte představu o focení nebo videu? Napište mi základní informace o projektu, místě a termínu. Společně vymyslíme nejlepší podobu výsledku.</p>
+        <p>{{ $contact.text }}</p>
         <div class="contact-placeholder">
-          <span>Kontaktní údaje</span>
-          <strong>Doplníme po potvrzení veřejného e-mailu nebo telefonu.</strong>
+          <span>{{ $contact.instagram_stit }}</span>
+          <a class="contact-instagram" href="{{ $settings.spolecne.instagram.url }}" target="_blank" rel="noopener noreferrer" aria-label="{{ $settings.spolecne.instagram.aria }}">
+            {{ $settings.spolecne.instagram.uzivatelske_jmeno }} <span aria-hidden="true">↗</span>
+          </a>
         </div>
-        <a class="button button-secondary" href="/portfolio/">Nejdřív si prohlédnout portfolio</a>
+        <a class="button button-primary" href="{{ $settings.spolecne.instagram.url }}" target="_blank" rel="noopener noreferrer">{{ $contact.instagram_tlacitko }} <span aria-hidden="true">↗</span></a>
+        <p class="contact-note">{{ $contact.poznamka }}</p>
+        <a class="text-link" href="{{ "/portfolio/" | relURL }}">{{ $contact.portfolio_odkaz }} <span aria-hidden="true">→</span></a>
       </div>
     </section>
   </article>

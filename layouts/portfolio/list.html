@@ -1,34 +1,16 @@
 {{ define "main" }}
-  <section class="page-intro">
-    <p class="eyebrow">Portfolio</p>
-    <h1>Každý příběh potřebuje jiný pohled.</h1>
-    <p>Vyberte si oblast. Každá kategorie má vlastní stránku a samostatnou galerii.</p>
+  {{ $settings := partialCached "settings.html" . }}
+  {{ $intro := $settings.portfolio.uvod }}
+  <section class="page-intro portfolio-intro">
+    <p class="eyebrow">{{ $intro.stit }}</p>
+    <h1>{{ $intro.nadpis }}</h1>
+    <p>{{ $intro.text }}</p>
   </section>
-
-  <section class="portfolio-index" aria-label="Kategorie portfolia">
-    {{ range $index, $album := .Pages.ByWeight }}
-      <a class="portfolio-category-card" href="{{ $album.RelPermalink }}">
-        <div class="portfolio-category-media">
-          {{ $images := $album.Resources.ByType "image" }}
-          {{ if gt (len $images) 0 }}
-            {{ $cover := index $images 0 }}
-            {{ $thumbnail := $cover.Filter (slice images.AutoOrient (images.Process "fill 900x700")) }}
-            <img src="{{ $thumbnail.RelPermalink }}" alt="{{ $album.Title }}" width="{{ $thumbnail.Width }}" height="{{ $thumbnail.Height }}" />
-          {{ else }}
-            <div class="portfolio-category-placeholder" aria-hidden="true">
-              <span>{{ printf "%02d" (add $index 1) }}</span>
-            </div>
-          {{ end }}
-        </div>
-        <div class="portfolio-category-copy">
-          <div>
-            <p>{{ printf "%02d" (add $index 1) }}</p>
-            <h2>{{ $album.Title }}</h2>
-            {{ with $album.Description }}<span>{{ . }}</span>{{ end }}
-          </div>
-          <span class="portfolio-category-arrow" aria-hidden="true">→</span>
-        </div>
-      </a>
+  <section class="portfolio-index" aria-label="{{ $intro.kategorie_aria }}">
+    {{ range $index, $category := $settings.portfolio.kategorie }}
+      {{ $album := site.GetPage (printf "/portfolio/%s" $category.id) }}
+      {{ partial "portfolio-card.html" (dict "page" $album "category" $category "eager" (lt $index 2)) }}
     {{ end }}
   </section>
+  {{ partial "portfolio-cta.html" . }}
 {{ end }}

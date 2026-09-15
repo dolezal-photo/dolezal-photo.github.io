@@ -1,27 +1,20 @@
 baseURL = 'https://dolezal-photo.github.io/'
 languageCode = 'cs-CZ'
+defaultContentLanguage = 'cs'
 title = 'Doležal Photo'
 theme = "gallery"
-copyright = "© Doležal Photo"
 
 [params]
   defaultTheme = "light"
-  description = "Fotograf na volné noze. Ateliér, koncerty, dron, interiéry, gastronomie a svatební příběhy."
 
-[menu]
-  [[menu.main]]
-    name = "Úvod"
-    pageRef = "/"
-    weight = 1
-  [[menu.main]]
-    name = "Portfolio"
-    pageRef = "/portfolio"
-    weight = 2
-  [[menu.main]]
-    name = "Kdo jsem"
-    pageRef = "/kdo-jsem"
-    weight = 3
-  [[menu.main]]
-    name = "Kontakt"
-    pageRef = "/kontakt"
-    weight = 4
+  [params.gallery]
+    boxSpacing = 16
+    targetRowHeight = 500
+
+[module]
+  [[module.mounts]]
+    source = "assets"
+    target = "assets"
+  [[module.mounts]]
+    source = "fotky-originaly/nastaveni.json"
+    target = "assets/config/nastaveni.json"

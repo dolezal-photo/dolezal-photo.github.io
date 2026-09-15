@@ -1,71 +1,119 @@
-# Kam nahrávat fotografie
+# Jediné místo pro fotografie a obsah webu
 
-Do podsložek v tomto adresáři ukládej původní fotografie podle tématu:
+V této složce jsou původní fotografie a soubor `nastaveni.json`. Právě tento JSON je jediný soubor, ve kterém se ručně řídí obsah webu.
 
-- přímo sem — zdrojový soubor loga
-- `kdo-jsem/` — kandidáti na portrét použitý na stránce „Kdo jsem“
-- `atelier/`
-- `koncerty/`
-- `shora/`
-- `catering/`
-- `svatebni-video/`
-- `interiery/`
+Neupravuj komprimované obrázky ve složkách `content/` ani `assets/images/`. Jsou to automatické webové kopie a přípravný nástroj je může kdykoli nahradit.
 
-Originály se na web přímo neposílají a Git je ignoruje. Zůstávají v plné kvalitě jako bezpečný zdroj pro případnou novou exportní verzi.
+## Jak je JSON uspořádaný
 
-## Příprava fotografií pro web
+- `media` — katalog úplně všech obrazových souborů ve `fotky-originaly`
+- `spolecne` — název webu, logo, menu, Instagram, patička a společná kontaktní výzva
+- `uvod` — všechny texty a fotografie úvodní stránky
+- `portfolio` — úvod portfolia, pořadí kategorií, texty kategorií, titulní fotografie, galerie a svatební video
+- `kdo_jsem` — všechny texty a vybraný portrét stránky „Kdo jsem“
+- `kontakt` — všechny texty stránky Kontakt
 
-V kořenové složce projektu spusť:
+Každá fotografie má v `media` stabilní ID, například:
+
+```json
+"atelier-p1140078": {
+  "typ": "fotografie",
+  "soubor": "atelier/P1140078.jpg",
+  "alt": "Portrét ženy v černém roláku opřené o židli",
+  "stav": "aktivni"
+}
+```
+
+Ostatní části JSON používají už jen toto ID. Popis `alt` slouží lidem se čtečkou obrazovky a také vyhledávačům.
+
+## Nejčastější změny
+
+### Fotografie nahoře na úvodní stránce
+
+Uprav hodnotu:
+
+```text
+uvod → hero → fotografie
+```
+
+Je v ní výslovně uvedené ID `atelier-p1140078`. Úvodní snímek už se nevybírá skrytě jako první fotografie galerie.
+
+### Portrét na stránce „Kdo jsem“
+
+Uprav hodnotu:
+
+```text
+kdo_jsem → fotografie
+```
+
+Stejné nebo jiné ID lze nastavit také pro upoutávku na úvodu v `uvod → o_mne → fotografie`.
+
+### Pořadí kategorií portfolia
+
+Přesuň celé objekty v poli:
+
+```text
+portfolio → kategorie
+```
+
+### Titulní snímek kategorie
+
+V dané kategorii změň `titulni_fotografie`. Použité ID musí zároveň zůstat v jejím poli `fotografie`.
+
+### Pořadí snímků v galerii
+
+Přesuň ID v poli `fotografie` dané kategorie. Názvy webových kopií jsou stabilní, takže pouhá změna pořadí už fotografie znovu nekomprimuje.
+
+### Texty
+
+Texty uprav přímo v odpovídající sekci `spolecne`, `uvod`, `portfolio`, `kdo_jsem` nebo `kontakt`. Po změně samotného textu není nutné spouštět přípravu obrázků; běžící Hugo náhled změnu automaticky načte.
+
+## Přidání nové fotografie
+
+1. Vlož originál do správné podsložky: `atelier`, `koncerty`, `svatebni-video`, `interiery`, `shora`, `catering` nebo `kdo-jsem`.
+2. Přidej mu jedinečné ID do katalogu `media`.
+3. Chceš-li ho zobrazit, vlož jeho ID do příslušné stránky nebo galerie a ponech `"stav": "aktivni"`.
+4. Spusť kontrolu a přípravu:
 
 ```sh
+python3 scripts/priprav_fotky.py --check
 python3 scripts/priprav_fotky.py
 ```
 
+Kontrola záměrně ohlásí chybu, pokud ve složce leží obrázek, který v katalogu `media` chybí. JSON tak nemůže být nepozorovaně neúplný.
+
+## Rezervní fotografie
+
+Obrázek s hodnotou `"stav": "rezerva"` je v JSON evidovaný, ale nástroj pro něj nevytváří webovou kopii. Chceš-li ho použít, změň stav na `aktivni` a vlož jeho ID do požadované sekce.
+
+Aktuálně jsou jako rezerva vedené:
+
+- `kdo-jsem-alternativa`
+- `atelier-p1180272-rezerva`
+
+## Co dělá příprava fotografií
+
 Nástroj:
 
+- nejprve zkontroluje úplnost JSON a existenci všech souborů,
 - zpracuje pouze nové nebo změněné originály,
 - opraví orientaci podle EXIF,
+- převede vložený barevný profil do sRGB,
 - zmenší delší stranu maximálně na 2400 px,
-- uloží progresivní JPEG v kvalitě 82,
-- nepřenáší EXIF ani GPS údaje,
-- uloží hotové kopie do odpovídajících galerií ve složce `content/portfolio/`,
-- portrét ze složky `kdo-jsem/` vždy uloží jako `content/kdo-jsem/kdo-jsem.jpg`.
-- logo zmenší, ořízne prázdné okraje a uloží jako webovou kopii do `assets/images/logo.png`.
+- uloží progresivní JPEG v kvalitě 82 bez EXIF a GPS,
+- pro logo zachová PNG a odstraní prázdné okraje,
+- bezpečně odstraní jen staré automaticky spravované kopie.
 
-## Výběr obrázků a pořadí
-
-Ručně upravuj pouze soubor `nastaveni.json` v této složce. Technický soubor `.komprese.json` je automatická cache a není určený k úpravám.
-
-Hodnota `kdo_jsem` obsahuje přesný název vybraného portrétu ze složky `kdo-jsem/`:
-
-```json
-"kdo_jsem": "foto11_atelier_profil22 copy.jpg"
-```
-
-Hodnota `logo` obsahuje přesný název loga uloženého přímo v této složce:
-
-```json
-"logo": "logo dolezal 2026 33.png"
-```
-
-V části `portfolio` zapisuj názvy fotografií v požadovaném pořadí. První fotografie bude zároveň titulní fotografií kategorie:
-
-```json
-"atelier": [
-  "hlavni-portret.jpg",
-  "portret-02.jpg",
-  "portret-03.jpg"
-]
-```
-
-Fotografie, které v seznamu neuvedeš, se automaticky přidají za nastavené pořadí podle názvu souboru.
-
-Při změně nastavení lze vynutit nový export ze zachovaných originálů:
+Samotnou kontrolu bez zápisu spustíš:
 
 ```sh
-python3 scripts/priprav_fotky.py --force
+python3 scripts/priprav_fotky.py --check
 ```
 
-Podporované vstupy jsou JPEG, PNG a TIFF. Soubory RAW nebo HEIC nejprve exportuj ve fotografickém editoru jako JPEG v barevném prostoru sRGB.
+Náhled plánovaných změn bez zápisu:
 
-Ve složce `kdo-jsem/` můžeš ponechat více kandidátů. Aktivní portrét určuje `kdo_jsem` v `nastaveni.json`. Webová kopie dostane vždy stálý název `kdo-jsem.jpg`, takže šablonu není nutné upravovat.
+```sh
+python3 scripts/priprav_fotky.py --dry-run
+```
+
+Podporované vstupy jsou JPEG, PNG a TIFF. RAW nebo HEIC nejprve exportuj ve fotografickém editoru jako JPEG v barevném prostoru sRGB.

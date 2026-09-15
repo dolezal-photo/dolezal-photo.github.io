@@ -1,0 +1,16 @@
+{{ $page := .page }}
+{{ $category := .category }}
+{{ $settings := partialCached "settings.html" . }}
+<section class="gallery portfolio-gallery" aria-label="{{ $settings.portfolio.detail.galerie_aria }} {{ $category.nazev }}">
+  <div id="gallery">
+    {{ range $index, $mediaID := $category.fotografie }}
+      {{ $image := partial "media-resource.html" (dict "id" $mediaID) }}
+      {{ $media := index $settings.media $mediaID }}
+      <a class="gallery-item" href="{{ $image.RelPermalink }}" data-pswp-src="{{ $image.RelPermalink }}" data-pswp-width="{{ $image.Width }}" data-pswp-height="{{ $image.Height }}" data-pswp-target="{{ $mediaID }}" aria-label="{{ $settings.portfolio.detail.zvetsit }}: {{ $media.alt }}" style="aspect-ratio: {{ $image.Width }} / {{ $image.Height }}">
+        <figure style="aspect-ratio: {{ $image.Width }} / {{ $image.Height }}">
+          {{ partial "responsive-photo.html" (dict "image" $image "alt" $media.alt "eager" (lt $index 3) "sizes" "(max-width: 640px) 92vw, (max-width: 1000px) 48vw, 35vw") }}
+        </figure>
+      </a>
+    {{ end }}
+  </div>
+</section>

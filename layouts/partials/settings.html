@@ -1,0 +1,5 @@
+{{- $source := resources.Get "config/nastaveni.json" -}}
+{{- if not $source -}}
+  {{- errorf "Chybi fotky-originaly/nastaveni.json" -}}
+{{- end -}}
+{{- return ($source | transform.Unmarshal) -}}

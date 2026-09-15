@@ -1,0 +1,21 @@
+{{ $album := .page }}
+{{ $category := .category }}
+{{ $settings := partialCached "settings.html" . }}
+{{ $coverID := $category.titulni_fotografie }}
+{{ $cover := partial "media-resource.html" (dict "id" $coverID) }}
+{{ $coverMedia := index $settings.media $coverID }}
+<a class="portfolio-category-card" href="{{ $album.RelPermalink }}">
+  <div class="portfolio-category-media">
+    {{ with $cover }}
+      {{ partial "responsive-photo.html" (dict "image" . "alt" $coverMedia.alt "sizes" "(max-width: 640px) 70vw, (max-width: 1000px) 35vw, 25vw" "eager" $.eager) }}
+    {{ end }}
+  </div>
+  <div class="portfolio-category-copy">
+    <div>
+      <p>{{ $category.cislo }} <span class="category-count">/ {{ len $category.fotografie }} {{ $settings.portfolio.detail.pocet_fotografii }}</span></p>
+      <h2>{{ $category.nazev }}</h2>
+      <span>{{ $category.tagline }}</span>
+    </div>
+    <span class="portfolio-category-arrow" aria-hidden="true">↗</span>
+  </div>
+</a>

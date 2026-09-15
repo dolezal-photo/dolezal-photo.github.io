@@ -1,13 +1,657 @@
 {
-  "_napoveda": "U kdo_jsem zadej přesný název souboru. V galeriích určuje seznam pořadí; první položka je titulní fotografie. Neuvedené soubory se přidají za seznam podle názvu.",
-  "logo": "logo dolezal 2026 33.png",
-  "kdo_jsem": "P1130621.JPG",
+  "schema_version": 2,
+  "_napoveda": {
+    "hlavni_pravidlo": "Toto je jediny rucne upravovany soubor pro obrazky a texty webu.",
+    "media": "Kazdy obrazovy soubor ve fotky-originaly je jednou v katalogu media. Stranky pouzivaji jeho kratke ID.",
+    "fotografie": "Po zmene souboru, poradi nebo vyberu fotografie spust python3 scripts/priprav_fotky.py. Zmena samotneho textu kompresi nevyzaduje.",
+    "rezerva": "Polozka se stavem rezerva je evidovana, ale na webu se nezobrazi, dokud jeji ID nepridas do nektere sekce."
+  },
+  "media": {
+    "logo": {
+      "typ": "logo",
+      "soubor": "logo dolezal 2026 33.png",
+      "alt": "",
+      "stav": "aktivni"
+    },
+    "kdo-jsem-hlavni": {
+      "typ": "fotografie",
+      "soubor": "kdo-jsem/P1130621.JPG",
+      "alt": "Fotograf Doležal Photo při práci s fotoaparátem",
+      "stav": "aktivni"
+    },
+    "kdo-jsem-alternativa": {
+      "typ": "fotografie",
+      "soubor": "kdo-jsem/foto11_atelier_profil22 copy.jpg",
+      "alt": "Fotograf v černé košili kontroluje snímek na fotoaparátu",
+      "stav": "rezerva"
+    },
+    "atelier-p1140078": {
+      "typ": "fotografie",
+      "soubor": "atelier/P1140078.jpg",
+      "alt": "Portrét ženy v černém roláku opřené o židli",
+      "stav": "aktivni"
+    },
+    "atelier-p1150286": {
+      "typ": "fotografie",
+      "soubor": "atelier/P1150286.JPG",
+      "alt": "Ateliérový portrét ženy se zkříženýma rukama na světlém pozadí",
+      "stav": "aktivni"
+    },
+    "atelier-portret-svetle-pozadi": {
+      "typ": "fotografie",
+      "soubor": "atelier/portret-svetle-pozadi.png",
+      "alt": "Portrét ženy v bílé košili a s kudrnatými vlasy",
+      "stav": "aktivni"
+    },
+    "atelier-p1130844": {
+      "typ": "fotografie",
+      "soubor": "atelier/P1130844.JPG",
+      "alt": "Smějící se žena opřená o židli ve světlém ateliéru",
+      "stav": "aktivni"
+    },
+    "atelier-p1002875": {
+      "typ": "fotografie",
+      "soubor": "atelier/P1002875.jpg",
+      "alt": "Portrét ženy s červenými vlasy na tmavém pozadí",
+      "stav": "aktivni"
+    },
+    "atelier-p1150668final22": {
+      "typ": "fotografie",
+      "soubor": "atelier/P1150668final22.JPG",
+      "alt": "Usměvavá žena s rozevlátými vlasy v bočním světle",
+      "stav": "aktivni"
+    },
+    "atelier-p1150541": {
+      "typ": "fotografie",
+      "soubor": "atelier/P1150541.JPG",
+      "alt": "Tanečnice v tylové sukni zachycená v úzkém pruhu světla",
+      "stav": "aktivni"
+    },
+    "atelier-p1140123": {
+      "typ": "fotografie",
+      "soubor": "atelier/P1140123.JPG",
+      "alt": "Uvolněný ateliérový portrét ženy v podřepu",
+      "stav": "aktivni"
+    },
+    "atelier-p1150706": {
+      "typ": "fotografie",
+      "soubor": "atelier/P1150706.JPG",
+      "alt": "Portrét ženy na židli s protisvětlem ve vlasech",
+      "stav": "aktivni"
+    },
+    "atelier-p1180272-rezerva": {
+      "typ": "fotografie",
+      "soubor": "atelier/varianty/P1180272.jpg",
+      "alt": "Ateliérový portrét ženy s kudrnatými vlasy v bílé košili",
+      "stav": "rezerva"
+    },
+    "koncerty-rock-67": {
+      "typ": "fotografie",
+      "soubor": "koncerty/rock (67).JPG",
+      "alt": "Kytarista v siluetě pod fialovým pódiovým světlem",
+      "stav": "aktivni"
+    },
+    "koncerty-rock-21": {
+      "typ": "fotografie",
+      "soubor": "koncerty/rock (21).JPG",
+      "alt": "Zpěvák s kytarou v zelených a červených světlech",
+      "stav": "aktivni"
+    },
+    "koncerty-rock-66": {
+      "typ": "fotografie",
+      "soubor": "koncerty/rock (66).JPG",
+      "alt": "Dvojice hudebníků u mikrofonu během klubového koncertu",
+      "stav": "aktivni"
+    },
+    "koncerty-rock-30": {
+      "typ": "fotografie",
+      "soubor": "koncerty/rock (30).JPG",
+      "alt": "Zpěvák v červeném světle a kouři na pódiu",
+      "stav": "aktivni"
+    },
+    "koncerty-p1110417": {
+      "typ": "fotografie",
+      "soubor": "koncerty/P1110417.jpg",
+      "alt": "Zpěvák s rukama nad hlavou v růžovém světle",
+      "stav": "aktivni"
+    },
+    "koncerty-p1110549": {
+      "typ": "fotografie",
+      "soubor": "koncerty/P1110549.jpg",
+      "alt": "Dva kytaristé při společném hraní na pódiu",
+      "stav": "aktivni"
+    },
+    "koncerty-p1110637": {
+      "typ": "fotografie",
+      "soubor": "koncerty/P1110637.jpg",
+      "alt": "Tančící publikum během koncertu v klubu",
+      "stav": "aktivni"
+    },
+    "koncerty-p1110380": {
+      "typ": "fotografie",
+      "soubor": "koncerty/P1110380.jpg",
+      "alt": "Celá kapela s bicími na klubovém pódiu",
+      "stav": "aktivni"
+    },
+    "koncerty-p1110659": {
+      "typ": "fotografie",
+      "soubor": "koncerty/P1110659.jpg",
+      "alt": "Kapela a publikum po společném koncertním večeru",
+      "stav": "aktivni"
+    },
+    "svatby-p1011522": {
+      "typ": "fotografie",
+      "soubor": "svatebni-video/P1011522.jpg",
+      "alt": "Detail snubních prstenů na rukou novomanželů nad svatební kyticí",
+      "stav": "aktivni"
+    },
+    "svatby-p1011618": {
+      "typ": "fotografie",
+      "soubor": "svatebni-video/P1011618.jpg",
+      "alt": "Novomanželé při společném fotografování v podvečerním slunci",
+      "stav": "aktivni"
+    },
+    "svatby-p1011482": {
+      "typ": "fotografie",
+      "soubor": "svatebni-video/P1011482.jpg",
+      "alt": "Blízký okamžik novomanželů s kyticí u vody",
+      "stav": "aktivni"
+    },
+    "svatby-p1160445": {
+      "typ": "fotografie",
+      "soubor": "svatebni-video/P1160445.JPG",
+      "alt": "Usměvaví novomanželé mezi svatebními hosty",
+      "stav": "aktivni"
+    },
+    "svatby-p1000503": {
+      "typ": "fotografie",
+      "soubor": "svatebni-video/P1000503.jpg",
+      "alt": "Nevěsta a ženich při venkovním obřadu",
+      "stav": "aktivni"
+    },
+    "svatby-p1000546": {
+      "typ": "fotografie",
+      "soubor": "svatebni-video/P1000546.jpg",
+      "alt": "Polibek novomanželů po svatebním obřadu",
+      "stav": "aktivni"
+    },
+    "svatby-p1000568": {
+      "typ": "fotografie",
+      "soubor": "svatebni-video/P1000568.jpg",
+      "alt": "Nevěsta se svatební kyticí ve slunečním světle",
+      "stav": "aktivni"
+    },
+    "svatby-p1011657": {
+      "typ": "fotografie",
+      "soubor": "svatebni-video/P1011657.jpg",
+      "alt": "Novomanželé čelem k sobě v teplém podvečerním světle",
+      "stav": "aktivni"
+    },
+    "svatby-p1011649": {
+      "typ": "fotografie",
+      "soubor": "svatebni-video/P1011649.jpg",
+      "alt": "Novomanželé v objetí na louce v protisvětle",
+      "stav": "aktivni"
+    },
+    "svatby-p1011632": {
+      "typ": "fotografie",
+      "soubor": "svatebni-video/P1011632.jpg",
+      "alt": "Ženich naklání nevěstu při polibku na louce",
+      "stav": "aktivni"
+    },
+    "svatby-p1011682": {
+      "typ": "fotografie",
+      "soubor": "svatebni-video/P1011682.jpg",
+      "alt": "Nevěsta v bílých šatech na okraji pole",
+      "stav": "aktivni"
+    },
+    "svatby-p1160355": {
+      "typ": "fotografie",
+      "soubor": "svatebni-video/P1160355.JPG",
+      "alt": "Svatební hosté při společném setkání na zahradě",
+      "stav": "aktivni"
+    },
+    "architektura-p1040027": {
+      "typ": "fotografie",
+      "soubor": "interiery/P1040027.jpg",
+      "alt": "Historická budova na konci úzké městské ulice",
+      "stav": "aktivni"
+    },
+    "architektura-p1040024": {
+      "typ": "fotografie",
+      "soubor": "interiery/P1040024.jpg",
+      "alt": "Zlaté detaily astronomického ciferníku pražského orloje",
+      "stav": "aktivni"
+    },
+    "architektura-p10401843": {
+      "typ": "fotografie",
+      "soubor": "interiery/P10401843.jpg",
+      "alt": "Odraz podzimní městské ulice v dešťové louži",
+      "stav": "aktivni"
+    },
+    "architektura-p10401844": {
+      "typ": "fotografie",
+      "soubor": "interiery/P10401844.jpg",
+      "alt": "Osvětlená skleněná pyramida Louvru za soumraku",
+      "stav": "aktivni"
+    },
+    "architektura-p10401845": {
+      "typ": "fotografie",
+      "soubor": "interiery/P10401845.jpg",
+      "alt": "Detail konstrukce Eiffelovy věže nad červeným listím",
+      "stav": "aktivni"
+    },
+    "architektura-p10401841": {
+      "typ": "fotografie",
+      "soubor": "interiery/P10401841.jpg",
+      "alt": "Osvětlená monumentální budova a fontána při západu slunce",
+      "stav": "aktivni"
+    },
+    "interiery-foto-2": {
+      "typ": "fotografie",
+      "soubor": "interiery/foto-2.jpg",
+      "alt": "Světlý obytný prostor s jídelním stolem a posezením",
+      "stav": "aktivni"
+    },
+    "interiery-foto-11": {
+      "typ": "fotografie",
+      "soubor": "interiery/foto-11.jpg",
+      "alt": "Ložnice s dvojlůžkem a teplým světlem stolních lamp",
+      "stav": "aktivni"
+    },
+    "interiery-foto-29": {
+      "typ": "fotografie",
+      "soubor": "interiery/foto-29.jpg",
+      "alt": "Podkrovní interiér s dřevěným zábradlím a jídelním stolem",
+      "stav": "aktivni"
+    },
+    "interiery-foto-51": {
+      "typ": "fotografie",
+      "soubor": "interiery/foto-51.jpg",
+      "alt": "Posezení u dřevěných oken s výhledem na střechy",
+      "stav": "aktivni"
+    },
+    "dron-kostel-2": {
+      "typ": "fotografie",
+      "soubor": "shora/Kostel 2.jpg",
+      "alt": "Kostel uprostřed polí a zvlněné krajiny z ptačí perspektivy",
+      "stav": "aktivni"
+    },
+    "dron-brno-klaster": {
+      "typ": "fotografie",
+      "soubor": "shora/Brno klaster.jpg",
+      "alt": "Klášterní areál s červenými střechami při pohledu z dronu",
+      "stav": "aktivni"
+    },
+    "dron-zabehlice": {
+      "typ": "fotografie",
+      "soubor": "shora/zabehlice-1-2.jpg",
+      "alt": "Zelená zahrada a drobná stavba při kolmém pohledu shora",
+      "stav": "aktivni"
+    },
+    "dron-pankrac": {
+      "typ": "fotografie",
+      "soubor": "shora/Pankrac.jpg",
+      "alt": "Výškové budovy na pražské Pankráci z dronu",
+      "stav": "aktivni"
+    },
+    "dron-jesenice-2": {
+      "typ": "fotografie",
+      "soubor": "shora/Jesenice 2.jpg",
+      "alt": "Domy na okraji Jesenice mezi zelenými poli",
+      "stav": "aktivni"
+    },
+    "dron-smichov": {
+      "typ": "fotografie",
+      "soubor": "shora/Smichov.jpg",
+      "alt": "Zástavba pražského Smíchova a okolní zeleň z výšky",
+      "stav": "aktivni"
+    },
+    "dron-rublova": {
+      "typ": "fotografie",
+      "soubor": "shora/Rublova.jpg",
+      "alt": "Městská čtvrť rozprostřená v kopcovité krajině",
+      "stav": "aktivni"
+    },
+    "dron-skola-2": {
+      "typ": "fotografie",
+      "soubor": "shora/Skola 2.jpg",
+      "alt": "Budova školy a její okolí při pohledu z dronu",
+      "stav": "aktivni"
+    },
+    "dron-sobesice": {
+      "typ": "fotografie",
+      "soubor": "shora/Sobesice.jpg",
+      "alt": "Rodinné domy, zahrady a krajina kolem Soběšic",
+      "stav": "aktivni"
+    },
+    "catering-p1160164": {
+      "typ": "fotografie",
+      "soubor": "catering/P1160164.JPG",
+      "alt": "Slavnostně prostřený svatební stůl s růžovými ubrousky",
+      "stav": "aktivni"
+    },
+    "catering-p1160074": {
+      "typ": "fotografie",
+      "soubor": "catering/P1160074.JPG",
+      "alt": "Detail talíře, příborů a růžového ubrousku na svatebním stole",
+      "stav": "aktivni"
+    },
+    "catering-p1160518": {
+      "typ": "fotografie",
+      "soubor": "catering/P1160518.JPG",
+      "alt": "Novomanželé při společné polévce na svatební hostině",
+      "stav": "aktivni"
+    },
+    "catering-p1160628": {
+      "typ": "fotografie",
+      "soubor": "catering/P1160628.JPG",
+      "alt": "Usměvavá obsluha při servírování svatebního menu",
+      "stav": "aktivni"
+    }
+  },
+  "spolecne": {
+    "nazev_webu": "Doležal Photo",
+    "popis_webu": "Portréty, koncerty, svatby, architektura a pohledy z dronu. Fotografie a video Doležal Photo.",
+    "copyright": "© Doležal Photo",
+    "logo": {
+      "media": "logo",
+      "odkaz_aria": "Doležal Photo – úvodní stránka",
+      "nahradni_nazev": "Doležal",
+      "nahradni_doplnek": "Photo"
+    },
+    "instagram": {
+      "url": "https://www.instagram.com/dolezal_photo/",
+      "uzivatelske_jmeno": "@dolezal_photo",
+      "zakulisi_url": "https://www.instagram.com/stories/highlights/18125968234866505/",
+      "aria": "Doležal Photo na Instagramu, otevře se v novém panelu"
+    },
+    "hlavicka": {
+      "navigace_aria": "Hlavní navigace",
+      "menu": [
+        {
+          "text": "Úvod",
+          "url": "/"
+        },
+        {
+          "text": "Portfolio",
+          "url": "/portfolio/"
+        },
+        {
+          "text": "Kdo jsem",
+          "url": "/kdo-jsem/"
+        },
+        {
+          "text": "Kontakt",
+          "url": "/kontakt/"
+        }
+      ]
+    },
+    "paticka": {
+      "motto": "Světlo. Blízkost. Atmosféra."
+    },
+    "vyzva": {
+      "stit": "Máte svůj příběh?",
+      "nadpis": "Pojďme ho zachytit.",
+      "tlacitko": "Domluvit spolupráci",
+      "url": "/kontakt/"
+    }
+  },
+  "uvod": {
+    "seo": {
+      "titulek": "Fotografie s atmosférou",
+      "popis": "Portréty, koncerty, svatby a místa očima Doležal Photo. Prohlédněte si výběr fotografií a domluvte si focení."
+    },
+    "hero": {
+      "stit": "Doležal Photo · Fotografie & video",
+      "nadpis_radky": [
+        "Světlo.",
+        "Blízkost."
+      ],
+      "nadpis_zvyrazneny": "Atmosféra.",
+      "text": "Lidé, jejich příběhy a místa, která mají co říct. Zachycuji je tak, abyste se k nim chtěli vracet.",
+      "primarni_odkaz": {
+        "text": "Prohlédnout portfolio",
+        "url": "/portfolio/"
+      },
+      "sekundarni_odkaz": {
+        "text": "Domluvit focení",
+        "url": "/kontakt/"
+      },
+      "fotografie": "atelier-p1140078",
+      "fotografie_odkaz": "/portfolio/atelier/",
+      "fotografie_odkaz_aria": "Prohlédnout sérii Portréty",
+      "popisek_vlevo": "01 / Portréty",
+      "popisek_vpravo": "Osobnost. Výraz. Ty."
+    },
+    "vyber": {
+      "stit": "Výběr z tvorby",
+      "nadpis_radky": [
+        "Každý příběh.",
+        "Vlastní pohled."
+      ],
+      "text_radky": [
+        "Od klidného portrétu po energii koncertu.",
+        "Šest sérií, šest různých atmosfér."
+      ],
+      "sekce_aria": "Výběr fotografických sérií"
+    },
+    "o_mne": {
+      "stit": "Za fotoaparátem",
+      "nadpis_radky": [
+        "Hledám okamžiky,",
+        "které mají co říct."
+      ],
+      "text": "Jsem fotograf na volné noze. Baví mě přirozené výrazy, výrazné světlo i drobnosti, které dávají fotografii atmosféru.",
+      "odkaz_text": "Více o mně",
+      "odkaz_url": "/kdo-jsem/",
+      "fotografie": "kdo-jsem-hlavni"
+    }
+  },
   "portfolio": {
-    "atelier": [],
-    "koncerty": [],
-    "shora": [],
-    "catering": [],
-    "svatebni-video": [],
-    "interiery": []
+    "seo": {
+      "titulek": "Portfolio",
+      "popis": "Vyberte si oblast a prohlédněte si samostatnou galerii."
+    },
+    "uvod": {
+      "stit": "Portfolio / Vybrané fotografie",
+      "nadpis": "Každý příběh potřebuje jiný pohled.",
+      "text": "Osobnost v portrétu. Energie na pódiu. Blízkost ve svatební den. Vyberte si sérii a prohlédněte si ji zblízka.",
+      "kategorie_aria": "Kategorie portfolia"
+    },
+    "detail": {
+      "zpet": "Všechny série",
+      "stit": "Portfolio",
+      "pocet_fotografii": "fotografií",
+      "prohlednout": "Prohlédněte si fotografie zblízka",
+      "galerie_aria": "Fotogalerie",
+      "zvetsit": "Zvětšit",
+      "zaver_stit": "Vaše chvíle, můj pohled",
+      "kontakt_odkaz": "Napište mi",
+      "dalsi_aria": "Další fotografické série",
+      "dalsi_nadpis": "Další série"
+    },
+    "kategorie": [
+      {
+        "id": "atelier",
+        "cislo": "01",
+        "nazev": "Portréty",
+        "tagline": "Osobnost. Výraz. Ty.",
+        "seo_popis": "Portréty a ateliérová fotografie. Přirozený výraz, jemné světlo a prostor být sám sebou.",
+        "uvod": "Každý člověk má svůj výraz. V ateliéru hledám světlo, ve kterém vynikne — od klidného portrétu po spontánní úsměv.",
+        "vyzva": "Domluvit portrétní focení",
+        "titulni_fotografie": "atelier-p1140078",
+        "fotografie": [
+          "atelier-p1140078",
+          "atelier-p1150286",
+          "atelier-portret-svetle-pozadi",
+          "atelier-p1130844",
+          "atelier-p1002875",
+          "atelier-p1150668final22",
+          "atelier-p1150541",
+          "atelier-p1140123",
+          "atelier-p1150706"
+        ]
+      },
+      {
+        "id": "koncerty",
+        "cislo": "02",
+        "nazev": "Koncerty",
+        "tagline": "Hudba. Energie. Atmosféra.",
+        "seo_popis": "Koncertní fotografie z klubů a živých vystoupení. Hudba, světlo a energie publika.",
+        "uvod": "Světla se mění, hudba zní a každý okamžik je jiný. Zachycuji dění na pódiu i energii lidí pod ním.",
+        "vyzva": "Domluvit focení koncertu",
+        "titulni_fotografie": "koncerty-rock-67",
+        "fotografie": [
+          "koncerty-rock-67",
+          "koncerty-rock-21",
+          "koncerty-rock-66",
+          "koncerty-rock-30",
+          "koncerty-p1110417",
+          "koncerty-p1110549",
+          "koncerty-p1110637",
+          "koncerty-p1110380",
+          "koncerty-p1110659"
+        ]
+      },
+      {
+        "id": "svatebni-video",
+        "cislo": "03",
+        "nazev": "Svatby",
+        "tagline": "Blízkost. Emoce. Vzpomínky.",
+        "seo_popis": "Svatební fotografie a video. Od drobných detailů po chvíle, které patří jen vám.",
+        "uvod": "Pohledy, doteky a chvíle mezi nimi. Váš den vyprávím fotografiemi i filmem, s důrazem na přirozenost a atmosféru.",
+        "vyzva": "Pojďme zachytit váš den.",
+        "titulni_fotografie": "svatby-p1011522",
+        "video": {
+          "youtube_id": "Tbbqyz8PKYo",
+          "pocet_text": "a jeden svatební film",
+          "stit": "Příběh v pohybu",
+          "nadpis_radky": [
+            "Když fotografie",
+            "dostanou hlas."
+          ],
+          "text": "Svatební den Kačí a Milana zachycený ve filmu.",
+          "odkaz_text": "Otevřít na YouTube",
+          "prehravac_titulek": "Svatební film — Kačí a Milan, 2025"
+        },
+        "fotografie": [
+          "svatby-p1011522",
+          "svatby-p1011618",
+          "svatby-p1011482",
+          "svatby-p1160445",
+          "svatby-p1000503",
+          "svatby-p1000546",
+          "svatby-p1000568",
+          "svatby-p1011657",
+          "svatby-p1011649",
+          "svatby-p1011632",
+          "svatby-p1011682",
+          "svatby-p1160355"
+        ]
+      },
+      {
+        "id": "interiery",
+        "cislo": "04",
+        "nazev": "Architektura",
+        "tagline": "Linie. Světlo. Prostor.",
+        "seo_popis": "Architektura a interiéry. Městské detaily, výrazné stavby a prostory v přirozeném světle.",
+        "uvod": "Rytmus fasád, odrazy po dešti i světlo v obytném prostoru. Výběr propojuje městskou architekturu s fotografií interiérů.",
+        "vyzva": "Domluvit focení prostoru",
+        "titulni_fotografie": "architektura-p1040027",
+        "fotografie": [
+          "architektura-p1040027",
+          "architektura-p1040024",
+          "architektura-p10401843",
+          "architektura-p10401844",
+          "architektura-p10401845",
+          "architektura-p10401841",
+          "interiery-foto-2",
+          "interiery-foto-11",
+          "interiery-foto-29",
+          "interiery-foto-51"
+        ]
+      },
+      {
+        "id": "shora",
+        "cislo": "05",
+        "nazev": "Dron",
+        "tagline": "Výška. Klid. Perspektiva.",
+        "seo_popis": "Letecká fotografie krajiny, měst a staveb. Známá místa z nového úhlu.",
+        "uvod": "Z výšky se ukážou souvislosti, které ze země nevidíme. Krajina, městské čtvrti i jednotlivé stavby v širším obrazu.",
+        "vyzva": "Domluvit letecké focení",
+        "titulni_fotografie": "dron-kostel-2",
+        "fotografie": [
+          "dron-kostel-2",
+          "dron-brno-klaster",
+          "dron-zabehlice",
+          "dron-pankrac",
+          "dron-jesenice-2",
+          "dron-smichov",
+          "dron-rublova",
+          "dron-skola-2",
+          "dron-sobesice"
+        ]
+      },
+      {
+        "id": "catering",
+        "cislo": "06",
+        "nazev": "Catering",
+        "tagline": "Chuť. Detail. Setkání.",
+        "seo_popis": "Fotografie svatební hostiny, slavnostního stolování a obsluhy. Detaily, které tvoří atmosféru.",
+        "uvod": "Prostřený stůl, drobné detaily i okamžik, kdy se začne servírovat. Atmosféra hostiny zachycená tak, jak ji prožívají hosté.",
+        "vyzva": "Domluvit focení hostiny",
+        "titulni_fotografie": "catering-p1160164",
+        "fotografie": [
+          "catering-p1160164",
+          "catering-p1160074",
+          "catering-p1160518",
+          "catering-p1160628"
+        ]
+      }
+    ]
+  },
+  "kdo_jsem": {
+    "seo": {
+      "titulek": "Kdo jsem",
+      "popis": "Poznejte fotografa za Doležal Photo a jeho přístup k fotografování lidí, událostí a míst."
+    },
+    "hero": {
+      "stit": "Kdo jsem",
+      "nadpis": "Za fotoaparátem hledám světlo, atmosféru a skutečné momenty.",
+      "text": "Jsem fotograf na volné noze. Zachycuji lidi, energii živých událostí i charakter míst — od ateliéru a koncertních pódií po interiéry a pohledy z výšky.",
+      "primarni_odkaz": {
+        "text": "Prohlédnout portfolio",
+        "url": "/portfolio/"
+      },
+      "sekundarni_odkaz": {
+        "text": "Domluvit spolupráci",
+        "url": "/kontakt/"
+      }
+    },
+    "fotografie": "kdo-jsem-hlavni",
+    "fotografie_popisek": "Každý příběh si zaslouží vlastní pohled.",
+    "pristup": {
+      "stit": "Můj přístup",
+      "nadpis": "Fotografie má působit opravdově, ne naaranžovaně.",
+      "odstavce": [
+        "Při focení hledám přirozené momenty, výrazné světlo a detaily, které dávají výsledným snímkům atmosféru. Každou zakázku beru jako samostatný příběh a přizpůsobuji jí svůj způsob práce.",
+        "Baví mě pestrost fotografie: soustředěná práce v ateliéru, tempo koncertu, přesnost interiérové fotografie i úplně nový pohled, který nabízí dron. U svatebních příběhů propojuji fotografii také s videem."
+      ],
+      "instagram_text": "Nahlédnout do zákulisí na Instagramu"
+    }
+  },
+  "kontakt": {
+    "seo": {
+      "titulek": "Kontakt",
+      "popis": "Domluvme fotografování nebo video pro váš příběh, událost či prostor."
+    },
+    "stit": "Kontakt",
+    "nadpis": "Pojďme zachytit váš příběh.",
+    "text": "Máte představu o focení nebo videu? Napište mi základní informace o projektu, místě a termínu. Společně vymyslíme nejlepší podobu výsledku.",
+    "instagram_stit": "Instagram",
+    "instagram_tlacitko": "Napsat přes Instagram",
+    "poznamka": "Do zprávy stačí přidat, co chcete fotit, kde a v jakém termínu. Podle toho společně domluvíme další postup.",
+    "portfolio_odkaz": "Prohlédnout všechny série"
   }
 }

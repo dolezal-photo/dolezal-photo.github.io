@@ -1,0 +1,8 @@
+{{- $settings := partialCached "settings.html" . -}}
+{{- $category := dict -}}
+{{- range $settings.portfolio.kategorie -}}
+  {{- if eq .id $ -}}
+    {{- $category = . -}}
+  {{- end -}}
+{{- end -}}
+{{- return $category -}}

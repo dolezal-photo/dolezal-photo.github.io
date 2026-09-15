@@ -1,0 +1,5 @@
+{{ $settings := partialCached "settings.html" . }}
+<section class="portfolio-cta">
+  <div><p class="eyebrow">{{ $settings.spolecne.vyzva.stit }}</p><h2>{{ $settings.spolecne.vyzva.nadpis }}</h2></div>
+  <a class="button button-primary" href="{{ $settings.spolecne.vyzva.url | relURL }}">{{ $settings.spolecne.vyzva.tlacitko }} <span aria-hidden="true">↗</span></a>
+</section>

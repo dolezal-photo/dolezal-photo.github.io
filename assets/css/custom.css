@@ -401,11 +401,31 @@ main > .contact-page > .contact-intro {
   text-transform: uppercase;
 }
 
-.contact-placeholder strong {
+.contact-placeholder strong,
+.contact-placeholder .contact-instagram {
+  color: var(--portfolio-ink);
   font-family: Georgia, "Times New Roman", serif;
   font-size: 1.25rem;
   font-weight: 400;
   line-height: 1.45;
+}
+
+.contact-placeholder .contact-instagram {
+  align-items: baseline;
+  display: inline-flex;
+  gap: 0.5rem;
+}
+
+.contact-placeholder .contact-instagram:hover {
+  color: var(--portfolio-accent);
+}
+
+.contact-placeholder .contact-instagram span {
+  display: inline;
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.8em;
+  letter-spacing: 0;
+  margin: 0;
 }
 
 main > .identity-page > .about-focus {
@@ -601,3 +621,130 @@ body > footer {
     transition: none;
   }
 }
+
+/* Portfolio: stejné fotografické série a papírové rámy jako na Instagramu. */
+a:focus-visible, button:focus-visible { outline: 2px solid var(--portfolio-accent); outline-offset: 5px; }
+.button { gap: 1.1rem; }
+.text-link { display: inline-flex; align-items: center; gap: 1rem; border-bottom: 1px solid var(--portfolio-line); padding: .65rem 0; font-size: .9rem; }
+.text-link:hover { color: var(--portfolio-accent); border-color: var(--portfolio-accent); }
+main > .home-hero, main > .home-selection, main > .home-about,
+main > .album-intro, main > .portfolio-gallery, main > .album-end,
+main > .wedding-film, main > .portfolio-cta {
+  max-width: 1440px; margin: 0 auto; padding-left: clamp(1.25rem, 5vw, 5rem); padding-right: clamp(1.25rem, 5vw, 5rem);
+}
+main > .home-hero { display: grid; grid-template-columns: 1fr .92fr; gap: clamp(2rem, 7vw, 7rem); align-items: center; padding-top: clamp(2rem, 4vw, 4rem); padding-bottom: clamp(3rem, 6vw, 6rem); }
+.home-hero h1, .home-section-heading h2, .home-about h2, .portfolio-cta h2, .album-heading h1, .album-end h2, .wedding-film h2 {
+  font-family: Georgia, "Times New Roman", serif; font-weight: 400; letter-spacing: -.045em; line-height: 1.04;
+}
+.home-hero h1 { font-size: clamp(3.8rem, 7vw, 7rem); }
+.home-hero h1 em { color: var(--portfolio-accent); font-weight: 400; }
+.home-hero .eyebrow { margin-bottom: 2rem; }
+.home-lead { color: var(--portfolio-muted); max-width: 29rem; font-size: 1.05rem; line-height: 1.8; margin-top: 1.75rem; }
+.home-hero-photo { margin: 0; background: var(--portfolio-paper-light); padding: clamp(1.2rem, 3vw, 2.75rem); border: 1px solid var(--portfolio-line); }
+.home-hero-photo > a { display: block; }
+.home-hero-photo img { display: block; width: 100%; height: auto; max-height: 550px; object-fit: contain; }
+.home-hero-photo figcaption { display: flex; gap: 1rem; justify-content: space-between; margin-top: 1.25rem; color: var(--portfolio-muted); font-size: .7rem; }
+.home-hero-photo figcaption span:first-child { text-transform: uppercase; letter-spacing: .12em; color: var(--portfolio-accent); }
+main > .home-selection { padding-top: 4rem; padding-bottom: clamp(4rem, 8vw, 7rem); border-top: 1px solid var(--portfolio-line); }
+.home-section-heading { display: flex; justify-content: space-between; gap: 2rem; align-items: flex-end; margin-bottom: 3rem; }
+.home-section-heading h2, .home-about h2, .portfolio-cta h2, .album-end h2, .wedding-film h2 { font-size: clamp(2.1rem, 3.8vw, 4rem); }
+.home-section-heading > p { color: var(--portfolio-muted); font-size: .95rem; line-height: 1.8; }
+.home-portfolio-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; }
+.portfolio-category-media { aspect-ratio: 4 / 5; padding: clamp(1.25rem, 3vw, 2.5rem); }
+.portfolio-category-media img { display: block; object-fit: contain; }
+.portfolio-category-card:hover .portfolio-category-media img { transform: none; }
+.portfolio-category-copy { padding: 0 clamp(1.25rem, 3vw, 2.5rem) 1.75rem; gap: 1rem; }
+.portfolio-category-copy h2 { font-size: clamp(1.65rem, 2.5vw, 2.5rem); }
+.portfolio-category-copy p { margin-bottom: 1rem; }
+.category-count { font-family: Inter, ui-sans-serif, system-ui, sans-serif; color: var(--portfolio-muted); font-size: .67rem; margin-left: .3rem; }
+.portfolio-category-copy div > span { font-size: .8rem; }
+.home-portfolio-grid .portfolio-category-media { padding: 1.5rem; }
+.home-portfolio-grid .portfolio-category-copy { padding: 0 1.5rem 1.5rem; }
+.home-portfolio-grid .portfolio-category-copy h2 { font-size: clamp(1.6rem, 2.1vw, 2.25rem); }
+main > .home-about { border-top: 1px solid var(--portfolio-line); padding-top: clamp(3rem, 6vw, 6rem); padding-bottom: clamp(3rem, 6vw, 6rem); display: grid; grid-template-columns: .7fr 1fr; gap: clamp(2rem, 8vw, 8rem); align-items: center; }
+.home-about figure { max-width: 27rem; background: var(--portfolio-paper-light); padding: 1.5rem; }
+.home-about img { width: 100%; height: auto; display: block; }
+.home-about div > p:not(.eyebrow) { color: var(--portfolio-muted); line-height: 1.8; max-width: 32rem; margin: 1.5rem 0; }
+main > .portfolio-cta { border-top: 1px solid var(--portfolio-line); padding-top: 3rem; padding-bottom: 3rem; display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
+.portfolio-cta .eyebrow { margin-bottom: 1rem; }
+main > .portfolio-intro { padding-top: clamp(3rem, 5vw, 5rem); padding-bottom: 3rem; }
+.portfolio-intro h1 { max-width: 19ch; font-size: clamp(2.7rem, 4.5vw, 4.5rem); }
+main > .portfolio-index { grid-template-columns: repeat(3, minmax(0, 1fr)); max-width: 1440px; padding-bottom: 4rem; }
+main > .album-intro { padding-top: 2rem; }
+.album-back { font-size: .8rem; }
+.album-heading { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: end; padding: 3rem 0 2.5rem; }
+.album-heading h1 { font-size: clamp(3.4rem, 7vw, 6.5rem); }
+.album-heading .eyebrow { margin-bottom: 1rem; }
+.album-description { max-width: 32rem; }
+.album-tagline { font-family: Georgia, "Times New Roman", serif; font-size: clamp(1.25rem, 2vw, 1.75rem); margin-bottom: 1rem; }
+.album-description > p:last-child { color: var(--portfolio-muted); font-size: .95rem; line-height: 1.8; }
+.album-meta { border-top: 1px solid var(--portfolio-line); display: flex; justify-content: space-between; gap: 1rem; padding: 1.2rem 0; color: var(--portfolio-muted); font-size: .72rem; }
+main > .portfolio-gallery { margin-bottom: 4rem; }
+#gallery { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.gallery-item, .gallery-item figure { display: block; border-radius: 0; margin: 0; }
+.gallery-item { background: var(--portfolio-paper-light); }
+.gallery-item img { display: block; width: 100%; height: auto; }
+main > .album-end { border-top: 1px solid var(--portfolio-line); padding-top: 3rem; padding-bottom: 4rem; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; }
+.album-end h2 { max-width: 17ch; margin-bottom: 1.5rem; }
+.album-series-nav { max-width: 30rem; width: 100%; justify-self: end; }
+.album-series-nav a { display: flex; align-items: baseline; gap: 1rem; padding: .85rem 0; border-bottom: 1px solid var(--portfolio-line); font-family: Georgia, "Times New Roman", serif; font-size: 1.4rem; }
+.album-series-nav a span { font-family: Inter, ui-sans-serif, system-ui, sans-serif; font-size: .7rem; color: var(--portfolio-accent); }
+.album-series-nav a span:last-child { margin-left: auto; font-size: 1.2rem; }
+.album-series-nav a:hover { color: var(--portfolio-accent); }
+main > .wedding-film { display: grid; grid-template-columns: .65fr 1fr; gap: 3rem; align-items: center; padding-top: 1rem; padding-bottom: 4rem; }
+.wedding-film p:not(.eyebrow) { color: var(--portfolio-muted); line-height: 1.8; margin-top: 1.5rem; }
+.film-player { background: var(--portfolio-ink); aspect-ratio: 16 / 9; }
+.film-player iframe { width: 100%; height: 100%; border: 0; display: block; }
+.contact-note { color: var(--portfolio-muted); font-size: .85rem; line-height: 1.7; margin-top: 1.5rem; }
+.about-instagram { margin-top: 2rem; }
+body > footer.identity-footer { width: 100%; max-width: none; border-top: 1px solid var(--portfolio-line); padding: 2rem clamp(1.25rem, 5vw, 5rem); margin: 0; }
+.identity-footer > div { max-width: 1280px; margin: 0 auto; display: flex; gap: 1rem 2rem; justify-content: space-between; align-items: center; flex-wrap: wrap; }
+.identity-footer a { display: inline-flex; gap: .75rem; padding: .5rem 0; }
+.identity-footer a:hover { color: var(--portfolio-accent); }
+.identity-footer .footer-note { font-family: Georgia, "Times New Roman", serif; font-style: italic; }
+@media (min-width: 1600px) { .home-hero h1 { font-size: 7rem; } }
+@media (max-width: 1000px) {
+  .home-portfolio-grid, main > .portfolio-index { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .home-hero .about-actions { align-items: flex-start; flex-direction: column; gap: .5rem; }
+  .home-hero-photo figcaption { flex-direction: column; gap: .5rem; }
+  .album-heading { grid-template-columns: .8fr 1fr; gap: 2rem; }
+  .album-heading h1 { font-size: clamp(3rem, 6.5vw, 5rem); }
+  main > .wedding-film { grid-template-columns: 1fr; }
+}
+@media (max-width: 760px) {
+  main > .home-hero, main > .home-about, .album-heading, main > .album-end { grid-template-columns: 1fr; }
+  main > .home-hero { gap: 2.5rem; padding-top: 2.5rem; }
+  .home-hero h1 { font-size: clamp(3.8rem, 12vw, 5.5rem); }
+  .home-hero .eyebrow { font-size: .62rem; }
+  .home-hero-photo { max-width: 30rem; width: 100%; justify-self: center; }
+  .home-hero-photo figcaption { flex-direction: row; }
+  .home-section-heading { display: block; }
+  .home-section-heading > p { margin-top: 1.5rem; }
+  .home-about figure { max-width: 24rem; }
+  main > .portfolio-cta { flex-direction: column; align-items: flex-start; }
+  .album-heading { padding-top: 2rem; }
+  .album-heading h1 { font-size: clamp(3.1rem, 11.5vw, 5rem); }
+  .album-series-nav { max-width: none; }
+  .album-meta { font-size: .68rem; }
+  .album-meta > span:last-child { text-align: right; max-width: 11rem; }
+  #gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 640px) {
+  .home-portfolio-grid, main > .portfolio-index { grid-template-columns: 1fr; }
+  .portfolio-category-media { aspect-ratio: 4 / 5; max-height: 450px; padding: 1.75rem; }
+  .portfolio-category-copy { padding: 0 1.75rem 1.75rem; }
+  .home-portfolio-grid .portfolio-category-copy h2 { font-size: 2rem; }
+  .home-hero .about-actions { margin-top: 1.5rem; }
+  .home-hero .button { font-size: .68rem; }
+  .identity-footer .footer-note { flex-basis: 100%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .portfolio-category-card, .portfolio-category-media img, .portfolio-category-arrow { transition: none; }
+  .portfolio-category-card:hover { transform: none; }
+}
+
+/* Stejná hierarchie nadpisů na informačních stránkách. */
+.about-hero h1 { font-size: clamp(2.8rem, 4.7vw, 4.8rem); max-width: 16ch; line-height: 1.04; }
+main > .identity-page > .about-hero { min-height: 0; padding-top: 3.5rem; }
+.contact-intro h1 { font-size: clamp(3rem, 5vw, 5rem); max-width: 15ch; line-height: 1.04; }
+main > .contact-page > .contact-intro { padding-top: clamp(3rem, 6vw, 6rem); padding-bottom: clamp(3rem, 6vw, 6rem); }

@@ -1,0 +1,8 @@
+{{ $settings := partialCached "settings.html" . }}
+<footer class="identity-footer">
+  <div>
+    <span>{{ $settings.spolecne.copyright }}</span>
+    <span class="footer-note">{{ $settings.spolecne.paticka.motto }}</span>
+    <a href="{{ $settings.spolecne.instagram.url }}" target="_blank" rel="noopener noreferrer" aria-label="{{ $settings.spolecne.instagram.aria }}">{{ $settings.spolecne.instagram.uzivatelske_jmeno }} <span aria-hidden="true">↗</span></a>
+  </div>
+</footer>

@@ -4,14 +4,14 @@
 from __future__ import annotations
 
 import argparse
+import io
 import json
 import os
 import re
 import sys
-import unicodedata
 from pathlib import Path
 
-from PIL import Image, ImageChops, ImageOps
+from PIL import Image, ImageChops, ImageCms, ImageOps
 
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
@@ -21,20 +21,18 @@ SETTINGS_PATH = SOURCE_ROOT / "nastaveni.json"
 LOGO_DESTINATION = PROJECT_ROOT / "assets" / "images" / "logo.png"
 
 TARGETS = {
-    "kdo-jsem": (PROJECT_ROOT / "content" / "kdo-jsem", "kdo-jsem.jpg"),
-    "atelier": (PROJECT_ROOT / "content" / "portfolio" / "atelier", None),
-    "koncerty": (PROJECT_ROOT / "content" / "portfolio" / "koncerty", None),
-    "shora": (PROJECT_ROOT / "content" / "portfolio" / "shora", None),
-    "catering": (PROJECT_ROOT / "content" / "portfolio" / "catering", None),
-    "svatebni-video": (
-        PROJECT_ROOT / "content" / "portfolio" / "svatebni-video",
-        None,
-    ),
-    "interiery": (PROJECT_ROOT / "content" / "portfolio" / "interiery", None),
+    "kdo-jsem": PROJECT_ROOT / "content" / "kdo-jsem",
+    "atelier": PROJECT_ROOT / "content" / "portfolio" / "atelier",
+    "koncerty": PROJECT_ROOT / "content" / "portfolio" / "koncerty",
+    "shora": PROJECT_ROOT / "content" / "portfolio" / "shora",
+    "catering": PROJECT_ROOT / "content" / "portfolio" / "catering",
+    "svatebni-video": PROJECT_ROOT / "content" / "portfolio" / "svatebni-video",
+    "interiery": PROJECT_ROOT / "content" / "portfolio" / "interiery",
 }
 
 SUPPORTED_EXTENSIONS = {".jpg", ".jpeg", ".png", ".tif", ".tiff"}
 PORTFOLIO_ALBUMS = tuple(album for album in TARGETS if album != "kdo-jsem")
+MEDIA_ID_PATTERN = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
 
 
 def parse_args() -> argparse.Namespace:
@@ -63,6 +61,11 @@ def parse_args() -> argparse.Namespace:
         action="store_true",
         help="Pouze vypise, co by se zpracovalo.",
     )
+    parser.add_argument(
+        "--check",
+        action="store_true",
+        help="Pouze overi uplnost a spravnost nastaveni.",
+    )
     args = parser.parse_args()
 
     if args.max_edge < 400:
@@ -75,15 +78,29 @@ def parse_args() -> argparse.Namespace:
 def load_manifest() -> dict[str, dict[str, object]]:
     try:
         data = json.loads(MANIFEST_PATH.read_text(encoding="utf-8"))
-        if data.get("version") == 1 and isinstance(data.get("files"), dict):
-            return data["files"]
+        files = data.get("files")
+        if data.get("version") == 2 and isinstance(files, dict):
+            return files
+        if data.get("version") == 1 and isinstance(files, dict):
+            migrated: dict[str, dict[str, object]] = {}
+            for source_key, entry in files.items():
+                if not isinstance(entry, dict):
+                    continue
+                output_key = entry.get("output")
+                signature_data = entry.get("signature")
+                if isinstance(output_key, str) and isinstance(signature_data, dict):
+                    migrated[output_key] = {
+                        "source": source_key,
+                        "signature": signature_data,
+                    }
+            return migrated
     except (FileNotFoundError, json.JSONDecodeError, OSError):
         pass
     return {}
 
 
 def save_manifest(files: dict[str, dict[str, object]]) -> None:
-    payload = {"version": 1, "files": files}
+    payload = {"version": 2, "files": files}
     temp_path = MANIFEST_PATH.with_suffix(".tmp")
     temp_path.write_text(
         json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
@@ -91,7 +108,7 @@ def save_manifest(files: dict[str, dict[str, object]]) -> None:
     os.replace(temp_path, MANIFEST_PATH)
 
 
-def load_settings() -> tuple[str, str, dict[str, list[str]]]:
+def load_settings() -> dict[str, object]:
     try:
         data = json.loads(SETTINGS_PATH.read_text(encoding="utf-8"))
     except FileNotFoundError as error:
@@ -101,73 +118,147 @@ def load_settings() -> tuple[str, str, dict[str, list[str]]]:
 
     if not isinstance(data, dict):
         raise ValueError(f"{SETTINGS_PATH.name} musi obsahovat JSON objekt.")
+    if data.get("schema_version") != 2:
+        raise ValueError("schema_version musi byt 2.")
 
-    portrait = data.get("kdo_jsem", "")
-    if not isinstance(portrait, str):
-        raise ValueError("Hodnota kdo_jsem musi byt nazev souboru.")
+    for section in ("media", "spolecne", "uvod", "portfolio", "kdo_jsem", "kontakt"):
+        if not isinstance(data.get(section), dict):
+            raise ValueError(f"Chybi povinna sekce {section}.")
 
-    logo = data.get("logo", "")
-    if not isinstance(logo, str):
-        raise ValueError("Hodnota logo musi byt nazev souboru.")
-    if logo and Path(logo).name != logo:
-        raise ValueError("Hodnota logo musi obsahovat pouze nazev souboru.")
+    media = data["media"]
+    listed_sources: dict[str, str] = {}
+    for media_id, item in media.items():
+        if not isinstance(media_id, str) or not MEDIA_ID_PATTERN.fullmatch(media_id):
+            raise ValueError(f"Neplatne ID media: {media_id!r}.")
+        if not isinstance(item, dict):
+            raise ValueError(f"Media {media_id} musi byt JSON objekt.")
 
-    portfolio_data = data.get("portfolio", {})
-    if not isinstance(portfolio_data, dict):
-        raise ValueError("Hodnota portfolio musi byt JSON objekt.")
+        media_type = item.get("typ")
+        relative_source = item.get("soubor")
+        status = item.get("stav")
+        alt = item.get("alt")
+        if media_type not in {"fotografie", "logo"}:
+            raise ValueError(f"Media {media_id} ma neznamy typ {media_type!r}.")
+        if status not in {"aktivni", "rezerva"}:
+            raise ValueError(f"Media {media_id} ma neznamy stav {status!r}.")
+        if not isinstance(relative_source, str) or not relative_source:
+            raise ValueError(f"Media {media_id} nema platnou cestu souboru.")
+        if not isinstance(alt, str):
+            raise ValueError(f"Media {media_id} nema text alt.")
+        if media_type == "fotografie" and status == "aktivni" and not alt.strip():
+            raise ValueError(f"Aktivni fotografie {media_id} musi mit vyplneny alt.")
 
-    portfolio: dict[str, list[str]] = {}
-    for album in PORTFOLIO_ALBUMS:
-        order = portfolio_data.get(album, [])
-        if not isinstance(order, list) or not all(
-            isinstance(filename, str) for filename in order
-        ):
-            raise ValueError(f"Poradi pro {album} musi byt seznam nazvu souboru.")
-        if len(order) != len(set(order)):
-            raise ValueError(f"Poradi pro {album} obsahuje stejny soubor vicekrat.")
-        portfolio[album] = order
+        relative_path = Path(relative_source)
+        if relative_path.is_absolute() or ".." in relative_path.parts:
+            raise ValueError(f"Media {media_id} ma nebezpecnou cestu.")
+        source = (SOURCE_ROOT / relative_path).resolve()
+        if not source.is_relative_to(SOURCE_ROOT.resolve()):
+            raise ValueError(f"Media {media_id} smeruje mimo fotky-originaly.")
+        if source.suffix.lower() not in SUPPORTED_EXTENSIONS:
+            raise ValueError(f"Media {media_id} nema podporovany format.")
+        if not source.is_file():
+            raise ValueError(f"Soubor media {media_id} neexistuje: {relative_source}.")
+        if relative_source in listed_sources:
+            raise ValueError(
+                f"Soubor {relative_source} je duplicitne u {listed_sources[relative_source]} "
+                f"a {media_id}."
+            )
+        listed_sources[relative_source] = media_id
 
-    return portrait, logo, portfolio
-
-
-def select_sources(
-    album: str,
-    sources: list[Path],
-    portrait: str,
-    portfolio_order: dict[str, list[str]],
-) -> list[Path]:
-    by_name = {source.name: source for source in sources}
-
-    if album == "kdo-jsem":
-        if portrait:
-            if Path(portrait).name != portrait:
-                raise ValueError("kdo_jsem musi obsahovat pouze nazev souboru.")
-            if portrait not in by_name:
-                raise ValueError(
-                    f"Vybrany portret {portrait!r} neni ve slozce kdo-jsem."
-                )
-            return [by_name[portrait]]
-        if len(sources) == 1:
-            return sources
-        if not sources:
-            return []
+    actual_sources = {
+        path.relative_to(SOURCE_ROOT).as_posix()
+        for path in SOURCE_ROOT.rglob("*")
+        if path.is_file() and path.suffix.lower() in SUPPORTED_EXTENSIONS
+    }
+    unlisted = sorted(actual_sources - set(listed_sources))
+    if unlisted:
         raise ValueError(
-            "Ve slozce kdo-jsem je vice obrazku; vyber jeden v nastaveni.json."
+            "V katalogu media chybi soubory: " + ", ".join(unlisted)
         )
-
-    configured_names = portfolio_order.get(album, [])
-    missing = [name for name in configured_names if name not in by_name]
+    missing = sorted(set(listed_sources) - actual_sources)
     if missing:
         raise ValueError(
-            f"V nastaveni galerie {album} chybi soubory: {', '.join(missing)}"
+            "Katalog media odkazuje na chybejici soubory: " + ", ".join(missing)
         )
 
-    configured = [by_name[name] for name in configured_names]
-    remaining = sorted(
-        (source for source in sources if source.name not in configured_names),
-        key=lambda source: source.name.casefold(),
+    portfolio = data["portfolio"]
+    categories = portfolio.get("kategorie")
+    if not isinstance(categories, list):
+        raise ValueError("portfolio.kategorie musi byt seznam.")
+
+    category_ids: list[str] = []
+    used_media: set[str] = set()
+    for category in categories:
+        if not isinstance(category, dict):
+            raise ValueError("Kazda kategorie portfolia musi byt JSON objekt.")
+        album = category.get("id")
+        photo_ids = category.get("fotografie")
+        cover_id = category.get("titulni_fotografie")
+        if album not in PORTFOLIO_ALBUMS:
+            raise ValueError(f"Neznama kategorie portfolia: {album!r}.")
+        if album in category_ids:
+            raise ValueError(f"Kategorie {album} je v JSON vicekrat.")
+        category_ids.append(album)
+        if not isinstance(photo_ids, list) or not photo_ids or not all(
+            isinstance(media_id, str) for media_id in photo_ids
+        ):
+            raise ValueError(f"Kategorie {album} musi mit seznam fotografii.")
+        if len(photo_ids) != len(set(photo_ids)):
+            raise ValueError(f"Kategorie {album} obsahuje duplicitni fotografii.")
+        if cover_id not in photo_ids:
+            raise ValueError(
+                f"Titulni fotografie kategorie {album} musi byt i v jejim seznamu."
+            )
+        for media_id in photo_ids:
+            item = media.get(media_id)
+            if not isinstance(item, dict):
+                raise ValueError(f"Kategorie {album} odkazuje na nezname media {media_id}.")
+            if item.get("typ") != "fotografie":
+                raise ValueError(f"Media {media_id} v kategorii {album} neni fotografie.")
+            if Path(item["soubor"]).parts[0] != album:
+                raise ValueError(
+                    f"Fotografie {media_id} nelezi ve slozce kategorie {album}."
+                )
+            used_media.add(media_id)
+
+    if set(category_ids) != set(PORTFOLIO_ALBUMS):
+        absent = sorted(set(PORTFOLIO_ALBUMS) - set(category_ids))
+        raise ValueError("V JSON chybi kategorie: " + ", ".join(absent))
+
+    references = {
+        data["spolecne"].get("logo", {}).get("media"),
+        data["uvod"].get("hero", {}).get("fotografie"),
+        data["uvod"].get("o_mne", {}).get("fotografie"),
+        data["kdo_jsem"].get("fotografie"),
+    }
+    for media_id in references:
+        if not isinstance(media_id, str) or media_id not in media:
+            raise ValueError(f"Stranka odkazuje na nezname media {media_id!r}.")
+        used_media.add(media_id)
+
+    logo_id = data["spolecne"]["logo"]["media"]
+    if media[logo_id].get("typ") != "logo":
+        raise ValueError("spolecne.logo.media musi odkazovat na typ logo.")
+    portrait_id = data["kdo_jsem"]["fotografie"]
+    if Path(media[portrait_id]["soubor"]).parts[0] != "kdo-jsem":
+        raise ValueError("kdo_jsem.fotografie musi byt ze slozky kdo-jsem.")
+
+    for media_id in used_media:
+        if media[media_id].get("stav") != "aktivni":
+            raise ValueError(
+                f"Pouzite media {media_id} je oznaceno jako rezerva; zmen stav na aktivni."
+            )
+    unused_active = sorted(
+        media_id
+        for media_id, item in media.items()
+        if item.get("stav") == "aktivni" and media_id not in used_media
     )
-    return configured + remaining
+    if unused_active:
+        raise ValueError(
+            "Aktivni media nejsou nikde pouzita: " + ", ".join(unused_active)
+        )
+
+    return data
 
 
 def is_managed_output(relative_path: str) -> bool:
@@ -177,19 +268,11 @@ def is_managed_output(relative_path: str) -> bool:
             output.suffix.lower() == ".jpg"
             and any(
                 output.is_relative_to(destination_dir.resolve())
-                for destination_dir, _ in TARGETS.values()
+                for destination_dir in TARGETS.values()
             )
         )
     except (OSError, ValueError):
         return False
-
-
-def safe_stem(filename: str) -> str:
-    normalized = unicodedata.normalize("NFKD", filename)
-    ascii_name = normalized.encode("ascii", "ignore").decode("ascii").lower()
-    slug = re.sub(r"[^a-z0-9]+", "-", ascii_name).strip("-")
-    return slug or "fotografie"
-
 
 def signature(source: Path, max_edge: int, quality: int) -> dict[str, object]:
     stat = source.stat()
@@ -219,6 +302,15 @@ def optimize(source: Path, destination: Path, max_edge: int, quality: int) -> No
     with Image.open(source) as opened:
         icc_profile = opened.info.get("icc_profile")
         image = ImageOps.exif_transpose(opened)
+        if icc_profile:
+            # Hugo vytváří další náhledy. Převod do sRGB před exportem zajistí
+            # stejné barvy i v odvozených obrázcích bez vloženého profilu.
+            srgb = ImageCms.ImageCmsProfile(ImageCms.createProfile("sRGB"))
+            image = ImageCms.profileToProfile(
+                image, ImageCms.ImageCmsProfile(io.BytesIO(icc_profile)),
+                srgb, outputMode="RGB",
+            )
+            icc_profile = srgb.tobytes()
         image = flatten_transparency(image)
         image.thumbnail(
             (max_edge, max_edge), Image.Resampling.LANCZOS, reducing_gap=3.0
@@ -284,8 +376,43 @@ def optimize_logo(source: Path, destination: Path, max_edge: int) -> None:
     os.replace(temp_destination, destination)
 
 
+def build_tasks(settings: dict[str, object]) -> list[tuple[Path, Path, str]]:
+    tasks: list[tuple[Path, Path, str]] = []
+    media = settings["media"]
+    for media_id, item in media.items():
+        if item["stav"] != "aktivni":
+            continue
+        source = SOURCE_ROOT / item["soubor"]
+        if item["typ"] == "logo":
+            destination = LOGO_DESTINATION
+            kind = "logo"
+        else:
+            source_section = Path(item["soubor"]).parts[0]
+            destination = TARGETS[source_section] / f"{media_id}.jpg"
+            kind = "photo"
+        tasks.append((source, destination, kind))
+    return tasks
+
+
 def main() -> int:
     args = parse_args()
+    try:
+        settings = load_settings()
+    except ValueError as error:
+        print(f"CHYBA: {error}", file=sys.stderr)
+        return 1
+
+    tasks = build_tasks(settings)
+    if args.check:
+        reserve_count = sum(
+            1 for item in settings["media"].values() if item["stav"] == "rezerva"
+        )
+        print(
+            f"Nastaveni je v poradku: {len(settings['media'])} medii, "
+            f"{len(tasks)} aktivnich a {reserve_count} rezervnich."
+        )
+        return 0
+
     manifest = load_manifest()
     updated_manifest = dict(manifest)
     processed = 0
@@ -294,78 +421,25 @@ def main() -> int:
     original_bytes = 0
     web_bytes = 0
     removed = 0
-    tasks: list[tuple[Path, Path, str]] = []
-
-    try:
-        portrait, logo, portfolio_order = load_settings()
-    except ValueError as error:
-        print(f"CHYBA: {error}", file=sys.stderr)
-        return 1
-
-    for album, (destination_dir, fixed_filename) in TARGETS.items():
-        source_dir = SOURCE_ROOT / album
-        source_dir.mkdir(parents=True, exist_ok=True)
-
-        sources = sorted(
-            path
-            for path in source_dir.iterdir()
-            if path.is_file() and path.suffix.lower() in SUPPORTED_EXTENSIONS
-        )
-
-        try:
-            selected_sources = select_sources(
-                album, sources, portrait, portfolio_order
-            )
-        except ValueError as error:
-            print(f"CHYBA: {error}", file=sys.stderr)
-            errors += 1
-            continue
-
-        for position, source in enumerate(selected_sources, start=1):
-            destination = destination_dir / (
-                fixed_filename or f"{position:02d}-{safe_stem(source.stem)}.jpg"
-            )
-            tasks.append((source, destination, "photo"))
-
-    if logo:
-        logo_source = SOURCE_ROOT / logo
-        if not logo_source.is_file():
-            print(
-                f"CHYBA: Vybrane logo {logo!r} neni ve slozce fotky-originaly.",
-                file=sys.stderr,
-            )
-            errors += 1
-        elif logo_source.suffix.lower() not in SUPPORTED_EXTENSIONS:
-            print(f"CHYBA: Logo {logo!r} nema podporovany format.", file=sys.stderr)
-            errors += 1
-        else:
-            tasks.append((logo_source, LOGO_DESTINATION, "logo"))
-
-    active_source_keys = {
-        source.relative_to(PROJECT_ROOT).as_posix() for source, _, _ in tasks
-    }
     active_output_paths = {
         destination.relative_to(PROJECT_ROOT).as_posix()
         for _, destination, _ in tasks
     }
-    obsolete_outputs: set[str] = set()
 
     for source, destination, kind in tasks:
-
         source_key = source.relative_to(PROJECT_ROOT).as_posix()
         output_key = destination.relative_to(PROJECT_ROOT).as_posix()
         current_signature = signature(source, args.max_edge, args.quality)
         if kind == "logo":
             current_signature["processor"] = "logo-v2"
-        manifest_entry = manifest.get(source_key, {})
-        old_output = manifest_entry.get("output")
-        if isinstance(old_output, str) and old_output != output_key:
-            obsolete_outputs.add(old_output)
+        else:
+            current_signature["processor"] = "photo-v2-srgb"
+        manifest_entry = manifest.get(output_key, {})
         unchanged = (
             not args.force
             and destination.exists()
+            and manifest_entry.get("source") == source_key
             and manifest_entry.get("signature") == current_signature
-            and old_output == output_key
         )
 
         if unchanged:
@@ -386,9 +460,9 @@ def main() -> int:
                 optimize_logo(source, destination, args.max_edge)
             else:
                 optimize(source, destination, args.max_edge, args.quality)
-            updated_manifest[source_key] = {
+            updated_manifest[output_key] = {
+                "source": source_key,
                 "signature": current_signature,
-                "output": output_key,
             }
             original_bytes += source.stat().st_size
             web_bytes += destination.stat().st_size
@@ -398,14 +472,9 @@ def main() -> int:
             errors += 1
 
     if not args.dry_run and errors == 0:
-        stale_sources = set(updated_manifest) - active_source_keys
-        for source_key in stale_sources:
-            entry = updated_manifest.pop(source_key, {})
-            old_output = entry.get("output")
-            if isinstance(old_output, str):
-                obsolete_outputs.add(old_output)
-
-        for output_key in sorted(obsolete_outputs - active_output_paths):
+        stale_outputs = set(updated_manifest) - active_output_paths
+        for output_key in sorted(stale_outputs):
+            updated_manifest.pop(output_key, None)
             if not is_managed_output(output_key):
                 continue
             output_path = PROJECT_ROOT / output_key
@@ -414,7 +483,7 @@ def main() -> int:
                 print(f"ODSTRANENO: {output_key}")
                 removed += 1
 
-    if not args.dry_run:
+    if not args.dry_run and errors == 0:
         save_manifest(updated_manifest)
 
     print()

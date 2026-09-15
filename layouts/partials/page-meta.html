@@ -1,0 +1,19 @@
+{{- $settings := partialCached "settings.html" . -}}
+{{- $meta := dict "titulek" .Title "popis" $settings.spolecne.popis_webu -}}
+{{- $pagePath := .RelPermalink -}}
+{{- if .IsHome -}}
+  {{- $meta = $settings.uvod.seo -}}
+{{- else if eq $pagePath "/portfolio/" -}}
+  {{- $meta = $settings.portfolio.seo -}}
+{{- else if eq $pagePath "/kdo-jsem/" -}}
+  {{- $meta = $settings.kdo_jsem.seo -}}
+{{- else if eq $pagePath "/kontakt/" -}}
+  {{- $meta = $settings.kontakt.seo -}}
+{{- else if hasPrefix $pagePath "/portfolio/" -}}
+  {{- $categoryID := path.Base (strings.TrimSuffix "/" $pagePath) -}}
+  {{- $category := partial "portfolio-category.html" $categoryID -}}
+  {{- with $category -}}
+    {{- $meta = dict "titulek" .nazev "popis" .seo_popis -}}
+  {{- end -}}
+{{- end -}}
+{{- return $meta -}}

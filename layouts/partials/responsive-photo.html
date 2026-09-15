@@ -1,0 +1,13 @@
+{{- $image := .image -}}
+{{- $maxWidth := int (math.Min (.maxWidth | default 1280) $image.Width) -}}
+{{- $srcset := slice -}}
+{{- range slice 360 640 960 1280 -}}
+  {{- if lt . $maxWidth -}}
+    {{- $variant := $image.Resize (printf "%dx webp q82" .) -}}
+    {{- $srcset = $srcset | append (printf "%s %dw" $variant.RelPermalink $variant.Width) -}}
+  {{- end -}}
+{{- end -}}
+{{- $largest := $image.Resize (printf "%dx webp q82" $maxWidth) -}}
+{{- $srcset = $srcset | append (printf "%s %dw" $largest.RelPermalink $largest.Width) -}}
+{{- $fallback := $image.Resize (printf "%dx webp q82" (int (math.Min 640 $maxWidth))) -}}
+<img src="{{ $fallback.RelPermalink }}" srcset="{{ delimit $srcset ", " }}" sizes="{{ .sizes | default "(max-width: 640px) 90vw, (max-width: 1000px) 45vw, 30vw" }}" width="{{ $image.Width }}" height="{{ $image.Height }}" alt="{{ .alt | default $image.Title }}"{{ with .class }} class="{{ . }}"{{ end }} loading="{{ if .eager }}eager{{ else }}lazy{{ end }}"{{ if .priority }} fetchpriority="high"{{ end }} decoding="async">
