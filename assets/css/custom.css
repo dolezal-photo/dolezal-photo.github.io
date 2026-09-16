@@ -186,11 +186,7 @@ main > .identity-page > .about-hero {
 }
 
 .about-portrait::before {
-  border: 1px solid var(--portfolio-line);
-  content: "";
-  inset: -1rem 1rem 1rem -1rem;
-  position: absolute;
-  z-index: -1;
+  display: none;
 }
 
 .about-portrait img {
@@ -198,6 +194,8 @@ main > .identity-page > .about-hero {
   height: auto;
   object-fit: cover;
   width: 100%;
+  outline: 1px solid var(--portfolio-line);
+  outline-offset: 1rem;
 }
 
 .about-portrait figcaption {
@@ -205,7 +203,7 @@ main > .identity-page > .about-hero {
   font-family: Georgia, "Times New Roman", serif;
   font-size: 0.92rem;
   font-style: italic;
-  padding-top: 0.9rem;
+  padding-top: 1.4rem;
   text-align: right;
 }
 
