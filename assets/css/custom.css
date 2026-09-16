@@ -751,3 +751,13 @@ main > .contact-page > .contact-intro { padding-top: clamp(3rem, 6vw, 6rem); pad
 .home-hero-copy {
   transform: translateY(-2rem);
 }
+
+/* Portfolio úvod výš */
+main > .portfolio-intro {
+  padding-top: 2rem;
+}
+
+/* Kdo jsem – úvod výš */
+main > .identity-page > .about-hero {
+  padding-top: 2.5rem;
+}
