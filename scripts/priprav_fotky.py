@@ -22,6 +22,7 @@ LOGO_DESTINATION = PROJECT_ROOT / "assets" / "images" / "logo.png"
 
 TARGETS = {
     "kdo-jsem": PROJECT_ROOT / "content" / "kdo-jsem",
+    "kontakt": PROJECT_ROOT / "content" / "kontakt",
     "atelier": PROJECT_ROOT / "content" / "portfolio" / "atelier",
     "koncerty": PROJECT_ROOT / "content" / "portfolio" / "koncerty",
     "shora": PROJECT_ROOT / "content" / "portfolio" / "shora",
@@ -31,7 +32,10 @@ TARGETS = {
 }
 
 SUPPORTED_EXTENSIONS = {".jpg", ".jpeg", ".png", ".tif", ".tiff"}
-PORTFOLIO_ALBUMS = tuple(album for album in TARGETS if album != "kdo-jsem")
+PORTFOLIO_ALBUMS = tuple(
+    album for album in TARGETS
+    if album not in {"kdo-jsem", "kontakt"}
+)
 MEDIA_ID_PATTERN = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
 
 
@@ -230,6 +234,7 @@ def load_settings() -> dict[str, object]:
         data["uvod"].get("hero", {}).get("fotografie"),
         data["uvod"].get("o_mne", {}).get("fotografie"),
         data["kdo_jsem"].get("fotografie"),
+        data["kontakt"].get("fotografie"),
     }
     for media_id in references:
         if not isinstance(media_id, str) or media_id not in media:

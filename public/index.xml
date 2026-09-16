@@ -20,7 +20,12 @@
       <title></title>
       <link>http://localhost:1313/kontakt/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/kontakt/</guid><description>&lt;no value&gt;</description></item>
+      <guid>http://localhost:1313/kontakt/</guid>
+        <media:content url="http://localhost:1313/kontakt/kontakt-hlavni_hu_58a828a2b33d20d0.jpg" type="image/jpeg"/>
+        <description>
+          &lt;img src=&quot;http://localhost:1313/kontakt/kontakt-hlavni_hu_58a828a2b33d20d0.jpg&quot; /&gt;
+          &lt;p&gt;&lt;no value&gt;&lt;/p&gt;
+        </description></item>
     <item>
       <title></title>
       <link>http://localhost:1313/portfolio/atelier/</link>

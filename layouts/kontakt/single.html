@@ -1,23 +1,72 @@
 {{ define "main" }}
   {{ $settings := partialCached "settings.html" . }}
   {{ $contact := $settings.kontakt }}
+  {{ $photo := partial "media-resource.html" (dict "id" $contact.fotografie) }}
+  {{ $photoMedia := index $settings.media $contact.fotografie }}
+
   <article class="contact-page">
     <section class="contact-intro">
       <div>
         <p class="eyebrow">{{ $contact.stit }}</p>
         <h1>{{ $contact.nadpis }}</h1>
+
+        <figure class="home-hero-photo" style="margin-top: 2.5rem; max-width: 30rem;">
+          {{ partial "responsive-photo.html" (dict
+            "image" $photo
+            "alt" $photoMedia.alt
+            "eager" true
+            "sizes" "(max-width: 860px) 90vw, 34vw"
+          ) }}
+        </figure>
       </div>
+
       <div class="contact-copy">
         <p>{{ $contact.text }}</p>
+
         <div class="contact-placeholder">
-          <span>{{ $contact.instagram_stit }}</span>
-          <a class="contact-instagram" href="{{ $settings.spolecne.instagram.url }}" target="_blank" rel="noopener noreferrer" aria-label="{{ $settings.spolecne.instagram.aria }}">
-            {{ $settings.spolecne.instagram.uzivatelske_jmeno }} <span aria-hidden="true">↗</span>
+          <span>{{ $contact.email_stit }}</span>
+          <a class="contact-instagram" href="mailto:{{ $contact.email }}">
+            {{ $contact.email }} <span aria-hidden="true">↗</span>
           </a>
         </div>
-        <a class="button button-primary" href="{{ $settings.spolecne.instagram.url }}" target="_blank" rel="noopener noreferrer">{{ $contact.instagram_tlacitko }} <span aria-hidden="true">↗</span></a>
+
+        <div class="contact-placeholder">
+          <span>{{ $contact.telefon_stit }}</span>
+          <a class="contact-instagram" href="tel:{{ $contact.telefon_odkaz }}">
+            {{ $contact.telefon }} <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+
+        <div class="contact-placeholder">
+          <span>{{ $contact.instagram_stit }}</span>
+          <a
+            class="contact-instagram"
+            href="{{ $settings.spolecne.instagram.url }}"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="{{ $settings.spolecne.instagram.aria }}"
+          >
+            {{ $settings.spolecne.instagram.uzivatelske_jmeno }}
+            <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+
+        <a
+          class="button button-primary"
+          href="{{ $settings.spolecne.instagram.url }}"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {{ $contact.instagram_tlacitko }}
+          <span aria-hidden="true">↗</span>
+        </a>
+
         <p class="contact-note">{{ $contact.poznamka }}</p>
-        <a class="text-link" href="{{ "/portfolio/" | relURL }}">{{ $contact.portfolio_odkaz }} <span aria-hidden="true">→</span></a>
+
+        <a class="text-link" href="{{ "/portfolio/" | relURL }}">
+          {{ $contact.portfolio_odkaz }}
+          <span aria-hidden="true">→</span>
+        </a>
       </div>
     </section>
   </article>

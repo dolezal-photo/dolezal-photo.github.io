@@ -13,6 +13,12 @@
       "alt": "",
       "stav": "aktivni"
     },
+    "kontakt-hlavni": {
+      "typ": "fotografie",
+      "soubor": "kontakt/kontakt-hlavni.jpg",
+      "alt": "Fotograf Doležal Photo při fotografování s fotoaparátem",
+      "stav": "aktivni"
+    },
     "kdo-jsem-hlavni": {
       "typ": "fotografie",
       "soubor": "kdo-jsem/foto11_atelier_profil_55 copy.jpg",
@@ -649,9 +655,15 @@
     "stit": "Kontakt",
     "nadpis": "Pojďme zachytit váš příběh.",
     "text": "Máte představu o focení nebo videu? Napište mi základní informace o projektu, místě a termínu. Společně vymyslíme nejlepší podobu výsledku.",
+    "email_stit": "E-mail",
+    "email": "dolezal.photo@volny.cz",
+    "telefon_stit": "Telefon",
+    "telefon": "+420 608 990 610",
+    "telefon_odkaz": "+420608990610",
     "instagram_stit": "Instagram",
     "instagram_tlacitko": "Napsat přes Instagram",
     "poznamka": "Do zprávy stačí přidat, co chcete fotit, kde a v jakém termínu. Podle toho společně domluvíme další postup.",
-    "portfolio_odkaz": "Prohlédnout všechny série"
+    "portfolio_odkaz": "Prohlédnout všechny série",
+    "fotografie": "kontakt-hlavni"
   }
 }
