@@ -7,7 +7,7 @@
 <meta property="og:locale" content="{{ replace site.Language.LanguageCode `-` `_` }}" />
 <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}" />
 
-{{- $imageID := $settings.uvod.hero.fotografie -}}
+{{- $imageID := $settings.uvod.sdileni_fotografie -}}
 {{- $pagePath := .RelPermalink -}}
 {{- if eq $pagePath "/kdo-jsem/" -}}
   {{- $imageID = $settings.kdo_jsem.fotografie -}}
