@@ -746,3 +746,8 @@ body > footer.identity-footer { width: 100%; max-width: none; border-top: 1px so
 main > .identity-page > .about-hero { min-height: 0; padding-top: 3.5rem; }
 .contact-intro h1 { font-size: clamp(3rem, 5vw, 5rem); max-width: 15ch; line-height: 1.04; }
 main > .contact-page > .contact-intro { padding-top: clamp(3rem, 6vw, 6rem); padding-bottom: clamp(3rem, 6vw, 6rem); }
+
+/* Úvodní hero – textový blok výš */
+.home-hero-copy {
+  transform: translateY(-2rem);
+}
