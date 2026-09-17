@@ -654,6 +654,10 @@
       "titulek": "Kontakt",
       "popis": "Domluvme fotografování nebo video pro váš příběh, událost či prostor."
     },
+
+    "cena_stit": "Cena",
+    "cena_text": "Cena se odvíjí od typu focení, rozsahu a konkrétních požadavků. Ozvěte se mi a rád vám připravím nabídku na míru.",
+    "cena_tlacitko": "Nezávazně poptat cenu",
     "stit": "Kontakt",
     "nadpis": "Pojďme zachytit váš příběh.",
     "text": "Máte představu o focení nebo videu? Napište mi základní informace o projektu, místě a termínu. Společně vymyslíme nejlepší podobu výsledku.",

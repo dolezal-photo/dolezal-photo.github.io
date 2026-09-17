@@ -26,14 +26,32 @@
         <div class="contact-placeholder">
           <span>{{ $contact.email_stit }}</span>
           <a class="contact-instagram" href="mailto:{{ $contact.email }}">
-            {{ $contact.email }} <span aria-hidden="true">↗</span>
+            {{ $contact.email }}
+            <span aria-hidden="true">↗</span>
           </a>
         </div>
 
         <div class="contact-placeholder">
           <span>{{ $contact.telefon_stit }}</span>
           <a class="contact-instagram" href="tel:{{ $contact.telefon_odkaz }}">
-            {{ $contact.telefon }} <span aria-hidden="true">↗</span>
+            {{ $contact.telefon }}
+            <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+
+        <div class="contact-placeholder">
+          <span>{{ $contact.cena_stit }}</span>
+
+          <p style="margin: 0 0 1rem; line-height: 1.7;">
+            {{ $contact.cena_text }}
+          </p>
+
+          <a
+            class="text-link"
+            href="mailto:{{ $contact.email }}?subject=Popt%C3%A1vka%20ceny"
+          >
+            {{ $contact.cena_tlacitko }}
+            <span aria-hidden="true">→</span>
           </a>
         </div>
 
