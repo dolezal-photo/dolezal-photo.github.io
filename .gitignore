@@ -8,3 +8,6 @@ fotky-originaly/**
 !fotky-originaly/nastaveni.json
 !fotky-originaly/*/
 !fotky-originaly/*/.gitkeep
+
+!fotky-originaly/sdileni/
+!fotky-originaly/sdileni/**

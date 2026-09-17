@@ -1,5 +1,6 @@
 {{- $settings := partialCached "settings.html" . -}}
 {{- $meta := partial "page-meta.html" . -}}
+
 <meta property="og:url" content="{{ .Permalink }}" />
 <meta property="og:site_name" content="{{ $settings.spolecne.nazev_webu }}" />
 <meta property="og:title" content="{{ $meta.titulek }}" />
@@ -7,19 +8,19 @@
 <meta property="og:locale" content="{{ replace site.Language.LanguageCode `-` `_` }}" />
 <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}" />
 
-{{- $imageID := $settings.uvod.sdileni_fotografie -}}
-{{- $pagePath := .RelPermalink -}}
-{{- if eq $pagePath "/kdo-jsem/" -}}
-  {{- $imageID = $settings.kdo_jsem.fotografie -}}
-{{- else if eq $pagePath "/portfolio/" -}}
-  {{- $imageID = (index $settings.portfolio.kategorie 0).titulni_fotografie -}}
-{{- else if hasPrefix $pagePath "/portfolio/" -}}
-  {{- $categoryID := path.Base (strings.TrimSuffix "/" $pagePath) -}}
-  {{- $category := partial "portfolio-category.html" $categoryID -}}
-  {{- with $category }}{{ $imageID = .titulni_fotografie }}{{ end -}}
-{{- end -}}
-{{- $image := partial "media-resource.html" (dict "id" $imageID) -}}
-{{- with $image -}}
-  {{- $full := .Filter (slice images.AutoOrient (images.Process "fit 1600x1600")) -}}
-  <meta property="og:image" content="{{ $full.Permalink }}" />
-{{- end -}}
+<meta
+  property="og:image"
+  content="{{ "images/sdileni/nahled.jpg" | absURL }}"
+/>
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:type" content="image/jpeg" />
+<meta property="og:image:alt" content="Doležal Photo – fotografie a video" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="{{ $meta.titulek }}" />
+<meta name="twitter:description" content="{{ $meta.popis | plainify }}" />
+<meta
+  name="twitter:image"
+  content="{{ "images/sdileni/nahled.jpg" | absURL }}"
+/>
