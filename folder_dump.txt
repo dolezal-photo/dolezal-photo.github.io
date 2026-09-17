@@ -1,10 +1,10 @@
 PROJECT CONTEXT DUMP
-Generated: 2026-09-16T12:18:56
+Generated: 2026-09-17T00:32:56
 Project: dolezal-photo.github.io
 Root: /Users/jirka/Downloads/fotograficke portfolio/dolezal-photo.github.io
-Files visible in tree: 212
-Files with source contents: 95
-Files represented without contents: 117
+Files visible in tree: 218
+Files with source contents: 98
+Files represented without contents: 120
 ================================================================================
 
 PROJECT STRUCTURE
@@ -21,15 +21,19 @@ ROOT: /Users/jirka/Downloads/fotograficke portfolio/dolezal-photo.github.io
     [F] jsconfig.json
     [D] assets/css
       [F] custom.css
+      [F] main.scss
     [D] assets/images
       [F] logo.png [media] [101 KB]
+    [D] assets/js
+      [F] lightbox.js
   [D] content
     [F] _index.md
     [D] content/kdo-jsem
       [F] index.md
-      [F] kdo-jsem-hlavni.jpg [media] [337 KB]
+      [F] kdo-jsem-hlavni.jpg [media] [441 KB]
     [D] content/kontakt
       [F] index.md
+      [F] kontakt-hlavni.jpg [media] [281 KB]
     [D] content/portfolio
       [F] _index.md
       [D] content/portfolio/atelier
@@ -41,7 +45,7 @@ ROOT: /Users/jirka/Downloads/fotograficke portfolio/dolezal-photo.github.io
         [F] atelier-p1150541.jpg [media] [357 KB]
         [F] atelier-p1150668final22.jpg [media] [377 KB]
         [F] atelier-p1150706.jpg [media] [352 KB]
-        [F] atelier-portret-svetle-pozadi.jpg [media] [111 KB]
+        [F] atelier-portret-svetle-pozadi.jpg [media] [309 KB]
         [F] index.md
       [D] content/portfolio/catering
         [F] catering-p1160074.jpg [media] [245 KB]
@@ -71,11 +75,11 @@ ROOT: /Users/jirka/Downloads/fotograficke portfolio/dolezal-photo.github.io
         [F] koncerty-rock-21.jpg [media] [309 KB]
         [F] koncerty-rock-30.jpg [media] [276 KB]
         [F] koncerty-rock-66.jpg [media] [357 KB]
-        [F] koncerty-rock-67.jpg [media] [184 KB]
+        [F] koncerty-rock-67.jpg [media] [227 KB]
       [D] content/portfolio/shora
-        [F] dron-brno-klaster.jpg [media] [701 KB]
+        [F] dron-brno-klaster.jpg [media] [1193 KB]
         [F] dron-jesenice-2.jpg [media] [794 KB]
-        [F] dron-kostel-2.jpg [media] [513 KB]
+        [F] dron-kostel-2.jpg [media] [885 KB]
         [F] dron-pankrac.jpg [media] [1038 KB]
         [F] dron-rublova.jpg [media] [1117 KB]
         [F] dron-skola-2.jpg [media] [865 KB]
@@ -111,7 +115,7 @@ ROOT: /Users/jirka/Downloads/fotograficke portfolio/dolezal-photo.github.io
       [F] P1150541.JPG [media] [5882 KB]
       [F] P1150668final22.JPG [media] [7526 KB]
       [F] P1150706.JPG [media] [6511 KB]
-      [F] portret-svetle-pozadi.png [media] [1732 KB]
+      [F] P1180272 edit full white.jpg [media] [5562 KB]
       [D] fotky-originaly/atelier/varianty
         [F] P1180272.jpg [media] [8489 KB]
     [D] fotky-originaly/catering
@@ -131,9 +135,8 @@ ROOT: /Users/jirka/Downloads/fotograficke portfolio/dolezal-photo.github.io
       [F] P10401844.jpg [media] [19195 KB]
       [F] P10401845.jpg [media] [22534 KB]
     [D] fotky-originaly/kdo-jsem
-      [F] foto11_atelier_profil22 compress.jpg [media] [963 KB]
       [F] foto11_atelier_profil22 copy.jpg [media] [2520 KB]
-      [F] P1130621.JPG [media] [9393 KB]
+      [F] foto11_atelier_profil_55 copy.jpg [media] [2328 KB]
     [D] fotky-originaly/koncerty
       [F] P1110380.jpg [media] [12106 KB]
       [F] P1110417.jpg [media] [11566 KB]
@@ -143,11 +146,13 @@ ROOT: /Users/jirka/Downloads/fotograficke portfolio/dolezal-photo.github.io
       [F] rock (21).JPG [media] [12694 KB]
       [F] rock (30).JPG [media] [10286 KB]
       [F] rock (66).JPG [media] [13664 KB]
-      [F] rock (67).JPG [media] [10641 KB]
+      [F] rock (67) copy.JPG [media] [2776 KB]
+    [D] fotky-originaly/kontakt
+      [F] kontakt-hlavni.jpg [media] [10857 KB]
     [D] fotky-originaly/shora
-      [F] Brno klaster.jpg [media] [2488 KB]
+      [F] DJI_0372-HDR.jpg [media] [11908 KB]
+      [F] DJI_0632 final.jpg [media] [1735 KB]
       [F] Jesenice 2.jpg [media] [8748 KB]
-      [F] Kostel 2.jpg [media] [1904 KB]
       [F] Pankrac.jpg [media] [10338 KB]
       [F] Rublova.jpg [media] [10729 KB]
       [F] Skola 2.jpg [media] [8883 KB]
@@ -194,6 +199,10 @@ ROOT: /Users/jirka/Downloads/fotograficke portfolio/dolezal-photo.github.io
   [D] scripts
     [F] priprav_fotky.py
   [D] static
+    [D] static/images
+      [F] apple-touch-icon.png [media]
+      [F] favicon.png [media]
+      [F] favicon.svg
   [D] themes
     [D] themes/gallery
       [F] go.mod
@@ -341,6 +350,7 @@ FILE: assets/jsconfig.json
   "baseUrl": ".",
   "paths": {
    "*": [
+    "*",
     "../themes/gallery/assets/*"
    ]
   }
@@ -539,11 +549,7 @@ main > .identity-page > .about-hero {
 }
 
 .about-portrait::before {
-  border: 1px solid var(--portfolio-line);
-  content: "";
-  inset: -1rem 1rem 1rem -1rem;
-  position: absolute;
-  z-index: -1;
+  display: none;
 }
 
 .about-portrait img {
@@ -551,6 +557,8 @@ main > .identity-page > .about-hero {
   height: auto;
   object-fit: cover;
   width: 100%;
+  outline: 1px solid var(--portfolio-line);
+  outline-offset: 1rem;
 }
 
 .about-portrait figcaption {
@@ -558,7 +566,7 @@ main > .identity-page > .about-hero {
   font-family: Georgia, "Times New Roman", serif;
   font-size: 0.92rem;
   font-style: italic;
-  padding-top: 0.9rem;
+  padding-top: 1.4rem;
   text-align: right;
 }
 
@@ -1102,6 +1110,122 @@ main > .identity-page > .about-hero { min-height: 0; padding-top: 3.5rem; }
 .contact-intro h1 { font-size: clamp(3rem, 5vw, 5rem); max-width: 15ch; line-height: 1.04; }
 main > .contact-page > .contact-intro { padding-top: clamp(3rem, 6vw, 6rem); padding-bottom: clamp(3rem, 6vw, 6rem); }
 
+/* Úvodní hero – textový blok výš */
+.home-hero-copy {
+  transform: translateY(-2rem);
+}
+
+/* Portfolio úvod výš */
+main > .portfolio-intro {
+  padding-top: 2rem;
+}
+
+/* Kdo jsem – úvod výš */
+main > .identity-page > .about-hero {
+  padding-top: 2.5rem;
+}
+
+--------------------------------------------------------------------------------
+
+FILE: assets/css/main.scss
+----------------------------------------
+@import "normalize";
+@import "colors";
+@import "styles";
+@import "photoswipe/photoswipe";
+
+@import "custom";
+
+.lazyload,
+.lazyloading {
+  opacity: 0;
+}
+
+.lazyloaded {
+  opacity: 1;
+  transition: opacity 300ms;
+}
+
+img.lazyload:not([src]) {
+  visibility: hidden;
+}
+
+--------------------------------------------------------------------------------
+
+FILE: assets/js/lightbox.js
+----------------------------------------
+import PhotoSwipeLightbox from "./photoswipe/photoswipe-lightbox.esm.js";
+import PhotoSwipe from "./photoswipe/photoswipe.esm.js";
+
+import * as params from "@params";
+
+const gallery = document.getElementById("gallery");
+
+if (gallery) {
+  const lightbox = new PhotoSwipeLightbox({
+    gallery,
+    children: ".gallery-item",
+    showHideAnimationType: "zoom",
+    bgOpacity: 1,
+    pswpModule: PhotoSwipe,
+    imageClickAction: "close",
+    closeTitle: params.closeTitle,
+    zoomTitle: params.zoomTitle,
+    arrowPrevTitle: params.arrowPrevTitle,
+    arrowNextTitle: params.arrowNextTitle,
+    errorMsg: params.errorMsg,
+  });
+
+  if (params.enableDownload) {
+    lightbox.on("uiRegister", () => {
+      lightbox.pswp.ui.registerElement({
+        name: "download-button",
+        order: 8,
+        isButton: true,
+        tagName: "a",
+        html: {
+          isCustomSVG: true,
+          inner: '<path d="M20.5 14.3 17.1 18V10h-2.2v7.9l-3.4-3.6L10 16l6 6.1 6-6.1ZM23 23H9v2h14Z" id="pswp__icn-download"/>',
+          outlineID: "pswp__icn-download",
+        },
+        onInit: (el, pswp) => {
+          el.setAttribute("download", "");
+          el.setAttribute("target", "_blank");
+          el.setAttribute("rel", "noopener");
+          el.setAttribute("title", params.downloadTitle || "Download");
+          pswp.on("change", () => {
+            el.href = pswp.currSlide.data.element.href;
+          });
+        },
+      });
+    });
+  }
+
+  lightbox.on("change", () => {
+    const target = lightbox.pswp.currSlide?.data?.element?.dataset["pswpTarget"];
+    history.replaceState("", document.title, "#" + target);
+  });
+
+  lightbox.on("close", () => {
+    history.replaceState("", document.title, window.location.pathname);
+  });
+
+
+
+  lightbox.init();
+
+  if (window.location.hash.substring(1).length > 1) {
+    const target = window.location.hash.substring(1);
+    const items = gallery.querySelectorAll("a");
+    for (let i = 0; i < items.length; i++) {
+      if (items[i].dataset["pswpTarget"] === target) {
+        lightbox.loadAndOpen(i, { gallery });
+        break;
+      }
+    }
+  }
+}
+
 --------------------------------------------------------------------------------
 
 FILE: content/_index.md
@@ -1207,9 +1331,15 @@ FILE: fotky-originaly/nastaveni.json
       "alt": "",
       "stav": "aktivni"
     },
+    "kontakt-hlavni": {
+      "typ": "fotografie",
+      "soubor": "kontakt/kontakt-hlavni.jpg",
+      "alt": "Fotograf Doležal Photo při fotografování s fotoaparátem",
+      "stav": "aktivni"
+    },
     "kdo-jsem-hlavni": {
       "typ": "fotografie",
-      "soubor": "kdo-jsem/foto11_atelier_profil22 compress.jpg",
+      "soubor": "kdo-jsem/foto11_atelier_profil_55 copy.jpg",
       "alt": "Fotograf Doležal Photo při práci s fotoaparátem",
       "stav": "aktivni"
     },
@@ -1233,7 +1363,7 @@ FILE: fotky-originaly/nastaveni.json
     },
     "atelier-portret-svetle-pozadi": {
       "typ": "fotografie",
-      "soubor": "atelier/portret-svetle-pozadi.png",
+      "soubor": "atelier/P1180272 edit full white.jpg",
       "alt": "Portrét ženy v bílé košili a s kudrnatými vlasy",
       "stav": "aktivni"
     },
@@ -1281,7 +1411,7 @@ FILE: fotky-originaly/nastaveni.json
     },
     "koncerty-rock-67": {
       "typ": "fotografie",
-      "soubor": "koncerty/rock (67).JPG",
+      "soubor": "koncerty/rock (67) copy.JPG",
       "alt": "Kytarista v siluetě pod fialovým pódiovým světlem",
       "stav": "aktivni"
     },
@@ -1467,13 +1597,13 @@ FILE: fotky-originaly/nastaveni.json
     },
     "dron-kostel-2": {
       "typ": "fotografie",
-      "soubor": "shora/Kostel 2.jpg",
+      "soubor": "shora/DJI_0632 final.jpg",
       "alt": "Kostel uprostřed polí a zvlněné krajiny z ptačí perspektivy",
       "stav": "aktivni"
     },
     "dron-brno-klaster": {
       "typ": "fotografie",
-      "soubor": "shora/Brno klaster.jpg",
+      "soubor": "shora/DJI_0372-HDR.jpg",
       "alt": "Klášterní areál s červenými střechami při pohledu z dronu",
       "stav": "aktivni"
     },
@@ -1592,6 +1722,8 @@ FILE: fotky-originaly/nastaveni.json
     }
   },
   "uvod": {
+    "sdileni_fotografie": "kontakt-hlavni",
+    
     "seo": {
       "titulek": "Fotografie s atmosférou",
       "popis": "Portréty, koncerty, svatby a místa očima Doležal Photo. Prohlédněte si výběr fotografií a domluvte si focení."
@@ -1612,11 +1744,11 @@ FILE: fotky-originaly/nastaveni.json
         "text": "Domluvit focení",
         "url": "/kontakt/"
       },
-      "fotografie": "atelier-p1140078",
-      "fotografie_odkaz": "/portfolio/atelier/",
-      "fotografie_odkaz_aria": "Prohlédnout sérii Portréty",
-      "popisek_vlevo": "01 / Portréty",
-      "popisek_vpravo": "Osobnost. Výraz. Ty."
+      "fotografie": "svatby-p1011482",
+      "fotografie_odkaz": "/portfolio/svatebni-video/",
+      "fotografie_odkaz_aria": "Prohlédnout sérii Svatby",
+      "popisek_vlevo": "03 / Svatby",
+      "popisek_vpravo": "Blízkost. Emoce. Vzpomínky."
     },
     "vyber": {
       "stit": "Výběr z tvorby",
@@ -1695,7 +1827,7 @@ FILE: fotky-originaly/nastaveni.json
         "seo_popis": "Koncertní fotografie z klubů a živých vystoupení. Hudba, světlo a energie publika.",
         "uvod": "Světla se mění, hudba zní a každý okamžik je jiný. Zachycuji dění na pódiu i energii lidí pod ním.",
         "vyzva": "Domluvit focení koncertu",
-        "titulni_fotografie": "koncerty-rock-67",
+        "titulni_fotografie": "koncerty-rock-30",
         "fotografie": [
           "koncerty-rock-67",
           "koncerty-rock-21",
@@ -1716,7 +1848,7 @@ FILE: fotky-originaly/nastaveni.json
         "seo_popis": "Svatební fotografie a video. Od drobných detailů po chvíle, které patří jen vám.",
         "uvod": "Pohledy, doteky a chvíle mezi nimi. Váš den vyprávím fotografiemi i filmem, s důrazem na přirozenost a atmosféru.",
         "vyzva": "Pojďme zachytit váš den.",
-        "titulni_fotografie": "svatby-p1011522",
+        "titulni_fotografie": "svatby-p1011482",
         "video": {
           "youtube_id": "Tbbqyz8PKYo",
           "pocet_text": "a jeden svatební film",
@@ -1843,10 +1975,16 @@ FILE: fotky-originaly/nastaveni.json
     "stit": "Kontakt",
     "nadpis": "Pojďme zachytit váš příběh.",
     "text": "Máte představu o focení nebo videu? Napište mi základní informace o projektu, místě a termínu. Společně vymyslíme nejlepší podobu výsledku.",
+    "email_stit": "E-mail",
+    "email": "dolezal.photo@volny.cz",
+    "telefon_stit": "Telefon",
+    "telefon": "+420 608 990 610",
+    "telefon_odkaz": "+420608990610",
     "instagram_stit": "Instagram",
     "instagram_tlacitko": "Napsat přes Instagram",
     "poznamka": "Do zprávy stačí přidat, co chcete fotit, kde a v jakém termínu. Podle toho společně domluvíme další postup.",
-    "portfolio_odkaz": "Prohlédnout všechny série"
+    "portfolio_odkaz": "Prohlédnout všechny série",
+    "fotografie": "kontakt-hlavni"
   }
 }
 
@@ -2098,23 +2236,72 @@ FILE: layouts/kontakt/single.html
 {{ define "main" }}
   {{ $settings := partialCached "settings.html" . }}
   {{ $contact := $settings.kontakt }}
+  {{ $photo := partial "media-resource.html" (dict "id" $contact.fotografie) }}
+  {{ $photoMedia := index $settings.media $contact.fotografie }}
+
   <article class="contact-page">
     <section class="contact-intro">
       <div>
         <p class="eyebrow">{{ $contact.stit }}</p>
         <h1>{{ $contact.nadpis }}</h1>
+
+        <figure class="home-hero-photo" style="margin-top: 2.5rem; max-width: 30rem;">
+          {{ partial "responsive-photo.html" (dict
+            "image" $photo
+            "alt" $photoMedia.alt
+            "eager" true
+            "sizes" "(max-width: 860px) 90vw, 34vw"
+          ) }}
+        </figure>
       </div>
+
       <div class="contact-copy">
         <p>{{ $contact.text }}</p>
+
         <div class="contact-placeholder">
-          <span>{{ $contact.instagram_stit }}</span>
-          <a class="contact-instagram" href="{{ $settings.spolecne.instagram.url }}" target="_blank" rel="noopener noreferrer" aria-label="{{ $settings.spolecne.instagram.aria }}">
-            {{ $settings.spolecne.instagram.uzivatelske_jmeno }} <span aria-hidden="true">↗</span>
+          <span>{{ $contact.email_stit }}</span>
+          <a class="contact-instagram" href="mailto:{{ $contact.email }}">
+            {{ $contact.email }} <span aria-hidden="true">↗</span>
           </a>
         </div>
-        <a class="button button-primary" href="{{ $settings.spolecne.instagram.url }}" target="_blank" rel="noopener noreferrer">{{ $contact.instagram_tlacitko }} <span aria-hidden="true">↗</span></a>
+
+        <div class="contact-placeholder">
+          <span>{{ $contact.telefon_stit }}</span>
+          <a class="contact-instagram" href="tel:{{ $contact.telefon_odkaz }}">
+            {{ $contact.telefon }} <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+
+        <div class="contact-placeholder">
+          <span>{{ $contact.instagram_stit }}</span>
+          <a
+            class="contact-instagram"
+            href="{{ $settings.spolecne.instagram.url }}"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="{{ $settings.spolecne.instagram.aria }}"
+          >
+            {{ $settings.spolecne.instagram.uzivatelske_jmeno }}
+            <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+
+        <a
+          class="button button-primary"
+          href="{{ $settings.spolecne.instagram.url }}"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {{ $contact.instagram_tlacitko }}
+          <span aria-hidden="true">↗</span>
+        </a>
+
         <p class="contact-note">{{ $contact.poznamka }}</p>
-        <a class="text-link" href="{{ "/portfolio/" | relURL }}">{{ $contact.portfolio_odkaz }} <span aria-hidden="true">→</span></a>
+
+        <a class="text-link" href="{{ "/portfolio/" | relURL }}">
+          {{ $contact.portfolio_odkaz }}
+          <span aria-hidden="true">→</span>
+        </a>
       </div>
     </section>
   </article>
@@ -2228,22 +2415,41 @@ FILE: layouts/partials/media-resource.html
 {{- $settings := partialCached "settings.html" . -}}
 {{- $mediaID := .id -}}
 {{- $media := index $settings.media $mediaID -}}
+
 {{- if not $media -}}
   {{- errorf "Nezname media %q v nastaveni.json" $mediaID -}}
 {{- end -}}
+
 {{- $resource := false -}}
+
 {{- if eq $media.typ "logo" -}}
+
   {{- $resource = resources.Get "images/logo.png" -}}
+
 {{- else -}}
+
   {{- $sourceSection := index (split $media.soubor "/") 0 -}}
-  {{- $page := site.GetPage (cond (eq $sourceSection "kdo-jsem") "/kdo-jsem" (printf "/portfolio/%s" $sourceSection)) -}}
+
+  {{- $pagePath := printf "/portfolio/%s" $sourceSection -}}
+
+  {{- if eq $sourceSection "kdo-jsem" -}}
+    {{- $pagePath = "/kdo-jsem" -}}
+  {{- else if eq $sourceSection "kontakt" -}}
+    {{- $pagePath = "/kontakt" -}}
+  {{- end -}}
+
+  {{- $page := site.GetPage $pagePath -}}
+
   {{- with $page -}}
     {{- $resource = .Resources.GetMatch (printf "%s.jpg" $mediaID) -}}
   {{- end -}}
+
 {{- end -}}
+
 {{- if not $resource -}}
   {{- errorf "Chybi webova kopie media %q; spust python3 scripts/priprav_fotky.py" $mediaID -}}
 {{- end -}}
+
 {{- return $resource -}}
 
 --------------------------------------------------------------------------------
@@ -2259,7 +2465,7 @@ FILE: layouts/partials/opengraph.html
 <meta property="og:locale" content="{{ replace site.Language.LanguageCode `-` `_` }}" />
 <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}" />
 
-{{- $imageID := $settings.uvod.hero.fotografie -}}
+{{- $imageID := $settings.uvod.sdileni_fotografie -}}
 {{- $pagePath := .RelPermalink -}}
 {{- if eq $pagePath "/kdo-jsem/" -}}
   {{- $imageID = $settings.kdo_jsem.fotografie -}}
@@ -2466,6 +2672,7 @@ LOGO_DESTINATION = PROJECT_ROOT / "assets" / "images" / "logo.png"
 
 TARGETS = {
     "kdo-jsem": PROJECT_ROOT / "content" / "kdo-jsem",
+    "kontakt": PROJECT_ROOT / "content" / "kontakt",
     "atelier": PROJECT_ROOT / "content" / "portfolio" / "atelier",
     "koncerty": PROJECT_ROOT / "content" / "portfolio" / "koncerty",
     "shora": PROJECT_ROOT / "content" / "portfolio" / "shora",
@@ -2475,7 +2682,10 @@ TARGETS = {
 }
 
 SUPPORTED_EXTENSIONS = {".jpg", ".jpeg", ".png", ".tif", ".tiff"}
-PORTFOLIO_ALBUMS = tuple(album for album in TARGETS if album != "kdo-jsem")
+PORTFOLIO_ALBUMS = tuple(
+    album for album in TARGETS
+    if album not in {"kdo-jsem", "kontakt"}
+)
 MEDIA_ID_PATTERN = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
 
 
@@ -2674,6 +2884,7 @@ def load_settings() -> dict[str, object]:
         data["uvod"].get("hero", {}).get("fotografie"),
         data["uvod"].get("o_mne", {}).get("fotografie"),
         data["kdo_jsem"].get("fotografie"),
+        data["kontakt"].get("fotografie"),
     }
     for media_id in references:
         if not isinstance(media_id, str) or media_id not in media:
@@ -2947,6 +3158,38 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
+
+--------------------------------------------------------------------------------
+
+FILE: static/images/favicon.svg
+----------------------------------------
+<svg id="Layer_4" data-name="Layer 4" xmlns="http://www.w3.org/2000/svg" viewBox="488.82 583.77 478.0 478.0"><rect x="488.82" y="583.77" width="478.0" height="478.0" fill="#211f1b"/>
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #fff;
+        stroke-miterlimit: 10;
+        stroke-width: 27px;
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <circle class="cls-1" cx="727.82" cy="822.77" r="168.65"/>
+  <g>
+    <path class="cls-2" d="M604.79,765.27c13.45-30.1,38.81-54.01,68.82-67.29l62.27,42.61-131.09,24.68Z"/>
+    <path class="cls-2" d="M779.84,696.9l11.52,72.61-108.02-75.36c31.44-10.9,65.71-9.52,96.5,2.75Z"/>
+    <path class="cls-2" d="M674.32,761.03l-74.84,106.68c-10.35-30.14-10.17-63.62,1.33-93.41l73.51-13.27Z"/>
+    <path class="cls-2" d="M811.27,830.56l-21.76-128.98c28.86,14.56,51.64,39.58,64.11,69.36l-42.34,59.62Z"/>
+    <path class="cls-2" d="M850.01,882.05c-14.2,29.34-39.28,53.1-69.37,65.73l-58.54-40.52,127.91-25.21Z"/>
+    <path class="cls-2" d="M853.62,873.98l-69.75,13.32-1.26-.73,74.3-106.96c9.96,30.81,9.03,64.4-3.29,94.37Z"/>
+    <path class="cls-2" d="M771.98,950.53c.51.75-4.66,2.17-5.31,2.38-28.91,9.14-61.57,6.84-89.6-4.08l-12.31-70.49,107.21,72.19Z"/>
+    <path class="cls-2" d="M668.48,944.68c-28.71-13.36-51.96-37.8-64.65-66.75l39.98-59.58,24.68,126.32Z"/>
+  </g>
+</svg>
 
 --------------------------------------------------------------------------------
 

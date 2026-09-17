@@ -404,7 +404,7 @@
     }
   },
   "uvod": {
-    "sdileni_fotografie": "kontakt-hlavni",
+    "sdileni_fotografie": "kkdo-jsem-hlavni",
     
     "seo": {
       "titulek": "Fotografie s atmosférou",
@@ -424,7 +424,7 @@
       },
       "sekundarni_odkaz": {
         "text": "Domluvit focení",
-        "url": "/kontakt/"
+        "url"og:image: "/kontakt/"
       },
       "fotografie": "svatby-p1011482",
       "fotografie_odkaz": "/portfolio/svatebni-video/",
