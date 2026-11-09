@@ -18,6 +18,9 @@ theme = "gallery"
   [[module.mounts]]
     source = "fotky-originaly/nastaveni.json"
     target = "assets/config/nastaveni.json"
-    [[module.mounts]]
-  source = "fotky-originaly/sdileni"
-  target = "static/images/sdileni"
+  [[module.mounts]]
+    source = "static"
+    target = "static"
+  [[module.mounts]]
+    source = "fotky-originaly/sdileni"
+    target = "static/images/sdileni"
