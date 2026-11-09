@@ -1,12 +1,12 @@
 (() => {
   if (location.origin !== 'https://dolezal-photo.github.io') return;
 
-  const path = '/foto' + location.pathname.replace(/\/index\.html$/, '/');
+  const path = location.pathname.replace(/\/index\.html$/, '/');
   window.goatcounter = { path };
 
   const tracker = document.createElement('script');
   tracker.async = true;
-  tracker.dataset.goatcounter = 'https://jiridolik.goatcounter.com/count';
+  tracker.dataset.goatcounter = 'https://fotograf.goatcounter.com/count';
   tracker.src = 'https://gc.zgo.at/count.js';
   document.head.append(tracker);
 
