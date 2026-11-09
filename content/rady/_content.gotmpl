@@ -1,0 +1,13 @@
+{{ $guides := (partial "settings.html" .).rady }}
+{{ .AddPage (dict "kind" "section" "path" "." "title" $guides.nadpis "description" $guides.popis) }}
+{{ range $guides.clanky }}
+  {{ $body := slice }}
+  {{ range .odstavce }}
+    {{ $body = $body | append (printf "## %s\n\n%s" (index . 0) (index . 1)) }}
+  {{ end }}
+  {{ $.AddPage (dict
+    "path" .slug "title" .nadpis "description" .popis
+    "params" (dict "kategorie" .kategorie "fotografie" .fotografie "popisek" .popisek)
+    "content" (dict "mediaType" "text/markdown" "value" (delimit $body "\n\n"))
+  ) }}
+{{ end }}

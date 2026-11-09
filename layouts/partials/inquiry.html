@@ -1,0 +1,3 @@
+{{ $settings := partialCached "settings.html" . }}
+{{ $subject := printf "Poptávka – %s" .nadpis | urlquery | replaceRE "\\+" "%20" }}
+<a class="button button-primary" href="mailto:{{ $settings.kontakt.email }}?subject={{ $subject | safeURL }}">{{ .tlacitko }} <span aria-hidden="true">↗</span></a>

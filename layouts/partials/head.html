@@ -34,5 +34,9 @@
   }}
   {{ $js := resources.Get "js/main.js" | js.Build (dict "minify" true "params" $params) | resources.Fingerprint }}
   <script src="{{ $js.RelPermalink }}" defer></script>
+  {{ if hugo.IsProduction }}
+    {{ $analytics := resources.Get "js/photo-analytics.js" | fingerprint }}
+    <script src="{{ $analytics.RelPermalink }}" defer></script>
+  {{ end }}
   {{- partial "head-custom.html" . -}}
 </head>

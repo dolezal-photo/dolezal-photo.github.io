@@ -1,0 +1,21 @@
+{{ define "main" }}
+  {{ $settings := partialCached "settings.html" . }}
+  {{ $category := partial "portfolio-category.html" .Params.kategorie }}
+  <article class="photo-guide">
+    <a class="text-link" href="{{ .Parent.RelPermalink }}">← {{ .Parent.Title }}</a>
+    <h1>{{ .Title }}</h1>
+    <figure>
+      {{ $image := partial "media-resource.html" (dict "id" .Params.fotografie) }}
+      {{ $media := index $settings.media .Params.fotografie }}
+      {{ partial "responsive-photo.html" (dict "image" $image "alt" $media.alt "eager" true "sizes" "(max-width: 760px) 90vw, 42rem") }}
+      <figcaption>{{ .Params.popisek }}</figcaption>
+    </figure>
+    {{ .Content }}
+    <footer>
+      {{ with site.GetPage (printf "/portfolio/%s" $category.id) }}
+        <a class="text-link" href="{{ .RelPermalink }}">{{ $category.sluzba.nadpis }} – ukázky <span aria-hidden="true">→</span></a>
+      {{ end }}
+      {{ partial "inquiry.html" $category.sluzba }}
+    </footer>
+  </article>
+{{ end }}

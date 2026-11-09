@@ -6,9 +6,17 @@
   <section class="album-intro">
     <a class="album-back text-link" href="{{ "/portfolio/" | relURL }}"><span aria-hidden="true">←</span> {{ $detail.zpet }}</a>
     <div class="album-heading">
-      <div><p class="eyebrow">{{ $category.cislo }} / {{ $detail.stit }}</p><h1>{{ $category.nazev }}</h1></div>
-      <div class="album-description"><p class="album-tagline">{{ $category.tagline }}</p><p>{{ $category.uvod }}</p></div>
+      <div><p class="eyebrow">{{ $category.cislo }} / {{ $detail.stit }}</p><h1{{ with $category.sluzba }} class="service-heading"{{ end }}>{{ $category.sluzba.nadpis | default $category.nazev }}</h1></div>
+      <div class="album-description"><p class="album-tagline">{{ $category.tagline }}</p><p>{{ $category.sluzba.text | default $category.uvod }}</p></div>
     </div>
+    {{ with $category.sluzba }}
+      <div class="service-inquiry">
+        {{ partial "inquiry.html" . }}
+        {{ range where (site.GetPage "/rady").RegularPages "Params.kategorie" $categoryID }}
+          <a class="text-link" href="{{ .RelPermalink }}">{{ .Title }}</a>
+        {{ end }}
+      </div>
+    {{ end }}
     <div class="album-meta"><span>{{ len $category.fotografie }} {{ $detail.pocet_fotografii }}{{ with $category.video }} · {{ .pocet_text }}{{ end }}</span><span>{{ $detail.prohlednout }} <span aria-hidden="true">↗</span></span></div>
   </section>
 

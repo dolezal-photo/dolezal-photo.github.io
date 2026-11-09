@@ -407,8 +407,8 @@
     "sdileni_fotografie": "kdo-jsem-hlavni",
 
     "seo": {
-      "titulek": "Fotografie s atmosférou",
-      "popis": "Portréty, koncerty, svatby a místa očima Doležal Photo. Prohlédněte si výběr fotografií a domluvte si focení."
+      "titulek": "Jiří Doležal – fotograf v Praze a okolí",
+      "popis": "Portréty v ateliéru, svatby, koncerty, interiéry a catering v Praze a okolí. Vyberte si druh focení, prohlédněte si fotografie a poptejte termín."
     },
     "hero": {
       "stit": "Doležal Photo · Fotografie & video",
@@ -417,7 +417,7 @@
         "Blízkost."
       ],
       "nadpis_zvyrazneny": "Atmosféra.",
-      "text": "Lidé, jejich příběhy a místa, která mají co říct. Zachycuji je tak, abyste se k nim chtěli vracet.",
+      "text": "Jsem Jiří Doležal. V Praze a okolí fotím lidi, koncerty, svatby i místa, kde se jejich příběhy odehrávají.",
       "primarni_odkaz": {
         "text": "Prohlédnout portfolio",
         "url": "/portfolio/"
@@ -485,7 +485,7 @@
         "cislo": "01",
         "nazev": "Portréty",
         "tagline": "Osobnost. Výraz. Ty.",
-        "seo_popis": "Portréty a ateliérová fotografie. Přirozený výraz, jemné světlo a prostor být sám sebou.",
+        "seo_popis": "Ateliérové portréty na pracovní profil i pro sebe v Praze a okolí. Prohlédněte si ukázky a domluvte si portrétní focení.",
         "uvod": "Každý člověk má svůj výraz. V ateliéru hledám světlo, ve kterém vynikne — od klidného portrétu po spontánní úsměv.",
         "vyzva": "Domluvit portrétní focení",
         "titulni_fotografie": "atelier-p1140078",
@@ -499,14 +499,20 @@
           "atelier-p1150541",
           "atelier-p1140123",
           "atelier-p1150706"
-        ]
+        ],
+        "sluzba": {
+          "titulek": "Portrétní focení v Praze a okolí",
+          "nadpis": "Portrétní focení",
+          "text": "Chcete portrét na pracovní profil, nebo fotku pro sebe? Fotím v Praze a okolí. Napište mi, kde snímek použijete. Podle toho spolu vybereme pozadí, oblečení i to, jak těsný má být záběr.",
+          "tlacitko": "Poptat portrétní focení"
+        }
       },
       {
         "id": "koncerty",
         "cislo": "02",
         "nazev": "Koncerty",
         "tagline": "Hudba. Energie. Atmosféra.",
-        "seo_popis": "Koncertní fotografie z klubů a živých vystoupení. Hudba, světlo a energie publika.",
+        "seo_popis": "Koncertní fotografie pro kapely, kluby a pořadatele v Praze a okolí. Ukázky z pódia i z publika a přímá poptávka focení koncertu.",
         "uvod": "Světla se mění, hudba zní a každý okamžik je jiný. Zachycuji dění na pódiu i energii lidí pod ním.",
         "vyzva": "Domluvit focení koncertu",
         "titulni_fotografie": "koncerty-rock-30",
@@ -520,14 +526,20 @@
           "koncerty-p1110637",
           "koncerty-p1110380",
           "koncerty-p1110659"
-        ]
+        ],
+        "sluzba": {
+          "titulek": "Focení koncertů v Praze a okolí",
+          "nadpis": "Focení koncertů",
+          "text": "Fotím klubové koncerty a živá vystoupení v Praze a okolí. Pro kapelu může být důležitý portrét zpěváka pod světly, pro pořadatele pohled na zaplněný sál. Pošlete mi místo, čas vystoupení a jméno kapely, kterou chcete zachytit.",
+          "tlacitko": "Poptat focení koncertu"
+        }
       },
       {
         "id": "svatebni-video",
         "cislo": "03",
         "nazev": "Svatby",
         "tagline": "Blízkost. Emoce. Vzpomínky.",
-        "seo_popis": "Svatební fotografie a video. Od drobných detailů po chvíle, které patří jen vám.",
+        "seo_popis": "Fotografie a film ze svatebního dne v Praze a okolí. Prohlédněte si svatební galerii a ukázku filmu a zeptejte se na svůj termín.",
         "uvod": "Pohledy, doteky a chvíle mezi nimi. Váš den vyprávím fotografiemi i filmem, s důrazem na přirozenost a atmosféru.",
         "vyzva": "Pojďme zachytit váš den.",
         "titulni_fotografie": "svatby-p1011482",
@@ -556,14 +568,20 @@
           "svatby-p1011632",
           "svatby-p1011682",
           "svatby-p1160355"
-        ]
+        ],
+        "sluzba": {
+          "titulek": "Svatební fotograf a video v Praze a okolí",
+          "nadpis": "Svatební fotografie a video",
+          "text": "Chystáte svatbu v Praze nebo okolí? Napište mi datum a místo obřadu a které části dne chcete zachytit. Pod fotografiemi najdete i ukázku filmu pro případ, že si chcete uchovat také hlasy a pohyb.",
+          "tlacitko": "Poptat focení svatby"
+        }
       },
       {
         "id": "interiery",
         "cislo": "04",
         "nazev": "Architektura",
         "tagline": "Linie. Světlo. Prostor.",
-        "seo_popis": "Architektura a interiéry. Městské detaily, výrazné stavby a prostory v přirozeném světle.",
+        "seo_popis": "Focení bytů a domů pro realitní inzerát i fotografie architektury v Praze a okolí. Prohlédněte si ukázky interiérů a poptejte focení.",
         "uvod": "Rytmus fasád, odrazy po dešti i světlo v obytném prostoru. Výběr propojuje městskou architekturu s fotografií interiérů.",
         "vyzva": "Domluvit focení prostoru",
         "titulni_fotografie": "architektura-p1040027",
@@ -578,7 +596,13 @@
           "interiery-foto-11",
           "interiery-foto-29",
           "interiery-foto-51"
-        ]
+        ],
+        "sluzba": {
+          "titulek": "Focení interiérů a architektury v Praze a okolí",
+          "nadpis": "Focení interiérů a architektury",
+          "text": "Fotím byty, domy i architekturu v Praze a okolí. Pro realitní inzerát vybírám záběry, ze kterých člověk pochopí, jak na sebe místnosti navazují. U realizace pro architekta se můžeme soustředit také na materiály a detaily. Napište mi adresu a účel fotografií.",
+          "tlacitko": "Poptat focení interiéru"
+        }
       },
       {
         "id": "shora",
@@ -606,7 +630,7 @@
         "cislo": "06",
         "nazev": "Catering",
         "tagline": "Chuť. Detail. Setkání.",
-        "seo_popis": "Fotografie svatební hostiny, slavnostního stolování a obsluhy. Detaily, které tvoří atmosféru.",
+        "seo_popis": "Fotografie cateringu, prostřených tabulí a obsluhy v Praze a okolí. Ukázky ze svatební hostiny a poptávka focení vaší akce.",
         "uvod": "Prostřený stůl, drobné detaily i okamžik, kdy se začne servírovat. Atmosféra hostiny zachycená tak, jak ji prožívají hosté.",
         "vyzva": "Domluvit focení hostiny",
         "titulni_fotografie": "catering-p1160164",
@@ -615,7 +639,13 @@
           "catering-p1160074",
           "catering-p1160518",
           "catering-p1160628"
-        ]
+        ],
+        "sluzba": {
+          "titulek": "Focení cateringu a hostin v Praze a okolí",
+          "nadpis": "Focení cateringu a hostin",
+          "text": "V Praze a okolí fotím catering pro pořadatele i dodavatele. Má být na snímcích vidět výzdoba stolu, servírování, nebo průběh celé hostiny? Napište mi místo a čas zahájení, abychom stihli i prostřenou tabuli před příchodem hostů.",
+          "tlacitko": "Poptat focení cateringu"
+        }
       }
     ]
   },
@@ -671,5 +701,63 @@
     "poznamka": "Do zprávy stačí přidat, co chcete fotit, kde a v jakém termínu. Podle toho společně domluvíme další postup.",
     "portfolio_odkaz": "Prohlédnout všechny série",
     "fotografie": "kontakt-hlavni"
+  },
+  "rady": {
+    "nadpis": "Rady před focením",
+    "popis": "Co si vzít do ateliéru a jak nachystat byt pro realitní inzerát. Praktické návody s ukázkami z mého portfolia.",
+    "clanky": [
+      {
+        "slug": "co-si-oblect-na-portretni-foceni",
+        "nadpis": "Co si obléct na portrétní focení v ateliéru?",
+        "popis": "Jak vybrat oblečení podle toho, kde portrét použijete, co udělá světlá košile na světlém pozadí a co si vzít na převlečení.",
+        "kategorie": "atelier",
+        "fotografie": "atelier-portret-svetle-pozadi",
+        "popisek": "Bílá košile a světlé pozadí. V portrétu pak vynikne tvář a linie vlasů.",
+        "odstavce": [
+          [
+            "Kde bude portrét vidět?",
+            "Na pracovním profilu bývá fotka malá a často se ořízne do kruhu. Zkuste si před zrcadlem zakrýt všechno od ramen dolů. Je vám příjemné, jak vypadá límec, výstřih nebo sako? Právě tahle část oblečení bude na snímku nejvíc vidět."
+          ],
+          [
+            "Světlá košile, nebo tmavý rolák?",
+            "Na ukázce z mého ateliéru splývá bílá košile se světlým pozadím a pohled přitahuje tvář. V galerii najdete i portrét v černém roláku, který na světlém pozadí zřetelně vykreslí ramena. Pokud mezi dvěma kousky váháte, vezměte oba."
+          ],
+          [
+            "Co si vyzkoušet doma",
+            "V oblečení se posaďte, otočte ramena a zkuste zvednout ruce. Kousek, který musíte po každém pohybu upravovat, vás bude při focení rozptylovat. Na převlečení přibalte vršek jiné barvy. Nosíte-li běžně brýle, vezměte je také."
+          ],
+          [
+            "Co mi poslat předem",
+            "Stačí napsat, pro koho je portrét určený a kde ho použijete. Pokud má ladit s firemním webem nebo s portréty kolegů, připojte odkaz. Podle něj můžeme vybrat pozadí i formát ještě před focením."
+          ]
+        ]
+      },
+      {
+        "slug": "jak-pripravit-byt-na-foceni",
+        "nadpis": "Jak připravit byt na focení pro realitní inzerát?",
+        "popis": "Co uklidit z kuchyňské linky, jak připravit průhled mezi místnostmi a podle čeho domluvit čas focení bytu na prodej či pronájem.",
+        "kategorie": "interiery",
+        "fotografie": "interiery-foto-2",
+        "popisek": "Jídelní stůl a posezení v jednom záběru ukazují, jak lze obytný prostor využít.",
+        "odstavce": [
+          [
+            "Začněte ve dveřích",
+            "Postavte se do dveří obýváku a podívejte se, co uvidí člověk při první návštěvě. Koš na prádlo nebo sušák uprostřed průchodu schovejte. Sedačku a jídelní stůl klidně nechte na místě. Na ukázce právě jejich vzájemná poloha pomáhá čtenáři pochopit uspořádání pokoje."
+          ],
+          [
+            "Co schovat z kuchyně a koupelny",
+            "Z pracovní desky odložte nádobí a utěrky, aby bylo vidět, kolik zbývá místa na vaření. V koupelně ukliďte drogerii z okraje vany a umyvadla. Z lednice a pracovního stolu sundejte dopisy, rodinné fotografie a cokoli s osobními údaji."
+          ],
+          [
+            "Kdy má byt nejlepší světlo?",
+            "Všimněte si, v kterou část dne bývá v hlavní místnosti příjemné světlo. Předem mi řekněte také o výhledu, který chcete ukázat. Pokud je důležitý třeba balkon do dvora, můžeme čas focení domluvit s ohledem na něj."
+          ],
+          [
+            "Co mi napsat před focením",
+            "Pošlete adresu, dispozici a informaci, jestli jde o prodej, nebo pronájem. Připište jednu věc, kterou by zájemce mohl z půdorysu přehlédnout, třeba samostatný vstup do pracovny. Budu vědět, který průhled si při focení pohlídat."
+          ]
+        ]
+      }
+    ]
   }
 }
